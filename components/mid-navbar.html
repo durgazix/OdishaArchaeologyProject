@@ -1,0 +1,57 @@
+<div class="mid-navbar">
+  <div class="container mid-container">
+    <!-- LEFT LOGOS -->
+    <div class="mid-logos">
+      <img src="assets/logo/odisha_govt.png" alt="Govt of Odisha" />
+      <img src="assets/logo/culturedept.jpg" alt="Archaeology" />
+      <img src="assets/logo/culturedept.jpg" alt="ASI" />
+    </div>
+
+    <!-- CENTER TEXT -->
+    <div class="mid-title">
+      <h2>Government of Odisha</h2>
+      <h3>Department of Archaeology</h3>
+    </div>
+
+    <!-- RIGHT CONTROLS -->
+    <div class="mid-actions">
+      <!-- Virtual Tour -->
+      <button class="virtual-btn" onclick="openVirtualTour()">
+        ▶ Virtual Tour
+      </button>
+
+      <!-- Search -->
+      <!-- Search -->
+      <div class="search-box">
+        <input type="text" placeholder="Search" />
+        <button class="search-btn">🔍</button>
+      </div>
+
+      <!-- Mobile Icons -->
+      <div class="mobile-icons">
+        <button class="search-icon">🔍</button>
+        <button class="menu-icon" id="menuToggle" onclick="toggleMenu()">☰</button>
+        <button class="close-icon" id="closeMenuBtn" onclick="toggleMenu()">✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mid-navbar">
+  <!-- Notification Bar -->
+  <div class="notification-bar">
+    <div class="notification-text">
+      RESULTS FOR THE PG DIPLOMA COURSES (2025–2026 & 2025–2027)
+    </div>
+  </div>
+</div>
+
+<!-- Virtual Tour Modal -->
+<div id="virtualModal" class="virtual-modal">
+  <div class="virtual-content">
+    <span class="close" onclick="closeVirtualTour()">×</span>
+    <video controls autoplay>
+      <source src="assets/videos/virtual-tour.mp4" type="video/mp4" />
+      Your browser does not support video.
+    </video>
+  </div>
+</div>

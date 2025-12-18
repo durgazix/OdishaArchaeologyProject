@@ -1,0 +1,78 @@
+/* ===== TOP HEADER ===== */
+.top-header {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.container {
+  margin: auto;
+  padding: 6px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left */
+.top-left a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Right */
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.top-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.top-link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  color: #888;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  color: #000;
+}
+
+.lang-switch .active {
+  font-weight: 600;
+}
+
+/* Font Controls */
+.font-controls button {
+  border: 1px solid #999;
+  background: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.font-controls button:hover {
+  background: #ddd;
+}
+
+/* Language Toggle Button */
+.lang-toggle-btn {
+  border: 1px solid #999;
+  background-color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.lang-toggle-btn:hover {
+  background-color: #e0e0e0;
+}

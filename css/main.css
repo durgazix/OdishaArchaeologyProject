@@ -1,0 +1,14 @@
+/* ===== GLOBAL LAYOUT ===== */
+.container, .mid-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Remove list bullets from navbar */
+.main-navbar ul,
+.main-navbar li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

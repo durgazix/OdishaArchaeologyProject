@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="css/header.css" />
+<link rel="stylesheet" href="css/mid-navbar.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/hero.css" />
+<link rel="stylesheet" href="css/news-about.css" />
+<link rel="stylesheet" href="css/about-detail.css" />
+<link rel="stylesheet" href="css/activities-notice-links.css" />
+<!-- <link rel="stylesheet" href="css/gallery.css" /> -->
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/loader.css" />
+
+<!-- Header -->
+<div id="header"></div>
+<!-- Loader -->
+<div id="loader"></div>
+<!-- Mid Navbar -->
+<div id="mid-navbar"></div>
+<!-- Main Navbar -->
+<div id="navbar"></div>
+<!-- About Detail Page (Hidden by default) -->
+<div class="about-detail-container" id="about-detail"></div>
+<!-- Hero Section -->
+<div id="hero"></div>
+<!-- News and About Section -->
+<div id="news-about"></div>
+<!-- Activities, Notice, and Important Links Section -->
+<div id="activities-notice-links"></div>
+<!-- Gallery Section -->
+<!-- <div id="gallery"></div> -->
+<!-- Footer Section -->
+<div id="footer"></div>
+
+<script>
+  fetch("components/header.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("header").innerHTML = data;
+    });
+  fetch("components/loader.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("loader").innerHTML = data;
+    });
+  fetch("components/mid-navbar.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("mid-navbar").innerHTML = data;
+    });
+  fetch("components/navbar.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("navbar").innerHTML = data));
+
+  fetch("components/hero.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("hero").innerHTML = data));
+
+  fetch("components/news-about.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("news-about").innerHTML = data));
+
+  fetch("components/about-detail.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("about-detail").innerHTML = data));
+
+  fetch("components/activities-notice-links.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("activities-notice-links").innerHTML = data));
+
+  // fetch("components/gallery.html")
+  //   .then((res) => res.text())
+  //   .then((data) => (document.getElementById("gallery").innerHTML = data));
+
+  fetch("components/footer.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("footer").innerHTML = data));
+</script>
+
+<script src="js/main.js"></script>
+<script src="js/mid-navbar.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/news-about.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/activities-notice-links.js"></script>
+<!-- <script src="js/gallery.js"></script> -->
+<script src="js/footer.js"></script>

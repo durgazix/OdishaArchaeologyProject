@@ -1,0 +1,138 @@
+/* FOOTER SECTION */
+.footer-section {
+  background: #f3a668e5;
+  border-top: 1px solid #e0e0e0;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  margin: 0 auto;
+}
+
+/* FOOTER LINKS */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  /* width: 100%; */
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 12px;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.link-separator {
+  color: #fff;
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+/* LICENSE INFORMATION */
+.license-info {
+  margin: 10px 0;
+}
+
+.license-text {
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.license-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.license-link:hover {
+  color: #d24a00;
+  text-decoration: underline;
+}
+
+/* VISITOR INFORMATION */
+.visitor-info {
+  margin: 5px 0;
+}
+
+.visitor-text {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+}
+
+.visitor-count {
+  color: #d24a00;
+  font-weight: 700;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 30px 0;
+    margin-top: 40px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-link {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .link-separator {
+    display: none;
+  }
+
+  .license-text,
+  .visitor-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    padding: 25px 0;
+    margin-top: 30px;
+  }
+
+  .footer-link {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .license-text,
+  .visitor-text {
+    font-size: 11px;
+  }
+}
