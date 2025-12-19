@@ -2,14 +2,14 @@
     <div class="container">
       <ul class="nav-list" id="navList">
         <li class="home-icon">
-          <a href="#" onclick="goHome(); return false;"><span>🏠</span></a>
+          <a href="#" onclick="goHome(); return false;"><i class="fa fa-home"></i></a>
         </li>
 
         <li class="dropdown">
-          <a href="#">About Us</a>
+          <a href="#" onclick="showAboutPage(); return false;">About Us</a>
             <ul class="dropdown-menu">
-            <li><a href="#" onclick="openAboutPage(); return false;">About Odisha State Archaeology</a></li>
-            <li><a href="#">Staffing Pattern</a></li>
+            <li><a href="#" onclick="showAboutPage(); return false;">About Odisha State Archaeology</a></li>
+            <li><a href="#" onclick="showStaffingPatternPage(); return false;">Staffing Pattern</a></li>
           </ul>
         </li>
 
@@ -58,8 +58,8 @@
         <li><a href="#">Publication</a></li>
         <li><a href="#">E-Publication</a></li>
         <li><a href="#">Library</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#">News</a></li>
+        <li><a href="#gallery" onclick="showGalleryPage(); return false;">Gallery</a></li>
+        <li><a href="#" onclick="showNewsPage(); return false;">News</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Staffing Pattern</title>
+
+  <!-- Font Awesome 4 (for fa fa-home) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="staffing-pattern.css" />
+</head>
+<body>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">home</a>
+        <span class="breadcrumb-separator">&gt;&gt;</span>
+        <span class="breadcrumb-item active">Staffing Pattern</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Staffing Pattern Section -->
+  <section class="staffing-pattern-section">
+    <div class="container">
+
+      <!-- Chart 1 -->
+      <div class="chart-section">
+        <h2 class="chart-title">
+          DEPARTMENT OF ARCHAEOLOGY ADMINISTRATIVE CHART
+        </h2>
+        <div class="chart-image-container">
+          <img
+            src="assets/abouts/image.png"
+            alt="Department of Archaeology Administrative Chart"
+            class="chart-image"
+          />
+        </div>
+      </div>
+
+      <!-- Chart 2 -->
+      <div class="chart-section">
+        <h2 class="chart-title">
+          GOVERNMENT ORIENTAL MANUSCRIPTS LIBRARY AND RESEARCH CENTRE
+          ADMINISTRATIVE CHART
+        </h2>
+        <div class="chart-image-container">
+          <img
+            src="assets/abouts/goml_admin.jpg"
+            alt="Government Oriental Manuscripts Library and Research Centre Administrative Chart"
+            class="chart-image"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Close Button -->
+  <button class="close-detail-btn" onclick="goHome(); return false;">&times;</button>
+
+  <!-- JS -->
+  <script>
+    function goHome() {
+      window.location.href = "index.html"; // change if needed
+    }
+  </script>
+
+</body>
+</html>

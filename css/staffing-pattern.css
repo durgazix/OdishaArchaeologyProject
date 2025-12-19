@@ -1,0 +1,146 @@
+/* Container visibility */
+.staffing-pattern-container {
+  display: none;
+}
+
+.staffing-pattern-container.active {
+  display: block;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb-bar {
+  background: #dd6d05;
+  padding: 12px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-item {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #777;
+}
+
+/* Home Icon */
+.home-icon i {
+  font-size: 18px;
+  color: #333;
+}
+
+.home-icon:hover i {
+  color: #0a3cff;
+}
+
+/* ---------- Staffing Section ---------- */
+.staffing-pattern-section {
+  padding: 40px 0;
+  background: #fff;
+  min-height: 80vh;
+}
+
+/* Force column layout */
+.staffing-pattern-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Container */
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* Chart Section */
+.chart-section {
+  width: 100%;
+}
+
+.chart-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Image Box */
+.chart-image-container {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Big Responsive Image */
+.chart-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ---------- Close Button ---------- */
+.close-detail-btn {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-detail-btn:hover {
+  color: red;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .chart-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .staffing-pattern-section {
+    padding: 30px 0;
+  }
+
+  .chart-title {
+    font-size: 16px;
+  }
+
+  .chart-image-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-title {
+    font-size: 14px;
+  }
+
+  .chart-image-container {
+    padding: 10px;
+  }
+}

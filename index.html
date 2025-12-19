@@ -1,10 +1,16 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="css/header.css" />
 <link rel="stylesheet" href="css/mid-navbar.css" />
 <link rel="stylesheet" href="css/navbar.css" />
 <link rel="stylesheet" href="css/hero.css" />
 <link rel="stylesheet" href="css/news-about.css" />
+<link rel="stylesheet" href="css/news-page.css" />
 <link rel="stylesheet" href="css/about-detail.css" />
+<link rel="stylesheet" href="css/staffing-pattern.css" />
 <link rel="stylesheet" href="css/activities-notice-links.css" />
 <link rel="stylesheet" href="css/gallery.css" />
 <link rel="stylesheet" href="css/footer.css" />
@@ -20,6 +26,10 @@
 <div id="navbar"></div>
 <!-- About Detail Page (Hidden by default) -->
 <div class="about-detail-container" id="about-detail"></div>
+<!-- Staffing Pattern Page (Hidden by default) -->
+<div class="staffing-pattern-container" id="staffing-pattern"></div>
+<!-- News Page (Hidden by default) -->
+<div class="news-page-container" id="news-page"></div>
 <!-- Hero Section -->
 <div id="hero"></div>
 <!-- News and About Section -->
@@ -62,6 +72,16 @@
   fetch("components/about-detail.html")
     .then((res) => res.text())
     .then((data) => (document.getElementById("about-detail").innerHTML = data));
+
+  fetch("components/staffing-pattern.html")
+    .then((res) => res.text())
+    .then((data) => (document.getElementById("staffing-pattern").innerHTML = data));
+
+  fetch("components/news-page.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("news-page").innerHTML = data;
+    });
 
   fetch("components/activities-notice-links.html")
     .then((res) => res.text())

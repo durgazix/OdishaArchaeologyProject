@@ -40,6 +40,57 @@ window.goHome = function () {
     window.closeDetailPage();
   }
 
+  // Get all sections
+  const heroSection = document.getElementById("hero");
+  const newsAboutSection = document.getElementById("news-about");
+  const activitiesNoticeLinksSection = document.getElementById("activities-notice-links");
+  const gallerySection = document.getElementById("gallery");
+  const aboutDetailSection = document.getElementById("about-detail");
+  const footerSection = document.getElementById("footer");
+
+  // Hide about detail section if it was shown
+  if (aboutDetailSection) {
+    aboutDetailSection.style.display = "none";
+    aboutDetailSection.classList.remove("active");
+  }
+
+  const staffingPatternSection = document.getElementById("staffing-pattern");
+  // Hide staffing pattern section if it was shown
+  if (staffingPatternSection) {
+    staffingPatternSection.style.display = "none";
+    staffingPatternSection.classList.remove("active");
+  }
+
+  const newsPageSection = document.getElementById("news-page");
+  // Hide news page section if it was shown
+  if (newsPageSection) {
+    newsPageSection.style.display = "none";
+    newsPageSection.classList.remove("active");
+  }
+
+  // Hide close button
+  const closeBtn = document.querySelector(".close-detail-btn");
+  if (closeBtn) {
+    closeBtn.classList.remove("active");
+  }
+
+  // Show all home sections
+  if (heroSection) {
+    heroSection.style.display = "block";
+  }
+  if (newsAboutSection) {
+    newsAboutSection.style.display = "block";
+  }
+  if (activitiesNoticeLinksSection) {
+    activitiesNoticeLinksSection.style.display = "block";
+  }
+  if (gallerySection) {
+    gallerySection.style.display = "block";
+  }
+  if (footerSection) {
+    footerSection.style.display = "block";
+  }
+
   // Scroll to the top of the page (home section)
   window.scrollTo({
     top: 0,

@@ -25,18 +25,27 @@
   border-right: 1px solid #ddd;
 }
 .nav-list > li:not(.home-icon):hover > a{
-  background-color: #8b0000;
+  background-color: #ff9900ea;
     color: #fff;
   
 }
 
 /* Home Icon */
 .home-icon {
-  background: #8b0000;
+  background: #ff9900ea;
 }
 
 .home-icon a {
-  font-size: 25px;
+  font-size: 26px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+}
+
+.home-icon a:hover {
+  color: #fff;
 }
 
 /* Dropdown */
