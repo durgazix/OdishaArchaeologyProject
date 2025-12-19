@@ -105,10 +105,37 @@
 
 .close {
   position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 24px;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+  font-size: 28px;
   cursor: pointer;
+  color: #302d2dbe;
+  font-weight: bold;
+  background: #e7e3e3b9;
+  border: 1px solid #999;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 4px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close:hover {
+  background: #e0e0e0;
+  border-color: #666;
+  transform: scale(1.15);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.close:active {
+  transform: scale(0.9);
 }
 
 /* ===== Notification Bar ===== */

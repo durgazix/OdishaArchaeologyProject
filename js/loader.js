@@ -23,18 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const homeIcon = document.querySelector(".home-icon a");
   const pageLoader = document.getElementById("pageLoader");
 
-  if (homeIcon) {
+  if (homeIcon && pageLoader) {
     homeIcon.addEventListener("click", function (e) {
       e.preventDefault();
 
       // Show loader
-      if (pageLoader) {
-        pageLoader.classList.add("active");
-      }
+      pageLoader.classList.add("active");
 
-      // Reload page after delay
+      // Navigate to home after delay
       setTimeout(function () {
-        window.location.href = window.location.pathname;
+        window.location.href = "/";
       }, 1500);
     });
   }

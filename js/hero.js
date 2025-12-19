@@ -1,12 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initializeHeroSlider() {
   let currentSlide = 0;
   let isAnimating = false;
 
   const slides = document.querySelectorAll(".hero-slide");
   const dots = document.querySelectorAll(".dot");
   const totalSlides = slides.length;
-  const intervalTime = 2000;
+  const intervalTime = 3000;
   let autoSlide;
+
+  // Exit if no slides found
+  if (totalSlides === 0) {
+    console.warn("No hero slides found");
+    return;
+  }
 
   function resetSlideClasses(slide) {
     slide.classList.remove(
@@ -18,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showSlide(nextIndex, direction) {
-    if (isAnimating || nextIndex === currentSlide) return;
+    if (isAnimating || nextIndex === currentSlide || totalSlides === 0) return;
     isAnimating = true;
 
     const current = slides[currentSlide];
@@ -96,4 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
   hero?.addEventListener("mouseleave", startAuto);
 
   startAuto();
+}
+
+// Wait for hero component to be loaded
+const heroObserver = new MutationObserver(() => {
+  if (document.querySelector(".hero-slide")) {
+    initializeHeroSlider();
+    heroObserver.disconnect();
+  }
+});
+
+// Start observing when document is ready
+document.addEventListener("DOMContentLoaded", () => {
+  const heroContainer = document.getElementById("hero");
+  if (heroContainer) {
+    heroObserver.observe(heroContainer, { childList: true, subtree: true });
+  }
 });
