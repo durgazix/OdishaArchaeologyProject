@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 500px;
+  height: 550px;
   overflow: hidden;
   background: #000;
 }
@@ -63,7 +63,7 @@
   padding: 20px 20px;
   font-size: 20px;
   font-weight: 600;
-  max-width: 400px;
+  max-width: 500px;
   text-align: left;
   border-radius: 4px;
 }
