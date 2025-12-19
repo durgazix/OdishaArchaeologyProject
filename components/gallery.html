@@ -1,71 +1,75 @@
 <section class="gallery-section" id="gallery">
   <div class="container">
-    <!-- Gallery Header -->
-    <h2 class="gallery-title">Gallery</h2>
-    <div class="gallery-divider"></div>
-
-    <!-- GALLERY WRAPPER -->
     <div class="gallery-wrapper">
-      <!-- PHOTO GALLERY -->
-      <div class="gallery-header-subtitle">Photo</div>
-      <div class="gallery-container" id="photo-gallery">
-      <div class="gallery-slider">
-        <div class="gallery-items">
-          <div class="gallery-item">
-            <img src="assets/gallery/gallery_1.jpg" alt="Gallery Image">
-            <div class="gallery-caption">Ancient Temple</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/gallery/gallery_2.jpg" alt="Gallery Image">
-            <div class="gallery-caption">Architecture</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/gallery/gallery_3.jpg" alt="Gallery Image">
-            <div class="gallery-caption">Painting</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/gallery/gallery_4.jpg" alt="Gallery Image">
-            <div class="gallery-caption">Historic Site</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/gallery/gallery_5.jpeg" alt="Gallery Image">
-            <div class="gallery-caption">Cultural Heritage</div>
-          </div>
+
+      <!-- Header -->
+      <div class="gallery-header">
+        <h2 class="gallery-title">Gallery</h2>
+
+        <div class="gallery-toggle-group">
+          <button id="photoTab" class="gallery-toggle-btn active">Photo</button>
+          <button id="videoTab" class="gallery-toggle-btn">Video</button>
         </div>
       </div>
 
-      <button class="gallery-arrow prev">‹</button>
-      <button class="gallery-arrow next">›</button>
-    </div>
+      <!-- PHOTO -->
+      <div class="gallery-container photo-gallery" id="photoGallery">
+        <div class="gallery-items" id="galleryItems"></div>
 
-      <!-- VIDEO GALLERY -->
-      <div class="gallery-header-subtitle">Video</div>
-      <div class="gallery-container" id="video-gallery">
-      <div class="gallery-slider">
-        <div class="gallery-items">
-          <div class="gallery-item">
-            <img src="assets/gallery/video1.jpg" alt="Video">
-            <div class="gallery-caption">▶ Video</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/gallery/video2.jpg" alt="Video">
-            <div class="gallery-caption">▶ Video</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/gallery/video3.jpg" alt="Video">
-            <div class="gallery-caption">▶ Video</div>
-          </div>
+        <div class="gallery-footer photo-footer">
+          <button class="view-more-btn">View More</button>
+          <button class="view-less-btn">View Less</button>
         </div>
       </div>
 
-      <button class="gallery-arrow prev">‹</button>
-      <button class="gallery-arrow next">›</button>
-    </div>
+      <!-- VIDEO -->
+      <div class="video-gallery" id="videoGallery" style="display:none">
 
-    <!-- Footer -->
-    <div class="gallery-footer">
-      <button class="view-more-btn">View More</button>
-    </div>
+        <div class="video-grid">
+
+          <div class="video-card">
+            <video controls>
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
+            </video>
+            <p>Tharangambadi</p>
+          </div>
+
+          <div class="video-card">
+            <video controls>
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
+            </video>
+            <p>Keeladi</p>
+          </div>
+
+          <div class="video-card">
+            <video controls>
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
+            </video>
+            <p>Excavation Documentary</p>
+          </div>
+
+          <div class="video-card">
+            <video controls>
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
+            </video>
+            <p>Excavation Documentary</p>
+          </div>
+          
+          <div class="video-card">
+            <video controls>
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
+            </video>
+            <p>Excavation Documentary</p>
+          </div>
+
+        </div>
+
+        <div class="gallery-footer video-footer">
+          <button class="view-more-btn">View More</button>
+          <button class="view-less-btn">View Less</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

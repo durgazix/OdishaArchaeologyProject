@@ -5,7 +5,7 @@ function initializeHeroSlider() {
   const slides = document.querySelectorAll(".hero-slide");
   const dots = document.querySelectorAll(".dot");
   const totalSlides = slides.length;
-  const intervalTime = 3000;
+  const intervalTime = 5000;
   let autoSlide;
 
   // Exit if no slides found

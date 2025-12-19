@@ -76,10 +76,13 @@
   outline: none;
 }
 
-.search-box button {
+.search-box button{
   border: none;
   cursor: pointer;
-  
+}
+.search-btn{
+  background-color: #ffffff;
+  border-left: 1px solid #ccc;
 }
 
 /* MODAL */

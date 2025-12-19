@@ -2,8 +2,7 @@
 .footer-section {
   background: #f3a668e5;
   border-top: 1px solid #e0e0e0;
-  padding: 40px 0;
-  margin-top: 60px;
+  padding: 20px 0;
 }
 
 .container {
@@ -96,8 +95,8 @@
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .footer-section {
-    padding: 30px 0;
-    margin-top: 40px;
+    /* padding: 10px 0; */
+    margin-top: 5px;
   }
 
   .footer-links {

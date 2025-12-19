@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="css/news-about.css" />
 <link rel="stylesheet" href="css/about-detail.css" />
 <link rel="stylesheet" href="css/activities-notice-links.css" />
-<!-- <link rel="stylesheet" href="css/gallery.css" /> -->
+<link rel="stylesheet" href="css/gallery.css" />
 <link rel="stylesheet" href="css/footer.css" />
 <link rel="stylesheet" href="css/loader.css" />
 
@@ -26,7 +26,7 @@
 <!-- Activities, Notice, and Important Links Section -->
 <div id="activities-notice-links"></div>
 <!-- Gallery Section -->
-<!-- <div id="gallery"></div> -->
+<div id="gallery"></div>
 <!-- Footer Section -->
 <div id="footer"></div>
 
@@ -66,9 +66,15 @@
     .then((res) => res.text())
     .then((data) => (document.getElementById("activities-notice-links").innerHTML = data));
 
-  // fetch("components/gallery.html")
-  //   .then((res) => res.text())
-  //   .then((data) => (document.getElementById("gallery").innerHTML = data));
+  fetch("components/gallery.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("gallery").innerHTML = data;
+      // Initialize gallery interactions after the HTML has been injected
+      if (window.initGallery) {
+        window.initGallery();
+      }
+    });
 
   fetch("components/footer.html")
     .then((res) => res.text())
@@ -82,5 +88,5 @@
 <script src="js/news-about.js"></script>
 <script src="js/loader.js"></script>
 <script src="js/activities-notice-links.js"></script>
-<!-- <script src="js/gallery.js"></script> -->
+<script src="js/gallery.js"></script>
 <script src="js/footer.js"></script>
