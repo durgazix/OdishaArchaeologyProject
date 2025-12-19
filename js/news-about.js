@@ -1,20 +1,21 @@
 // NEWS SLIDER FUNCTIONALITY
 let currentNewsIndex = 0;
+let autoSlideInterval;
 const newsItems = [
   {
-    title: "Newly declared Protected Monument - Cave Temples at Vallam Village",
-    text: "The Pallava period Rock-cut temples namely Sri Karivartharaja Perumal Temple, Siva Temple and Sri Vedhandhees warar Cave Temple in Vallam village which is 3 km from Chengalpattu Taluk, Kanchipuram District, are declared as protected Monument of...",
+    title: "Preservation of Jagannath Temple Complex - A Living Monument",
+    text: "The Jagannath Temple in Puri is one of Odisha's most sacred and architecturally significant monuments. The Department of Archaeology continues its dedicated efforts to preserve this 12th-century masterpiece, ensuring that its intricate stone carvings, magnificent spires, and spiritual significance are maintained for future generations of pilgrims and scholars. This magnificent structure, built in the 12th century, stands as a testament to Odishan architectural brilliance and remains one of the four most important pilgrimage sites in Hinduism.",
     image: "assets/news/Vallam-min_1.jpg"
   },
   {
-    title: "Archaeological Discoveries at Historical Sites",
-    text: "Recent excavations have uncovered significant artifacts and structures that provide insights into the ancient civilizations of Odisha. These discoveries help us understand the rich cultural heritage and historical significance of the region...",
-    image: "assets/news/news1.jpg"
+    title: "Konark Sun Temple - Architectural Marvel of Odisha",
+    text: "The Sun Temple at Konark is a UNESCO World Heritage Site and represents the pinnacle of Odishan medieval architecture. Built in the 13th century under King Narasimhadeva I, its stunning stone sculptures and intricate carvings depicting celestial bodies, mythological scenes, and daily life provide invaluable insights into the Somavamshi dynasty's artistic achievements and astronomical knowledge. The temple's unique chariot-like structure symbolizes the sun god's journey across the sky, making it one of the most innovative architectural achievements in ancient India.",
+    image: "assets/news/Vallam-min_2.jpg"
   },
   {
-    title: "Conservation Efforts for Ancient Monuments",
-    text: "The Department of Archaeology is committed to the preservation and restoration of ancient monuments. Our team of experts uses modern conservation techniques to ensure that these historical treasures are maintained for future generations...",
-    image: "assets/news/news2.jpg"
+    title: "Recent Archaeological Excavations Unveil Ancient Odisha",
+    text: "Ongoing excavations across Odisha have revealed pottery, coins, terracotta figurines, and structural remains dating back centuries. These discoveries at sites like Sisupalgarh, Dhabaleswar, and other historically significant locations continue to provide crucial evidence of Odisha's prosperous trade networks, cultural exchanges, and advanced urban planning in ancient times. Recent findings have shown that Odisha maintained thriving commercial connections with Southeast Asia, establishing it as a major maritime trading hub during the medieval period.",
+    image: "assets/news/Vallam-min_3.jpg"
   }
 ];
 
@@ -22,6 +23,10 @@ function updateNewsSlide(index) {
   const newsItem = newsItems[index];
   const newsContent = document.querySelector(".news-content");
   const newsTitle = document.querySelector(".news-title");
+  
+  // Reset auto-slide timer
+  clearInterval(autoSlideInterval);
+  startAutoSlide();
   
   // Add fade out animation before update
   if (newsContent) {
@@ -36,8 +41,10 @@ function updateNewsSlide(index) {
       `;
       
       // Trigger animation by resetting styles
-      newsContent.style.opacity = "1";
-      newsContent.style.transform = "translateY(0)";
+      setTimeout(() => {
+        newsContent.style.opacity = "1";
+        newsContent.style.transform = "translateY(0)";
+      }, 10);
     }, 250);
   }
 
@@ -52,25 +59,45 @@ function updateNewsSlide(index) {
   currentNewsIndex = index;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // News slider navigation
-  const navPrev = document.querySelector(".nav-prev");
-  const navNext = document.querySelector(".nav-next");
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    const nextIndex = (currentNewsIndex + 1) % newsItems.length;
+    updateNewsSlide(nextIndex);
+  }, 3000); // Change slide every 3 seconds
+}
 
-  if (navPrev) {
-    navPrev.addEventListener("click", function (e) {
-      e.preventDefault();
-      const previousIndex = (currentNewsIndex - 1 + newsItems.length) % newsItems.length;
-      updateNewsSlide(previousIndex);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Wait for DOM to be fully loaded before attaching button listeners
+  function initializeNewsSlider() {
+    const navPrev = document.querySelector(".nav-prev");
+    const navNext = document.querySelector(".nav-next");
+
+    if (navPrev && navNext) {
+      navPrev.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const previousIndex = (currentNewsIndex - 1 + newsItems.length) % newsItems.length;
+        updateNewsSlide(previousIndex);
+      });
+
+      navNext.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const nextIndex = (currentNewsIndex + 1) % newsItems.length;
+        updateNewsSlide(nextIndex);
+      });
+      
+      // Start auto-slide
+      startAutoSlide();
+      return true;
+    }
+    return false;
   }
 
-  if (navNext) {
-    navNext.addEventListener("click", function (e) {
-      e.preventDefault();
-      const nextIndex = (currentNewsIndex + 1) % newsItems.length;
-      updateNewsSlide(nextIndex);
-    });
+  // Try to initialize immediately
+  if (!initializeNewsSlider()) {
+    // If not ready, wait a bit and try again
+    setTimeout(initializeNewsSlider, 500);
   }
 
   // Open About Detail Page
@@ -96,8 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
       newsAboutSection.style.display = "none";
     }
     
-    // Scroll to detail section
-    window.scrollTo(0, document.querySelector(".breadcrumb-bar").offsetTop);
+    // Scroll to detail section below navbar
+    setTimeout(() => {
+      const breadcrumb = document.querySelector(".breadcrumb-bar");
+      if (breadcrumb) {
+        breadcrumb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   // Close About Detail Page
