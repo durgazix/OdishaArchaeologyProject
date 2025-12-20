@@ -175,6 +175,7 @@
   cursor: pointer;
   border-radius: 3px;
   transition: all 0.3s ease;
+  align-self: flex-end;
 }
 
 .read-more-btn:hover {
