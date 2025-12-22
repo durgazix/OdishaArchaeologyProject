@@ -32,6 +32,29 @@ function initTopBarLanguageToggle() {
   });
 }
 
+//Goblal function to hide all main sections
+function hideAllSections() {
+  const sections = [
+    "hero",
+    "news-about",
+    "activities-notice-links",
+    "gallery",
+    "about-detail",
+    "staffing-pattern",
+    "news-page",
+    "contact-us",
+    "act-rules"
+  ];
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.display = "none";
+      el.classList.remove("active");
+    }
+  });
+}
+
 // Global handler to return to the home view
 // Called from the Home icon in the navbar
 window.goHome = function () {
@@ -66,6 +89,30 @@ window.goHome = function () {
   if (newsPageSection) {
     newsPageSection.style.display = "none";
     newsPageSection.classList.remove("active");
+  }
+
+  const contactUsSection = document.getElementById("contact-us");
+  // Hide contact us section if it was shown
+  if (contactUsSection) {
+    contactUsSection.style.display = "none";
+  }
+
+  const actRulesSection = document.getElementById("act-rules");
+  // Hide act rules section if it was shown
+  if (actRulesSection) {
+    actRulesSection.style.display = "none";
+  }
+
+  const rtiSection = document.getElementById("rti");
+  // Hide rti section if it was shown
+  if (rtiSection) {
+    rtiSection.style.display = "none";
+  }
+
+  const galleryBreadcrumb = document.getElementById("gallery-breadcrumb");
+  // Hide gallery breadcrumb if it was shown
+  if (galleryBreadcrumb) {
+    galleryBreadcrumb.style.display = "none";
   }
 
   // Hide close button

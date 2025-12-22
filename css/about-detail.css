@@ -143,8 +143,8 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #d24a00;
-  color: #fff;
+  background: #9a99983b;
+  color: #948d8ac8;
   border: none;
   width: 40px;
   height: 40px;
@@ -159,8 +159,9 @@
 }
 
 .close-detail-btn:hover {
-  background: #a83800;
+  background: #948d8ac8;
   transform: rotate(90deg);
+  color: #9a99983b;
 }
 
 .close-detail-btn.active {

@@ -1,113 +1,171 @@
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
-<link rel="stylesheet" href="css/main.css" />
-<link rel="stylesheet" href="css/header.css" />
-<link rel="stylesheet" href="css/mid-navbar.css" />
-<link rel="stylesheet" href="css/navbar.css" />
-<link rel="stylesheet" href="css/hero.css" />
-<link rel="stylesheet" href="css/news-about.css" />
-<link rel="stylesheet" href="css/news-page.css" />
-<link rel="stylesheet" href="css/about-detail.css" />
-<link rel="stylesheet" href="css/staffing-pattern.css" />
-<link rel="stylesheet" href="css/activities-notice-links.css" />
-<link rel="stylesheet" href="css/gallery.css" />
-<link rel="stylesheet" href="css/footer.css" />
-<link rel="stylesheet" href="css/loader.css" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Odisha State Archaeology</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/mid-navbar.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/news-about.css" />
+    <link rel="stylesheet" href="css/news-page.css" />
+    <link rel="stylesheet" href="css/about-detail.css" />
+    <link rel="stylesheet" href="css/staffing-pattern.css" />
+    <link rel="stylesheet" href="css/activities-notice-links.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/contact-us.css" />
+    <link rel="stylesheet" href="css/act-rules.css" />
+    <link rel="stylesheet" href="css/rti.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header"></div>
+    <!-- Loader -->
+    <div id="loader"></div>
+    <!-- Mid Navbar -->
+    <div id="mid-navbar"></div>
+    <!-- Main Navbar -->
+    <div id="navbar"></div>
+    <!-- About Detail Page (Hidden by default) -->
+    <div class="about-detail-container" id="about-detail"></div>
+    <!-- Staffing Pattern Page (Hidden by default) -->
+    <div class="staffing-pattern-container" id="staffing-pattern"></div>
+    <!-- News Page (Hidden by default) -->
+    <div class="news-page-container" id="news-page"></div>
+    <!-- Hero Section -->
+    <div id="hero"></div>
+    <!-- News and About Section -->
+    <div id="news-about"></div>
+    <!-- Activities, Notice, and Important Links Section -->
+    <div id="activities-notice-links"></div>
+    <!-- Gallery Section -->
+    <div id="gallery"></div>
+    <!-- Contact Us Section (Hidden by default) -->
+    <div id="contact-us"></div>
+    <!-- Act & Rules Section (Hidden by default) -->
+    <div id="act-rules"></div>
+    <!-- RTI Section -->
+    <div id="rti"></div>
+    <!-- Footer Section -->
+    <div id="footer"></div>
 
-<!-- Header -->
-<div id="header"></div>
-<!-- Loader -->
-<div id="loader"></div>
-<!-- Mid Navbar -->
-<div id="mid-navbar"></div>
-<!-- Main Navbar -->
-<div id="navbar"></div>
-<!-- About Detail Page (Hidden by default) -->
-<div class="about-detail-container" id="about-detail"></div>
-<!-- Staffing Pattern Page (Hidden by default) -->
-<div class="staffing-pattern-container" id="staffing-pattern"></div>
-<!-- News Page (Hidden by default) -->
-<div class="news-page-container" id="news-page"></div>
-<!-- Hero Section -->
-<div id="hero"></div>
-<!-- News and About Section -->
-<div id="news-about"></div>
-<!-- Activities, Notice, and Important Links Section -->
-<div id="activities-notice-links"></div>
-<!-- Gallery Section -->
-<div id="gallery"></div>
-<!-- Footer Section -->
-<div id="footer"></div>
+    <script>
+      fetch("components/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+      fetch("components/loader.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("loader").innerHTML = data;
+        });
+      fetch("components/mid-navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("mid-navbar").innerHTML = data;
+        });
+      fetch("components/navbar.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("navbar").innerHTML = data));
 
-<script>
-  fetch("components/header.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("header").innerHTML = data;
-    });
-  fetch("components/loader.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("loader").innerHTML = data;
-    });
-  fetch("components/mid-navbar.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("mid-navbar").innerHTML = data;
-    });
-  fetch("components/navbar.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("navbar").innerHTML = data));
+      fetch("components/hero.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("hero").innerHTML = data));
 
-  fetch("components/hero.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("hero").innerHTML = data));
+      fetch("components/news-about.html")
+        .then((res) => res.text())
+        .then(
+          (data) => (document.getElementById("news-about").innerHTML = data)
+        );
 
-  fetch("components/news-about.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("news-about").innerHTML = data));
+      fetch("components/about-detail.html")
+        .then((res) => res.text())
+        .then(
+          (data) => (document.getElementById("about-detail").innerHTML = data)
+        );
 
-  fetch("components/about-detail.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("about-detail").innerHTML = data));
+      fetch("components/staffing-pattern.html")
+        .then((res) => res.text())
+        .then(
+          (data) =>
+            (document.getElementById("staffing-pattern").innerHTML = data)
+        );
 
-  fetch("components/staffing-pattern.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("staffing-pattern").innerHTML = data));
+      fetch("components/news-page.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("news-page").innerHTML = data;
+        });
 
-  fetch("components/news-page.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("news-page").innerHTML = data;
-    });
+      fetch("components/activities-notice-links.html")
+        .then((res) => res.text())
+        .then(
+          (data) =>
+            (document.getElementById("activities-notice-links").innerHTML =
+              data)
+        );
 
-  fetch("components/activities-notice-links.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("activities-notice-links").innerHTML = data));
+      fetch("components/gallery.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("gallery").innerHTML = data;
+          // Initialize gallery interactions after the HTML has been injected
+          if (window.initGallery) {
+            window.initGallery();
+          }
+        });
 
-  fetch("components/gallery.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("gallery").innerHTML = data;
-      // Initialize gallery interactions after the HTML has been injected
-      if (window.initGallery) {
-        window.initGallery();
-      }
-    });
+      fetch("components/contact-us.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("contact-us").innerHTML = data;
+          // Hide contact-us section by default
+          document.getElementById("contact-us").style.display = "none";
+        });
 
-  fetch("components/footer.html")
-    .then((res) => res.text())
-    .then((data) => (document.getElementById("footer").innerHTML = data));
-</script>
+      fetch("components/act-rules.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("act-rules").innerHTML = data;
+          // Hide act-rules section by default
+          document.getElementById("act-rules").style.display = "none";
+        });
+      fetch("components/rti.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("rti").innerHTML = data;
+          // Hide rti section by default
+          document.getElementById("rti").style.display = "none";
+        });
 
-<script src="js/header.js"></script>
-<script src="js/mid-navbar.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/hero.js"></script>
-<script src="js/news-about.js"></script>
-<script src="js/loader.js"></script>
-<script src="js/activities-notice-links.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/footer.js"></script>
+      fetch("components/footer.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("footer").innerHTML = data));
+    </script>
+
+    <script src="js/header.js"></script>
+    <script src="js/mid-navbar.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/news-about.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/activities-notice-links.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/contact-us.js"></script>
+    <script src="js/act-rules.js"></script>
+    <script src="js/rti.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

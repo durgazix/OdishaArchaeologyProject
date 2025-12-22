@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Open About Detail Page
-  window.openAboutPage = function() {
+  window.showAboutPage = function() {
     const detailSection = document.querySelector(".about-detail-container");
     const closeBtn = document.querySelector(".close-detail-btn");
     const heroSection = document.getElementById("hero");
@@ -144,6 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if (detailSection) {
       detailSection.classList.remove("active");
+      // Clear any inline display styles to let CSS classes control visibility
+      detailSection.style.display = "";
     }
     
     if (closeBtn) {

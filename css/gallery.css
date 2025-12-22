@@ -43,7 +43,13 @@
   color: #fff;
   margin: 0 5px;
 }
-
+.gallery-divider {
+  height: 3px;
+  background: linear-gradient(to right, #ff9900, transparent);
+  margin-bottom: 20px;
+  width: 100px;
+  gap: 30px
+}
 
 
 /* ===== HEADER ===== */

@@ -1,0 +1,126 @@
+<div class="breadcrumb-bar">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;"
+        >Home</a
+      >
+      <span class="breadcrumb-separator">&gt;&gt;</span>
+      <span class="breadcrumb-item active">Contact Us</span>
+    </nav>
+  </div>
+</div>
+
+<section class="container map-container">
+  <div class="map-section">
+    <h2 class="section-title">MAP</h2>
+    <div class="section-divider"></div>
+
+    <div class="map-container">
+      <div class="map-wrapper">
+        <!-- Small Location Overlay (like screenshot) -->
+        <div class="map-location-badge">
+          <i class="fa fa-map-marker"></i>
+          <span>Odisha State Archaeology</span>
+          <a
+            href="https://maps.google.com/?q=Odisha+State+Archaeology+Sanskruti+Bhawan+Museum+Complex+Bhubaneswar"
+            target="_blank"
+            class="map-link"
+            id="viewLargerMapLink"
+          >
+            View in larger map
+          </a>
+        </div>
+
+        <!-- Google Map -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.5!2d85.8333!3d20.2961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d2b2091d%3A0xcdb9885023bdf1d2!2sOdisha%20State%20Archaeology!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin"
+          class="google-map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form and Address Section -->
+<div class="container">
+  <section class="contact-address-grid">
+    <!-- Contact Form Section -->
+    <div class="contact-form-section">
+      <h2 class="section-title">CONTACT US</h2>
+      <div class="section-divider"></div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" />
+        </div>
+        <div class="form-group">
+          <label for="contactNo">Contact No *</label>
+          <input type="tel" id="contactNo" name="contactNo" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="2"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <!-- Address Section -->
+    <div class="address-section">
+      <h2 class="section-title">ADDRESS</h2>
+      <div class="section-divider"></div>
+      <div class="address-box">
+        <div class="address-content">
+          <h3 class="department-name">Odisha State Archaeology</h3>
+          <div class="address-item">
+            <div class="address-icon">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="address-text">
+              <p>
+                Odisha State Archaeology (1st floor, State Academy of Art)<br />
+                Sanskruti Bhawan, Museum Complex,<br />
+                Bhubaneswar-751014
+              </p>
+            </div>
+          </div>
+          <div class="address-item">
+            <div class="address-icon">
+              <i class="fa fa-phone"></i>
+            </div>
+            <div class="address-text">
+              <p>0674-2432147</p>
+            </div>
+          </div>
+          <div class="address-item">
+            <div class="address-icon">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <div class="address-text">
+              <p>suptosabbsr@gmail.com</p>
+            </div>
+          </div>
+          <div class="address-item">
+            <div class="address-icon">
+              <i class="fa fa-globe"></i>
+            </div>
+            <div class="address-text">
+              <p>www.odishaarchaeology.org</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

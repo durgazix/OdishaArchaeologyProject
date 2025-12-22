@@ -1,7 +1,7 @@
-<div class="breadcrumb-bar">
+<div class="breadcrumb-bar" id="gallery-breadcrumb" style="display: none;">
   <div class="container">
     <nav class="breadcrumb">
-      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">home</a>
+      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
       <span class="breadcrumb-separator">&gt;&gt;</span>
       <span class="breadcrumb-item active">Gallery</span>
     </nav>
@@ -14,11 +14,12 @@
 
       <!-- Header -->
       <div class="gallery-header">
-        <h2 class="gallery-title">Gallery</h2>
+        <h2 class="gallery-title">GALLERY</h2>
+        <div class="gallery-divider"></div>
 
         <div class="gallery-toggle-group">
-          <button id="photoTab" class="gallery-toggle-btn active">Photo</button>
-          <button id="videoTab" class="gallery-toggle-btn">Video</button>
+          <button id="photoTab" class="gallery-toggle-btn active">PHOTO</button>
+          <button id="videoTab" class="gallery-toggle-btn">VIDEO</button>
         </div>
       </div>
 
@@ -27,8 +28,8 @@
         <div class="gallery-items" id="galleryItems"></div>
 
         <div class="gallery-footer photo-footer">
-          <button class="view-more-btn">View More</button>
-          <button class="view-less-btn">View Less</button>
+          <button class="view-more-btn" onclick="showGalleryPage(); return false;">View More</button>
+          <button class="view-less-btn" onclick="showGalleryPage(); return false;">View Less</button>
         </div>
       </div>
 
@@ -75,8 +76,8 @@
         </div>
 
         <div class="gallery-footer video-footer">
-          <button class="view-more-btn">View More</button>
-          <button class="view-less-btn">View Less</button>
+          <button class="view-more-btn" onclick="showGalleryPage(); return false;">View More</button>
+          <button class="view-less-btn" onclick="showGalleryPage(); return false;">View Less</button>
         </div>
       </div>
 

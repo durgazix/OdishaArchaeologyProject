@@ -57,9 +57,9 @@
 /* News Section */
 .news-section {
   background: #fff;
-  padding: 30px;
+  /* padding: 30px; */
   border-radius: 4px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 0 auto;
 }
 
@@ -67,7 +67,7 @@
   font-size: 18px;
   font-weight: 700;
   color: #333;
-  margin: 0 0 10px 0;
+  /* margin: 0 0 10px 0; */
   text-transform: uppercase;
   letter-spacing: 1px;
 }

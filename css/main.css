@@ -11,11 +11,11 @@
 @font-face {
   font-family: 'robotoregular';
   src: url('../fonts/roboto-bold.woff2') format('woff2');
-  font-weight: 700;
+  font-weight: 900;
 }
 
 h1, h2, h3 {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 html, body {
@@ -25,7 +25,7 @@ html, body {
 
 /* ===== GLOBAL LAYOUT ===== */
 .container .mid-container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 15px;
 }
