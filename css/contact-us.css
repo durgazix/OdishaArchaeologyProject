@@ -75,7 +75,21 @@
 /* Map Section */
 .map-section {
   margin-top: 4px;
-  padding: 10px;
+  padding: 10px 10px;
+  overflow: hidden;
+
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.map-section,
+.map-section {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
 }
 
 /* .map-section h2 {
@@ -84,22 +98,24 @@
 
 
 .map-container {
-  /* background: #fff; */
-  /* padding: 15px; */
-  /* border-radius: 4px; */
   box-shadow: 0 2px 8px #fafafa;
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%; /* Full width */
 }
 
 .map-wrapper {
   position: relative;
-  /* padding: 10px; */
+  width: 100%;
+  max-width: 100%;
+  height: 450px;
 }
 
 .google-map {
-  width: 1250px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 .map-link-container {
@@ -129,6 +145,7 @@
   transform: translateY(-2px);
 }
 /* ---------- Map Location Badge ---------- */
+/* Map Location Badge - Make responsive */
 .map-location-badge {
   position: absolute;
   top: 12px;
@@ -138,19 +155,26 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
   gap: 8px;
   font-size: 14px;
   font-weight: 600;
   color: #333;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 15;
+  max-width: calc(100% - 24px); /* Prevent overflow */
 }
 
 .map-location-badge i {
-  color: #d93025; /* Google Maps red */
+  color: #d93025;
   font-size: 16px;
 }
 
+.map-location-badge .map-link {
+  padding: 4px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
 
 /* Contact Form and Address Grid */
 /* Contact Form and Address Grid */
