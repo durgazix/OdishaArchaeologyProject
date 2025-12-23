@@ -8,7 +8,8 @@
 .unprotected-section {
   padding: 40px 0;
   background-color: #f9f9f9;
-  min-height: 60vh;
+  /* min-height: 60vh; */
+  min-height: calc(100vh - 200px);
 }
 
 /* Heading */

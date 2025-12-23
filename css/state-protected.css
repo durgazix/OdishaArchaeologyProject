@@ -7,7 +7,8 @@
 
 .state-protected-section {
   background-color: #f9f9f9;
-  min-height: 80vh;
+  /* min-height: 80vh;0 */
+  min-height: calc(100vh - 400px);
 }
 
 /* Heading */
@@ -22,7 +23,7 @@
   font-weight: 600;
   color: #333;
   margin: 15px auto;
-  padding: 0 60px;
+  /* padding: 0 60px; */
 }
 
 /* Divider aligned with title */
@@ -32,7 +33,8 @@
   background: linear-gradient(to right, #ff9900, transparent);
   margin-top: 0;
   padding: 0;
-  margin: 0 auto;}
+  margin: 0 auto;
+}
 
 
 /* Table Container */

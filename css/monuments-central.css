@@ -2,7 +2,8 @@
 
 #monuments-central {
   background: #f8f9fa;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: calc(100vh - 150px);
 }
 
 /* Breadcrumb */

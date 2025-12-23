@@ -6,7 +6,8 @@
 }
 .rti-section {
   background-color: #f9f9f9;
-  min-height: 80vh;
+  /* min-height: 80vh; */
+  min-height: calc(100vh - 350px);
 }
 
 /* Heading */

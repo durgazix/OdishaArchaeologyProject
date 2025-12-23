@@ -1,7 +1,10 @@
 /* ===== GALLERY COMMON ===== */
 .gallery-section {
   background: #fef7f7dd;
-  min-height: 80vh;
+  /* min-height: 80vh; */
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
