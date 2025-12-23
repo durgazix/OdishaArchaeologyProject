@@ -69,7 +69,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #f3a668, #f97316);
+  background: linear-gradient(to right, #ff9900, transparent);
   border-radius: 2px;
 }
 
