@@ -7,6 +7,7 @@
 
 .state-protected-section {
   background-color: #f9f9f9;
+  min-height: 80vh;
 }
 
 /* Heading */

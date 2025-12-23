@@ -1,6 +1,7 @@
 /* ===== GALLERY COMMON ===== */
 .gallery-section {
   background: #fef7f7dd;
+  min-height: 80vh;
 }
 
 .container {

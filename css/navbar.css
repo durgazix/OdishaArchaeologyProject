@@ -17,10 +17,10 @@
 
 .nav-list > li > a {
   display: block;
-  padding: 10px 8px;
+  padding: 6px 12px;
   text-decoration: none;
   color: #222;
-  font-size: 16px;
+  font-size: 15px;
   border-right: 1px solid #ddd;
 }
 .nav-list > li:not(.home-icon):hover > a{
@@ -35,12 +35,12 @@
 }
 
 .home-icon a {
-  font-size: 26px;
+  font-size: 24px;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 8px;
+  padding: 6px 12px;
 }
 
 .home-icon a:hover {
