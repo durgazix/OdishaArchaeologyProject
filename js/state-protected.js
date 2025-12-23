@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to read Excel file
   async function loadMonumentsData() {
     try {
-      const response = await fetch("assets/state-monuments/212 SPM Odisha.xlsx");
+      const response = await fetch("assets/state-monuments/state_protected_monuments.xlsx");
       const arrayBuffer = await response.arrayBuffer();
       
       // Parse Excel using SheetJS
