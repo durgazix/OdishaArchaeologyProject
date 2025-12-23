@@ -10,6 +10,7 @@
     <!-- CENTER TEXT -->
     <div class="mid-title">
       <h2>Odisha State <b>Archaeology</b></h2>
+      <h2><b>Odia Language, Literature & Culture Department</b></h2>
       <h3><b>Government of Odisha</b></h3>
     </div>
 
@@ -19,6 +20,23 @@
       <button class="virtual-btn" onclick="openVirtualTour()">
         ▶ Virtual Tour
       </button>
+      <!-- Virtual Tour Modal -->
+      <div id="virtualModal" class="virtual-modal">
+        <div class="virtual-content">
+          <button
+            class="close"
+            onclick="closeVirtualTour()"
+            title="Close Virtual Tour"
+          >✕</button>
+          <video controls id="virtualTourVideo">
+            <source
+              src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support video.
+          </video>
+        </div>
+      </div>
 
       <!-- Search -->
       <!-- Search -->
@@ -30,8 +48,12 @@
       <!-- Mobile Icons -->
       <div class="mobile-icons">
         <button class="search-icon"><i class="fa fa-search"></i></button>
-        <button class="menu-icon" id="menuToggle" onclick="toggleMenu()">☰</button>
-        <button class="close-icon" id="closeMenuBtn" onclick="toggleMenu()">✕</button>
+        <button class="menu-icon" id="menuToggle" onclick="toggleMenu()">
+          ☰
+        </button>
+        <button class="close-icon" id="closeMenuBtn" onclick="toggleMenu()">
+          ✕
+        </button>
       </div>
     </div>
   </div>
@@ -48,9 +70,18 @@
 <!-- Virtual Tour Modal -->
 <div id="virtualModal" class="virtual-modal">
   <div class="virtual-content">
-    <button class="close" onclick="closeVirtualTour()" title="Close Virtual Tour">✕</button>
+    <button
+      class="close"
+      onclick="closeVirtualTour()"
+      title="Close Virtual Tour"
+    >
+      ✕
+    </button>
     <video controls autoplay>
-      <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4" />
+      <source
+        src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4"
+        type="video/mp4"
+      />
       Your browser does not support video.
     </video>
   </div>

@@ -1,3 +1,4 @@
+/* Hide about detail page by default */
 .about-detail-container {
   display: none;
 }
@@ -5,7 +6,7 @@
 .about-detail-container.active {
   display: block;
 }
-
+/* Breadcrumb */
 .breadcrumb-bar {
   background: #dd6d05;
   padding: 15px 0;
@@ -40,7 +41,8 @@
   margin: 0 5px;
 }
 
-.detail-section {
+/* About Detail Page */
+.about-detail-page {
   padding: 40px 0;
   background: #fff;
   position: relative;
@@ -53,18 +55,18 @@
 }
 
 /* WHO'S WHO AND ABOUT US GRID */
-.about-whos-grid {
+.about-detail-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 350px 1fr;
   gap: 40px;
 }
 
-.whos-who-section,
-.about-us-section {
+.about-whos-section,
+.about-detail-content-section {
   background: #fff;
 }
 
-.section-title {
+.about-detail-section-title {
   font-size: 18px;
   font-weight: 700;
   color: #333;
@@ -73,17 +75,17 @@
   letter-spacing: 1px;
 }
 
-.section-divider {
+.about-detail-section-divider {
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
   margin-bottom: 25px;
 }
 
-/* PROFILE CARDS */
-.profile-card {
+/* PROFILE CARDS - Smaller Size */
+.about-detail-profile-card {
   background: #e8e8e8;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
   border-radius: 3px;
   text-align: center;
   display: flex;
@@ -91,31 +93,32 @@
   align-items: center;
 }
 
-.profile-image {
-  margin-bottom: 15px;
+.about-detail-profile-image {
+  margin-bottom: 12px;
   width: 100%;
-  max-width: 180px;
-  height: 200px;
+  max-width: 120px;
+  height: 140px;
   overflow: hidden;
   border-radius: 3px;
 }
 
-.profile-image img {
+.about-detail-profile-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.profile-name {
-  font-size: 16px;
+.about-detail-profile-name {
+  font-size: 14px;
   font-weight: 600;
   color: #dd6d05;
-  margin: 12px 0 8px 0;
+  margin: 10px 0 6px 0;
+  line-height: 1.3;
 }
 
-.profile-title {
-  font-size: 13px;
+.about-detail-profile-title {
+  font-size: 11px;
   color: #666;
   margin: 0;
   line-height: 1.4;
@@ -123,11 +126,11 @@
 }
 
 /* ABOUT US CONTENT */
-.about-content {
+.about-detail-text-content {
   padding: 0;
 }
 
-.about-content p {
+.about-detail-text-content p {
   font-size: 14px;
   line-height: 1.8;
   color: #555;
@@ -135,11 +138,12 @@
   text-align: justify;
 }
 
-.about-content p:last-child {
+.about-detail-text-content p:last-child {
   margin-bottom: 0;
 }
 
-.close-detail-btn {
+/* Close Button */
+.about-detail-close-btn {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -158,66 +162,75 @@
   transition: all 0.3s ease;
 }
 
-.close-detail-btn:hover {
+.about-detail-close-btn:hover {
   background: #948d8ac8;
   transform: rotate(90deg);
   color: #9a99983b;
 }
 
-.close-detail-btn.active {
+.about-detail-close-btn.active {
   display: flex;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .about-whos-grid {
+  .about-detail-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .profile-card {
-    max-width: 100%;
+  .about-detail-profile-image {
+    max-width: 140px;
+    height: 160px;
   }
 
-  .profile-image {
-    max-width: 200px;
-    height: 220px;
-    margin: 0 auto 15px;
+  .about-detail-profile-name {
+    font-size: 15px;
   }
 
-  .section-title {
+  .about-detail-profile-title {
+    font-size: 12px;
+  }
+
+  .about-detail-section-title {
     font-size: 16px;
   }
 
-  .about-content p {
+  .about-detail-text-content p {
     font-size: 13px;
   }
 }
 
 @media (max-width: 768px) {
-  .profile-image {
-    max-width: 160px;
-    height: 180px;
+  .about-detail-profile-image {
+    max-width: 120px;
+    height: 140px;
   }
 
-  .profile-name {
+  .about-detail-profile-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .about-detail-profile-name {
+    font-size: 14px;
+    margin: 8px 0 5px 0;
+  }
+
+  .about-detail-profile-title {
+    font-size: 11px;
+  }
+
+  .about-detail-section-title {
     font-size: 15px;
   }
 
-  .profile-title {
-    font-size: 12px;
-  }
-
-  .section-title {
-    font-size: 15px;
-  }
-
-  .about-content p {
+  .about-detail-text-content p {
     font-size: 12px;
     line-height: 1.6;
   }
 
-  .close-detail-btn {
+  .about-detail-close-btn {
     width: 35px;
     height: 35px;
     font-size: 24px;
@@ -225,30 +238,42 @@
 }
 
 @media (max-width: 480px) {
-  .profile-image {
-    max-width: 140px;
-    height: 160px;
+  .about-detail-profile-image {
+    max-width: 100px;
+    height: 120px;
   }
 
-  .profile-card {
-    padding: 15px;
-    margin-bottom: 15px;
+  .about-detail-profile-card {
+    padding: 10px;
+    margin-bottom: 10px;
   }
 
-  .profile-name {
+  .about-detail-profile-name {
+    font-size: 13px;
+    margin: 8px 0 4px 0;
+  }
+
+  .about-detail-profile-title {
+    font-size: 10px;
+  }
+
+  .about-detail-section-title {
     font-size: 14px;
-    margin: 10px 0 6px 0;
   }
 
-  .profile-title {
+  .about-detail-text-content p {
     font-size: 11px;
   }
 
-  .section-title {
-    font-size: 14px;
+  .about-detail-close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
   }
+}
 
-  .about-content p {
-    font-size: 11px;
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1350px;
   }
 }

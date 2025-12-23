@@ -43,7 +43,16 @@ function hideAllSections() {
     "staffing-pattern",
     "news-page",
     "contact-us",
-    "act-rules"
+    "act-rules",
+    "rti",
+    "state-protected",
+    "monuments-central",
+    "monuments-section",
+    "state-protected",
+    "unprotected",
+    "archaeology-library",
+    "library-detail",
+    "books-journals"
   ];
 
   sections.forEach(id => {
@@ -63,6 +72,7 @@ window.goHome = function () {
     window.closeDetailPage();
   }
 
+  hideAllSections();
   // Get all sections
   const heroSection = document.getElementById("hero");
   const newsAboutSection = document.getElementById("news-about");
@@ -108,7 +118,40 @@ window.goHome = function () {
   if (rtiSection) {
     rtiSection.style.display = "none";
   }
+  const monumentSection = document.querySelector(".monuments-section");
+  if(monumentSection) {
+    monumentSection.style.display = "none";
+ }
+  const monumentsCentralSection = document.getElementById("monuments-central");
+  if(monumentsCentralSection) {
+    monumentsCentralSection.style.display = "none";
+  }
 
+  const stateProtectedSection = document.getElementById("state-protected");
+  if (stateProtectedSection) {
+    stateProtectedSection.style.display = "none";
+  }
+
+  const unprotectedSection = document.getElementById("unprotected");
+  if (unprotectedSection) {
+    unprotectedSection.style.display = "none";
+  }
+
+  const archaeologyLibrarySection = document.getElementById("archaeology-library");
+  if (archaeologyLibrarySection) {
+    archaeologyLibrarySection.style.display = "none";
+  }
+
+  const libraryDetailSection = document.querySelector(".library-detail");
+  if (libraryDetailSection) {
+    libraryDetailSection.style.display = "none";
+  }
+
+  const booksJournalsSection = document.getElementById("books-journals");
+  if (booksJournalsSection) {
+    booksJournalsSection.style.display = "none";
+  }
+  
   const galleryBreadcrumb = document.getElementById("gallery-breadcrumb");
   // Hide gallery breadcrumb if it was shown
   if (galleryBreadcrumb) {

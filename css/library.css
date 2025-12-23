@@ -1,0 +1,432 @@
+/* Breadcrumb */
+.breadcrumb-bar {
+  background: #2d5016;
+  padding: 12px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.breadcrumb-item {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.breadcrumb-item:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #fff;
+  margin: 0 5px;
+}
+
+/* Library Detail Section */
+.library-detail-section {
+  background-color: #f9f9f9;
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Page Heading */
+.library-detail-heading {
+  text-align: left;
+  margin-bottom: 30px;
+  margin: 20px 95px;
+}
+
+.library-detail-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.library-detail-divider {
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(to right, #ff9900, transparent);
+  margin-bottom: 0;
+}
+
+/* Main Content Layout */
+.library-main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.library-text-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.library-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.library-text-content em {
+  font-style: italic;
+  color: #ff9900;
+  font-weight: 500;
+}
+
+/* Image Slider */
+.library-image-slider {
+  position: relative;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 1;
+}
+
+.slider-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navigation Arrows */
+.slider-arrows {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.arrow-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn:hover {
+  background: rgba(255, 153, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.arrow-btn i {
+  font-size: 16px;
+}
+
+/* Book Categories Section */
+.book-categories-section {
+  background: #fff;
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  margin: 20px 95px;
+}
+
+.section-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d5016;
+  margin: 0 0 20px 0;
+  padding-left: 10px;
+  border-left: 4px solid #ff9900;
+}
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories-list li {
+  font-size: 15px;
+  color: #444;
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.categories-list li i {
+  color: #2d5016;
+  font-size: 8px;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* Beneficiaries Section */
+.beneficiaries-section {
+  background: #fff;
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  margin: 20px 95px;
+}
+
+.beneficiaries-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beneficiaries-list li {
+  font-size: 15px;
+  color: #444;
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.beneficiaries-list li i {
+  color: #2d5016;
+  font-size: 8px;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* Library Information Table */
+.library-info-section {
+  background: #fff;
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  margin: 20px 95px;
+}
+
+.library-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.library-info-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.library-info-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.library-info-table td {
+  padding: 15px 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #333;
+  width: 30%;
+  background: #f5f5f5;
+}
+
+.info-value {
+  color: #555;
+  width: 70%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .library-main-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .slider-container {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .library-detail-title {
+    font-size: 22px;
+  }
+
+  .library-main-content {
+    padding: 25px;
+  }
+
+  .library-text-content p {
+    font-size: 14px;
+  }
+
+  .book-categories-section,
+  .beneficiaries-section,
+  .library-info-section {
+    padding: 25px;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+  }
+
+  .categories-list li,
+  .beneficiaries-list li {
+    font-size: 14px;
+  }
+
+  .slider-container {
+    min-height: 300px;
+  }
+
+  .arrow-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .arrow-btn i {
+    font-size: 14px;
+  }
+
+  .library-info-table td {
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+
+  .info-label {
+    width: 35%;
+  }
+
+  .info-value {
+    width: 65%;
+  }
+}
+
+@media (max-width: 480px) {
+  .library-detail-title {
+    font-size: 18px;
+  }
+
+  .library-main-content {
+    padding: 20px;
+  }
+
+  .library-text-content p {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .book-categories-section,
+  .beneficiaries-section,
+  .library-info-section {
+    padding: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .categories-list li,
+  .beneficiaries-list li {
+    font-size: 13px;
+  }
+
+  .slider-container {
+    min-height: 250px;
+  }
+
+  .slider-arrows {
+    bottom: 15px;
+    right: 15px;
+    gap: 8px;
+  }
+
+  .arrow-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .arrow-btn i {
+    font-size: 12px;
+  }
+
+  .library-info-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .library-info-table td {
+    font-size: 13px;
+    padding: 10px 6px;
+  }
+
+  .info-label {
+    width: 40%;
+    font-size: 13px;
+  }
+
+  .info-value {
+    width: 60%;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1350px;
+  }
+}

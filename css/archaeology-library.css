@@ -1,0 +1,340 @@
+/* Breadcrumb */
+.breadcrumb-bar {
+  background: #2d5016;
+  padding: 12px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.breadcrumb-item {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.breadcrumb-item:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #fff;
+  margin: 0 5px;
+}
+
+/* Archaeology Library Section */
+.arch-library-section {
+  background-color: #f9f9f9;
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Heading */
+.arch-library-heading {
+  margin-bottom: 30px;
+  margin-left: 95px;
+}
+
+.arch-library-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.arch-library-divider {
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(to right, #ff9900, transparent);
+  margin-bottom: 0;
+}
+
+/* Image Slider Container */
+.arch-slider-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 40px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.arch-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.arch-slider-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.arch-slider-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.arch-slider-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slider Buttons */
+.arch-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arch-slider-btn:hover {
+  background: rgba(255, 153, 0, 0.9);
+}
+
+.arch-prev-btn {
+  left: 20px;
+}
+
+.arch-next-btn {
+  right: 20px;
+}
+
+.arch-slider-btn i {
+  font-size: 20px;
+}
+
+/* Slider Dots */
+.arch-slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.arch-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arch-dot.active {
+  background: #ff9900;
+  width: 30px;
+  border-radius: 6px;
+}
+
+.arch-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Pause/Play Button */
+.arch-pause-play-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arch-pause-play-btn:hover {
+  background: rgba(255, 153, 0, 0.9);
+}
+
+/* Library Description */
+.arch-library-description {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  margin: 20px 95px;
+}
+
+.arch-library-description p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.arch-library-description p:last-child {
+  margin-bottom: 0;
+}
+
+.arch-library-description em {
+  font-style: italic;
+  color: #ff9900;
+  font-weight: 500;
+}
+
+/* Read More Button */
+.arch-library-readmore {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.arch-readmore-btn {
+  background: #dd6d05;
+  color: #fff;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.arch-readmore-btn:hover {
+  background: #ff9900;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(221, 109, 5, 0.4);
+}
+
+.arch-readmore-btn i {
+  transition: transform 0.3s ease;
+}
+
+.arch-readmore-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .arch-library-heading {
+    margin-left: 15px;
+  }
+
+  .arch-library-title {
+    font-size: 22px;
+  }
+
+  .arch-slider-slide img {
+    height: 350px;
+  }
+
+  .arch-slider-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .arch-prev-btn {
+    left: 10px;
+  }
+
+  .arch-next-btn {
+    right: 10px;
+  }
+
+  .arch-library-description {
+    padding: 25px;
+    margin: 20px 15px;
+  }
+
+  .arch-library-description p {
+    font-size: 14px;
+  }
+
+  .arch-readmore-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arch-library-heading {
+    margin-left: 15px;
+  }
+
+  .arch-library-title {
+    font-size: 18px;
+  }
+
+  .arch-slider-slide img {
+    height: 250px;
+  }
+
+  .arch-slider-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .arch-slider-btn i {
+    font-size: 16px;
+  }
+
+  .arch-library-description {
+    padding: 20px;
+    margin: 20px 15px;
+  }
+
+  .arch-library-description p {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .arch-readmore-btn {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1350px;
+  }
+}

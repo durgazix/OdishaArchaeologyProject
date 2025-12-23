@@ -1,0 +1,98 @@
+<div class="breadcrumb-bar">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;"
+        >Home</a
+      >
+      <span class="breadcrumb-separator">&gt;&gt;</span>
+      <span class="breadcrumb-item active">Archaeology Library</span>
+    </nav>
+  </div>
+</div>
+
+<section class="arch-library-section">
+  <div class="arch-library-heading">
+    <h2 class="arch-library-title">LIBRARY</h2>
+    <div class="arch-library-divider"></div>
+  </div>
+  <div class="container">
+    <!-- Image Slider -->
+    <div class="arch-slider-container">
+      <button class="arch-slider-btn arch-prev-btn" id="archPrevSlide">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+
+      <div class="arch-slider">
+        <div class="arch-slider-track" id="archSliderTrack">
+          <div class="arch-slider-slide active">
+            <img src="assets/library/download_1.jpg" alt="Library Image 1" />
+          </div>
+          <div class="arch-slider-slide">
+            <img src="assets/library/download_2.jpg" alt="Library Image 2" />
+          </div>
+          <div class="arch-slider-slide">
+            <img src="assets/library/download_3.jpg" alt="Library Image 3" />
+          </div>
+          <div class="arch-slider-slide">
+            <img src="assets/library/download_2.jpg" alt="Library Image 4" />
+          </div>
+        </div>
+      </div>
+
+      <button class="arch-slider-btn arch-next-btn" id="archNextSlide">
+        <i class="fa fa-chevron-right"></i>
+      </button>
+
+      <!-- Slider Dots -->
+      <div class="arch-slider-dots" id="archSliderDots">
+        <span class="arch-dot active" data-slide="0"></span>
+        <span class="arch-dot" data-slide="1"></span>
+        <span class="arch-dot" data-slide="2"></span>
+        <span class="arch-dot" data-slide="3"></span>
+      </div>
+
+      <!-- Pause/Play Button -->
+      <button class="arch-pause-play-btn" id="archPausePlayBtn">
+        <i class="fa fa-pause"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Library Description -->
+  <div class="arch-library-description">
+    <p>
+      Odisha State Archaeology Department has one of the finest archaeological
+      libraries in the country, housing over 13,300 books on
+      <em
+        >Archaeology, Anthropology, Art, History, Epigraphy and Palaeography</em
+      >
+      authored by reputed foreign and Indian scholars and experts. The
+      collection includes rare volumes, research publications, excavation
+      reports, and comprehensive documentation of Odisha's rich cultural
+      heritage.
+    </p>
+    <p>
+      The library serves as a vital resource center for researchers, scholars,
+      students, and heritage enthusiasts who wish to explore the archaeological
+      wealth of Odisha. It contains extensive materials on temple architecture,
+      ancient inscriptions, Buddhist monuments, tribal culture, and the maritime
+      history of ancient Kalinga. Special collections feature monographs on
+      Odishan art forms, medieval manuscripts, and archaeological survey reports
+      dating back several decades.
+    </p>
+    <p>
+      Our library is regularly updated with new acquisitions, journals, and
+      digital resources to support ongoing research in archaeology and heritage
+      conservation. Visitors can access reference materials, periodicals, and
+      photographic archives that document significant archaeological discoveries
+      across Odisha. The reading room provides a conducive environment for
+      serious academic study and research work.
+    </p>
+  </div>
+
+  <!-- Read More Button -->
+  <div class="arch-library-readmore">
+    <button class="arch-readmore-btn" id="archLibraryReadMore" onclick="showLibraryDetailPage(); return false;">
+      Read More <i class="fa fa-arrow-right"></i>
+    </button>
+  </div>
+</section>

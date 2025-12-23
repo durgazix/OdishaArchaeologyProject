@@ -1,0 +1,83 @@
+<!-- CENTRAL PROTECTED MONUMENTS -->
+<section id="monuments-central" class="monuments-central-section">
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
+        <span class="breadcrumb-separator">&gt;&gt;</span>
+        <a class="breadcrumb-item active" onclick="showMonumentsPage(); return false;">Monuments</a>
+        <span class="breadcrumb-separator">&gt;&gt;</span>
+        <span class="breadcrumb-item active">Central Protected Monuments</span>
+      </nav>
+    </div>
+  </div>
+
+  <div class="monuments-central-wrapper">
+    <!-- Heading -->
+    <div class="monuments-central-heading">
+      <h2 class="monuments-central-title">CENTRAL PROTECTED MONUMENTS</h2>
+      <div class="monuments-central-divider"></div>
+      <p class="monuments-central-subtitle">
+        View official documents and acts related to monument preservation in Odisha
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- PDF Documents Grid -->
+    <div class="pdf-documents-grid">
+      <!-- Document 1 -->
+      <div class="pdf-document-card">
+        <div class="pdf-icon">
+          <i class="fa fa-file-pdf-o"></i>
+        </div>
+        <div class="pdf-document-info">
+          <h3 class="pdf-document-title">Orissa Ancient Monuments Preservation Act 1956</h3>
+          <p class="pdf-document-description">
+            Official act for the preservation of ancient monuments and objects of archaeological, historical or artistic interest.
+          </p>
+          <button class="pdf-view-btn" onclick="openPDFViewer('assets/state-monuments/Orissa Ancient Monuments Preservation Act 1956.pdf', 'Orissa Ancient Monuments Preservation Act 1956'); event.stopPropagation();">
+            <i class="fa fa-eye"></i> View Document
+          </button>
+        </div>
+      </div>
+
+      <!-- Document 2 -->
+      <div class="pdf-document-card">
+        <div class="pdf-icon">
+          <i class="fa fa-file-pdf-o"></i>
+        </div>
+        <div class="pdf-document-info">
+          <h3 class="pdf-document-title">Orissa Ancient Monuments Preservation Rule 1958</h3>
+          <p class="pdf-document-description">
+            Rules and regulations for the implementation of the Orissa Ancient Monuments Preservation Act, 1956.
+          </p>
+          <button class="pdf-view-btn" onclick="openPDFViewer('assets/state-monuments/Orissa Ancient Monuments Preservation Rule 1958.pdf', 'Orissa Ancient Monuments Preservation Rule 1958'); event.stopPropagation();">
+            <i class="fa fa-eye"></i> View Document
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PDF Viewer Modal -->
+<!-- <div id="pdfViewerModal" class="pdf-viewer-modal">
+  <div class="pdf-viewer-content">
+    <div class="pdf-viewer-header">
+      <h3 id="pdfViewerTitle">Document Viewer</h3>
+      <button class="pdf-close-btn" onclick="closePDFViewer()">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+    <div class="pdf-viewer-body">
+      <iframe id="pdfViewerFrame" src="" frameborder="0"></iframe>
+    </div>
+    <div class="pdf-viewer-footer">
+      <a id="pdfDownloadBtn" href="" download class="pdf-download-btn">
+        <i class="fa fa-download"></i> Download PDF
+      </a>
+    </div>
+  </div>
+</div> -->
