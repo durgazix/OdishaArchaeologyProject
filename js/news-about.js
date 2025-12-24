@@ -22,8 +22,8 @@ const newsItems = [
 
 function updateNewsSlide(index) {
   const newsItem = newsItems[index];
-  const newsContent = document.querySelector(".news-content");
-  const newsTitle = document.querySelector(".news-title");
+  const newsContent = document.querySelector("#news-about .news-content");
+  const newsTitle = document.querySelector("#news-about .news-title");
   
   if (!newsContent || !newsTitle) {
     console.error("News content or title element not found");
@@ -45,9 +45,19 @@ function updateNewsSlide(index) {
     
     // Update content
     newsContent.innerHTML = `
-      <p class="news-text">${newsItem.text}</p>
-      <img src="${newsItem.image}" alt="${newsItem.title}" class="news-image">
-      <a href="#" class="news-more">More..</a>
+      <div class="row g-3">
+        <div class="col-md-7">
+          <p class="news-text small text-muted lh-base mb-3">
+            ${newsItem.text}
+          </p>
+          <a href="#" class="news-more text-danger fw-semibold text-decoration-none" onclick="showNewsPage(); return false;">
+            More..
+          </a>
+        </div>
+        <div class="col-md-5">
+          <img src="${newsItem.image}" alt="${newsItem.title}" class="news-image img-fluid rounded" />
+        </div>
+      </div>
     `;
 
     // Fade in
@@ -74,8 +84,8 @@ function startAutoSlide() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize News Slider
-  const navPrev = document.querySelector(".nav-prev");
-  const navNext = document.querySelector(".nav-next");
+  const navPrev = document.querySelector("#news-about .nav-prev");
+  const navNext = document.querySelector("#news-about .nav-next");
 
   if (navPrev) {
     navPrev.addEventListener("click", function (e) {
@@ -102,78 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.warn("News navigation buttons not found");
   }
-
-  // Open About Detail Page
-  window.showAboutPage = function() {
-    const detailSection = document.querySelector(".about-detail-container");
-    const closeBtn = document.querySelector(".close-detail-btn");
-    const heroSection = document.getElementById("hero");
-    const newsAboutSection = document.getElementById("news-about");
-    
-    if (detailSection) {
-      detailSection.classList.add("active");
-    }
-    
-    if (closeBtn) {
-      closeBtn.classList.add("active");
-    }
-
-    // Hide hero and news-about sections
-    if (heroSection) {
-      heroSection.style.display = "none";
-    }
-    if (newsAboutSection) {
-      newsAboutSection.style.display = "none";
-    }
-    
-    // Scroll to detail section below navbar
-    setTimeout(() => {
-      const breadcrumb = document.querySelector(".breadcrumb-bar");
-      if (breadcrumb) {
-        breadcrumb.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 100);
-  };
-
-  // Close About Detail Page
-  window.closeDetailPage = function() {
-    const detailSection = document.querySelector(".about-detail-container");
-    const closeBtn = document.querySelector(".close-detail-btn");
-    const heroSection = document.getElementById("hero");
-    const newsAboutSection = document.getElementById("news-about");
-    
-    if (detailSection) {
-      detailSection.classList.remove("active");
-      // Clear any inline display styles to let CSS classes control visibility
-      detailSection.style.display = "";
-    }
-    
-    if (closeBtn) {
-      closeBtn.classList.remove("active");
-    }
-
-    // Show hero and news-about sections
-    if (heroSection) {
-      heroSection.style.display = "block";
-    }
-    if (newsAboutSection) {
-      newsAboutSection.style.display = "block";
-    }
-  };
-
-  // Close on Escape key
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      window.closeDetailPage();
-    }
-  });
-
-  // Close button click handler
-  document.addEventListener("click", function (e) {
-    if (e.target.closest(".close-detail-btn.active")) {
-      window.closeDetailPage();
-    }
-  });
 });
 
 // Initialize News Page Slider (for standalone news page)
@@ -217,8 +155,16 @@ window.initNewsPageSlider = function () {
     setTimeout(() => {
       newsTitle.textContent = newsItem.title;
       newsContent.innerHTML = `
-        <p class="news-text">${newsItem.text}</p>
-        <img src="${newsItem.image}" alt="${newsItem.title}" class="news-image">
+        <div class="row g-3">
+          <div class="col-md-8">
+            <p class="news-text small text-muted lh-base mb-3">
+              ${newsItem.text}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <img src="${newsItem.image}" alt="${newsItem.title}" class="news-image img-fluid rounded" />
+          </div>
+        </div>
       `;
 
       setTimeout(() => {

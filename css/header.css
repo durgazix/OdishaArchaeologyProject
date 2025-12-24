@@ -1,37 +1,18 @@
-/* ===== TOP HEADER ===== */
+/* TOP HEADER – BASE (ALL DEVICES) */
 .top-header {
   background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
-  font-size: 13px;
+  font-size: 14px;
 }
 
-.container {
-  margin: auto;
-  padding: 6px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Left */
 .top-left a {
   color: #000;
-  text-decoration: none;
   font-weight: 500;
-  padding: 5px;
-}
-
-/* Right */
-.top-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
 }
 
 .top-link {
   color: #000;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .top-link:hover {
@@ -40,40 +21,91 @@
 
 .divider {
   color: #888;
+  margin: 0 6px;
 }
 
-.lang-switch a {
-  text-decoration: none;
-  color: #000;
-}
-
-.lang-switch .active {
-  font-weight: 600;
-}
-
-/* Font Controls */
-.font-controls button {
-  border: 1px solid #999;
-  background: #fff;
-  padding: 2px 6px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.font-controls button:hover {
-  background: #ddd;
-}
-
-/* Language Toggle Button */
+/* Buttons */
+.font-controls .btn,
 .lang-toggle-btn {
-  border: 1px solid #999;
-  background-color: #fff;
-  padding: 4px 10px;
+  padding: 3px 10px;
   font-size: 12px;
-  cursor: pointer;
-  font-weight: 500;
+  line-height: 1;
 }
 
-.lang-toggle-btn:hover {
-  background-color: #e0e0e0;
+/* MOBILE VIEW (≤576px) */
+@media (max-width: 576px) {
+
+  .top-header {
+    font-size: 12px;
+  }
+
+  .top-left {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .top-right {
+    justify-content: center !important;
+    gap: 6px;
+  }
+
+  /* Hide dividers on mobile */
+  .divider {
+    display: none;
+  }
+
+  /* Compact buttons */
+  .font-controls .btn,
+  .lang-toggle-btn {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+}
+
+/* DESKTOP VIEW (≥992px) */
+@media (min-width: 992px) {
+
+  .top-header {
+    font-size: 13px;
+  }
+
+  .top-right {
+    gap: 10px;
+  }
+
+  .font-controls .btn {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  .lang-toggle-btn {
+    padding: 4px 12px;
+  }
+}
+
+   /* LARGE DESKTOP (≥1400px) */
+@media (min-width: 1400px) {
+
+  .top-header {
+    font-size: 14px;
+  }
+
+  .top-header .container-fluid {
+    max-width: 1400px;
+  }
+
+  .top-right {
+    gap: 14px;
+  }
+
+  .font-controls .btn {
+    font-size: 13px;
+    padding: 4px 12px;
+  }
+
+  .lang-toggle-btn {
+    font-size: 13px;
+    padding: 5px 14px;
+  }
 }

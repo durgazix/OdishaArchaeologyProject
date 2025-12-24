@@ -1,76 +1,51 @@
-/* ===== CENTRAL PROTECTED MONUMENTS - PDF VIEWER ===== */
+/* ===== MONUMENT IMAGE VIEWER ===== */
 
-// Open PDF Viewer
-function openPDFViewer(pdfPath, pdfTitle) {
-  const modal = document.getElementById("pdfViewerModal");
-  const iframe = document.getElementById("pdfViewerFrame");
-  const title = document.getElementById("pdfViewerTitle");
-  const downloadBtn = document.getElementById("pdfDownloadBtn");
+const monumentImages = [
+  "assets/central-monuments/img_1.jpg",
+  "assets/central-monuments/img_2.jpg",
+  "assets/central-monuments/img_3.jpg",
+  "assets/central-monuments/img_4.jpg",
+  "assets/central-monuments/img_5.jpg",
+  "assets/central-monuments/img_6.jpg",
+  "assets/central-monuments/img_7.jpg",
+  "assets/central-monuments/img_8.jpg"
+];
 
-  // Set the PDF path and title
-  iframe.src = pdfPath;
-  title.textContent = pdfTitle;
-  downloadBtn.href = pdfPath;
-  downloadBtn.download = pdfTitle + ".pdf";
+let currentIndex = 0;
 
-  // Show modal
-  modal.classList.add("active");
+function openImageViewer(index) {
+  currentIndex = index;
+  updateViewer();
+  document.getElementById("monumentsViewer").classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
-// Close PDF Viewer
-function closePDFViewer() {
-  const modal = document.getElementById("pdfViewerModal");
-  const iframe = document.getElementById("pdfViewerFrame");
-
-  // Clear iframe source
-  iframe.src = "";
-
-  // Hide modal
-  modal.classList.remove("active");
+function closeImageViewer() {
+  document.getElementById("monumentsViewer").classList.remove("active");
   document.body.style.overflow = "";
 }
 
-// Close on background click
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("pdfViewerModal");
-  if (modal) {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closePDFViewer();
-      }
-    });
-  }
+function nextImage() {
+  currentIndex = (currentIndex + 1) % monumentImages.length;
+  updateViewer();
+}
 
-  // Close on ESC key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("active")) {
-      closePDFViewer();
-    }
-  });
-});
+function prevImage() {
+  currentIndex =
+    (currentIndex - 1 + monumentImages.length) % monumentImages.length;
+  updateViewer();
+}
 
-/* ===== NAVIGATION FUNCTION ===== */
-// This function will be called from navbar.js
+function updateViewer() {
+  document.getElementById("viewerImage").src = monumentImages[currentIndex];
+  document.getElementById("viewerCurrent").textContent = currentIndex + 1;
+  document.getElementById("viewerTotal").textContent = monumentImages.length;
+}
+
+/* ===== NAVIGATION ===== */
 window.showMonumentsCentralPage = function () {
-  // Hide all sections first
   hideAllSections();
-
-  // Show only monuments-central section
-  const monumentsCentralSection = document.getElementById("monuments-central");
-  if (monumentsCentralSection) {
-    monumentsCentralSection.style.display = "block";
-  }
-
-  // Show footer
-  const footerSection = document.getElementById("footer");
-  if (footerSection) {
-    footerSection.style.display = "block";
-  }
-
-  // Scroll to top
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  document.getElementById("monuments-central").style.display = "block";
+  document.getElementById("footer").style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };

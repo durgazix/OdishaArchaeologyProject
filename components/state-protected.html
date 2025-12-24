@@ -1,65 +1,89 @@
-<div class="breadcrumb-bar">
-  <div class="container">
-    <nav class="breadcrumb">
-      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
-      <span class="breadcrumb-separator">&gt;&gt;</span>
-      <a onclick="showMonumentsPage(); return false;" class="breadcrumb-item active">Monuments</a>
-      <span class="breadcrumb-separator">&gt;&gt;</span>
-      <span class="breadcrumb-item active">State Protected Monuments</span>
-    </nav>
-  </div>
-</div>
+<section id="state-protected" class="state-protected-section">
 
-<section class="state-protected-section">
-  <div class="state-protected-heading">
-    <h2 class="state-protected-section-title">STATE PROTECTED MONUMENTS</h2>
-    <div class="state-protected-section-divider"></div>
-  </div>
-  <div class="container">
-    <div class="state-protected-table-container">
-      <table class="monuments-table">
-        <thead>
-          <tr>
-            <th>Sl. No.</th>
-            <th>District</th>
-            <th>Monument Name</th>
-            <th>Location</th>
-            <th>Period</th>
-            <th>Remarks</th>
-          </tr>
-        </thead>
-        <tbody id="monumentsTableBody">
-          <tr>
-            <td>1</td>
-            <td>Jajpur</td>
-            <td>Biraja Khetra</td>
-            <td>Jajpur Town</td>
-            <td>13 century</td>
-            <td>State Protected</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Anugul</td>
-            <td>Jiminia Hillock</td>
-            <td>Sankarjanga</td>
-            <td>Prehistoric</td>
-            <td>State Protected</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Balesore</td>
-            <td>Brahmani Temple</td>
-            <td>Avana</td>
-            <td>10th-11th C.A.D</td>
-            <td>State Protected</td>
-          </tr>
-          <tr>
-            <td colspan="6" class="loading-message">
-              Loading monuments data...
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
+        <span class="breadcrumb-separator">&gt;&gt;</span>
+        <a href="#" class="breadcrumb-item" onclick="showMonumentsPage(); return false;">
+          Monuments
+        </a>
+        <span class="breadcrumb-separator">&gt;&gt;</span>
+        <span class="breadcrumb-item active">State Protected Monuments</span>
+      </nav>
     </div>
   </div>
+
+  <!-- Heading -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="state-protected-heading">
+          <h2 class="state-protected-section-title">
+            STATE PROTECTED MONUMENTS
+          </h2>
+          <div class="state-protected-section-divider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="table-responsive state-protected-table-container">
+          <table class="table table-bordered table-hover monuments-table mb-0">
+            <thead>
+              <tr>
+                <th>Sl. No.</th>
+                <th>District</th>
+                <th>Monument Name</th>
+                <th>Location</th>
+                <th>Period</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+
+            <tbody id="monumentsTableBody">
+              <tr>
+                <td>1</td>
+                <td>Jajpur</td>
+                <td>Biraja Khetra</td>
+                <td>Jajpur Town</td>
+                <td>13 century</td>
+                <td>State Protected</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Anugul</td>
+                <td>Jiminia Hillock</td>
+                <td>Sankarjanga</td>
+                <td>Prehistoric</td>
+                <td>State Protected</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Balesore</td>
+                <td>Brahmani Temple</td>
+                <td>Avana</td>
+                <td>10th-11th C.A.D</td>
+                <td>State Protected</td>
+              </tr>
+
+              <tr>
+                <td colspan="6" class="loading-message">
+                  Loading monuments data...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </section>

@@ -3,20 +3,7 @@
   background: #f5f1f1dd;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-/* THREE COLUMN GRID */
-.activities-notice-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 120px;
-  place-items: stretch;
-}
-
-/* COMMON STYLES FOR ALL BOXES */
+/* BOXES */
 .activities-box,
 .notice-box,
 .important-links-box {
@@ -25,135 +12,107 @@
   border-radius: 8px;
   border: 1px solid #e5e5e5;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-
 }
 
 .activities-box:hover,
 .notice-box:hover,
 .important-links-box:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #d0d0d0;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* SECTION HEADER */
+/* HEADER */
 .section-header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .section-title {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
-  margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-/* DIVIDER LINE */
 .title-divider {
   height: 2px;
   background: #000;
   margin-bottom: 20px;
 }
 
-/* ACTIVITIES SECTION */
-.activities-content {
-  margin-bottom: 20px;
-}
-
-.activity-item {
+/* ACTIVITY + NOTICE */
+.activity-item,
+.notice-item {
   display: flex;
   gap: 15px;
   margin-bottom: 18px;
-  align-items: flex-start;
   animation: slideInUp 0.5s ease-in-out;
 }
 
+/* ===== DATE BOX (RESPONSIVE & ACCESSIBLE) ===== */
 .date-box {
   background: linear-gradient(135deg, #f3a668e5 0%, #b83b00 100%);
   color: #fff;
-  width: 50px;
-  height: 40px;
+
+  min-width: 60px;
+  padding: 6px 8px;
+
   border-radius: 6px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+
+  font-weight: 700;
+  line-height: 1.1;
+
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  text-align: center;
+
+  transition: transform 0.2s ease;
 }
 
 .date-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(210, 74, 0, 0.2);
 }
 
+/* DAY */
 .date-box .day {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1;
 }
 
+/* MONTH */
 .date-box .month {
-  font-size: 9px;
-  line-height: 1.2;
+  font-size: 10px;
   text-transform: uppercase;
+  opacity: 0.95;
 }
 
+/* YEAR */
 .date-box .year {
-  font-size: 9px;
-  line-height: 1;
+  font-size: 10px;
+  opacity: 0.9;
 }
 
-.activity-text {
-  font-size: 14px;
-  color: #333;
-  margin: 0;
-  align-self: center;
-  line-height: 1.4;
-  font-weight: 500;
-}
-
+.activity-text,
 .notice-text {
   font-size: 14px;
-  color: #333;
-  margin: 0;
-  margin-top: 10px;
   font-weight: 500;
 }
 
-/* NOTICE SECTION */
-.notice-content {
-  margin-bottom: 20px;
-}
-
-.notice-item {
-  display: flex;
-  margin-bottom: 18px;
-  align-items: flex-start;
-  animation: slideInUp 0.5s ease-in-out;
-  gap: 10px;
-}
-
-/* IMPORTANT LINKS SECTION */
+/* LINKS */
 .links-scroll-container {
   height: 170px;
   overflow: hidden;
-  margin-bottom: 20px;
-  position: relative;
 }
 
 .links-content {
   animation: scrollUpLinks 18s linear infinite;
-  padding: 5px 0;
 }
 
 .links-list {
@@ -164,152 +123,70 @@
 
 .links-list li {
   margin-bottom: 10px;
-  padding-left: 0;
   position: relative;
 }
 
-.links-list li:before {
+.links-list li::before {
   content: "•";
   position: absolute;
   left: -12px;
   color: #d24a00;
-  font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .links-list a {
+  font-size: 13px;
   color: #555;
   text-decoration: none;
-  font-size: 13px;
-  line-height: 1.4;
-  transition: all 0.3s ease;
-  display: block;
 }
 
-.links-list a:hover {
-  color: #d24a00;
-  padding-left: 5px;
-}
-
-/* VIEW ALL BUTTON */
+/* VIEW ALL */
 .view-all-btn {
-  color: #d24a00;
-  text-decoration: none;
   font-size: 13px;
   font-weight: 600;
-  cursor: pointer;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.3s ease;
-  align-self: flex-end;
+  color: #d24a00;
   margin-top: auto;
+  align-self: flex-end;
 }
 
-.view-all-btn:hover {
-  gap: 10px;
-}
-
-.view-all-btn .arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  font-size: 14px;
-}
-
-.view-all-btn:hover .arrow {
-  transform: translateX(2px);
-}
-
-/* SCROLLING ANIMATION */
-@keyframes scrollUpLinks {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .activities-notice-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-  
-  .icon-simple {
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-  }
-  
-  .section-title {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .activities-notice-links-section {
-    padding: 40px 0;
-  }
-  
-  .activities-notice-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .activities-box,
-  .notice-box,
-  .important-links-box {
-    padding: 25px;
-  }
-  
-  .links-scroll-container {
-    height: 150px;
-  }
-  
-  .links-list a {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .activities-notice-links-section {
-    padding: 30px 0;
-  }
-  
-  .section-title {
-    font-size: 14px;
-  }
-  
+/* ANIMATIONS */
+@media (max-width: 576px) {
   .date-box {
-    width: 55px;
-    height: 60px;
+    min-width: 54px;
+    padding: 6px;
   }
-  
+
+  .date-box .day {
+    font-size: 15px;
+  }
+
+  .date-box .month,
+  .date-box .year {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 768px) {
+  .date-box {
+    min-width: 64px;
+  }
+
+  .date-box .day {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .date-box {
+    min-width: 70px;
+  }
+
   .date-box .day {
     font-size: 18px;
   }
-  
-  .activity-text,
-  .notice-text,
-  .links-list a {
-    font-size: 12px;
-  }
-  
-  .activities-box,
-  .notice-box,
-  .important-links-box {
-    padding: 20px;
+
+  .date-box .month,
+  .date-box .year {
+    font-size: 11px;
   }
 }

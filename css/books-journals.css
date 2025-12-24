@@ -1,4 +1,7 @@
-/* Breadcrumb */
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
 .breadcrumb-bar {
   background: #2d5016;
 }
@@ -13,64 +16,60 @@
 
 .breadcrumb-item {
   color: #fff;
-  text-decoration: none;
   cursor: pointer;
-}
-
-.breadcrumb-item:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .breadcrumb-item.active {
-  color: #fff;
   font-weight: 600;
 }
 
 .breadcrumb-separator {
   color: #fff;
-  margin: 0 5px;
 }
 
-/* Books & Journals Section */
+/* =====================================================
+   SECTION
+===================================================== */
+
 .books-journals-section {
-  background-color: #f9f9f9;
-  /* min-height: 80vh; */
-  min-height: calc(100vh - 400px);
+  background: #f9f9f9;
+  min-height: calc(100vh - 350px);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+/* =====================================================
+   HEADING
+===================================================== */
 
-/* Page Heading */
 .books-journals-heading {
-  margin: 95px;
+  margin-bottom: 25px;
 }
 
 .books-journals-title {
   font-size: 28px;
   font-weight: 700;
   color: #333;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .books-journals-divider {
   width: 150px;
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
-  margin-bottom: 0;
 }
 
-/* Publications Content Box */
+/* =====================================================
+   CONTENT BOX
+===================================================== */
+
 .publications-content-box {
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   border-left: 4px solid #ff9900;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .publications-content-box p {
@@ -78,62 +77,44 @@
   line-height: 1.9;
   color: #444;
   text-align: justify;
+  margin-bottom: 18px;
 }
 
 .publications-content-box p:last-child {
   margin-bottom: 0;
 }
 
-/* Website Link */
+/* =====================================================
+   LINK
+===================================================== */
+
 .website-link {
   color: #ff9900;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
 }
 
 .website-link:hover {
   color: #dd6d05;
-  border-bottom: 2px solid #dd6d05;
+  border-bottom-color: #dd6d05;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .books-journals-title {
-    font-size: 24px;
-  }
+/* =====================================================
+   📱 MOBILE (≤576px)
+===================================================== */
 
-  .books-journals-divider {
-    width: 120px;
-  }
-
-  .publications-content-box {
-    padding: 30px;
-  }
-
-  .publications-content-box p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-}
-
-@media (max-width: 480px) {
-  .books-journals-section {
-    padding: 30px 0;
-  }
-
+@media (max-width: 576px) {
   .books-journals-title {
     font-size: 20px;
   }
 
   .books-journals-divider {
-    width: 100px;
-    height: 2px;
+    width: 110px;
   }
 
   .publications-content-box {
-    padding: 25px 20px;
+    padding: 22px;
     border-left-width: 3px;
   }
 
@@ -141,12 +122,47 @@
     font-size: 14px;
     line-height: 1.7;
     text-align: left;
-    margin-bottom: 18px;
   }
 }
+
+/* =====================================================
+   💻 LAPTOP (≥992px)
+===================================================== */
+
+@media (min-width: 992px) {
+  .books-journals-title {
+    font-size: 26px;
+  }
+
+  .publications-content-box p {
+    font-size: 15.5px;
+  }
+}
+
+/* =====================================================
+   🖥 DESKTOP (≥1200px)
+===================================================== */
+
+@media (min-width: 1200px) {
+  .publications-content-box {
+    padding: 35px;
+  }
+}
+
+/* =====================================================
+   🖥 LARGE DESKTOP (≥1400px)
+===================================================== */
 
 @media (min-width: 1400px) {
   .container {
     max-width: 1350px;
+  }
+
+  .books-journals-title {
+    font-size: 30px;
+  }
+
+  .publications-content-box p {
+    font-size: 16px;
   }
 }

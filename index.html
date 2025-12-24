@@ -1,271 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Odisha State Archaeology</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/mid-navbar.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/hero.css" />
-    <link rel="stylesheet" href="css/news-about.css" />
-    <link rel="stylesheet" href="css/news-page.css" />
-    <link rel="stylesheet" href="css/about-detail.css" />
-    <link rel="stylesheet" href="css/monuments.css" />
-    <link rel="stylesheet" href="css/monuments-central.css" />
-    <link rel="stylesheet" href="css/state-protected.css" />
-    <link rel="stylesheet" href="css/unprotected-monuments.css" />
-    <link rel="stylesheet" href="css/archaeology-library.css" />
-    <link rel="stylesheet" href="css/library.css" />
-    <link rel="stylesheet" href="css/books-journals.css" />
-    <link rel="stylesheet" href="css/staffing-pattern.css" />
-    <link rel="stylesheet" href="css/activities-notice-links.css" />
-    <link rel="stylesheet" href="css/gallery.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/loader.css" />
-    <link rel="stylesheet" href="css/contact-us.css" />
-    <link rel="stylesheet" href="css/act-rules.css" />
-    <link rel="stylesheet" href="css/rti.css" />
-  </head>
 
-  <body>
-    <!-- Header -->
-    <div id="header"></div>
-    <!-- Loader -->
-    <div id="loader"></div>
-    <!-- Mid Navbar -->
-    <div id="mid-navbar"></div>
-    <!-- Main Navbar -->
-    <div id="navbar"></div>
-    <!-- About Detail Page (Hidden by default) -->
-    <div class="about-detail-container" id="about-detail"></div>
-    <!-- Staffing Pattern Page (Hidden by default) -->
-    <div class="staffing-pattern-container" id="staffing-pattern"></div>
-    <!-- News Page (Hidden by default) -->
-    <div class="news-page-container" id="news-page"></div>
-    <!-- Hero Section -->
-    <div id="hero"></div>
-    <!-- News and About Section -->
-    <div id="news-about"></div>
-    <!-- Monument Section -->
-    <div id="monuments-container"></div>
-    <!-- Central Protected Monuments Section -->
-    <div id="monuments-central"></div>
-    <!-- State Protected Monuments (Hidden by default) -->
-    <div id="state-protected"></div>
-    <!-- Activities, Notices & Links Section -->
-    <div id="activities-notice-links"></div>
-    <!-- Unprotected Monuments (Hidden by default) -->
-    <div id="unprotected"></div>
-    <!-- Archaeology Library (Hidden by default) -->
-    <div id="archaeology-library"></div>
-    <!-- Library Detail Page (Hidden by default) -->
-    <div id="library-detail"></div>
-    <!-- Books & Journals Page (Hidden by default) -->
-    <div id="books-journals"></div>
-    <!-- Gallery Section -->
-    <div id="gallery"></div>
-    <!-- Contact Us Section (Hidden by default) -->
-    <div id="contact-us"></div>
-    <!-- Act & Rules Section (Hidden by default) -->
-    <div id="act-rules"></div>
-    <!-- RTI Section -->
-    <div id="rti"></div>
-    <!-- Footer Section -->
-    <div id="footer"></div>
-    <div id="pdfViewerModal" class="pdf-viewer-modal">
-      <div class="pdf-viewer-content">
-        <div class="pdf-viewer-header">
-          <h3 id="pdfViewerTitle">Document Viewer</h3>
-          <button class="pdf-close-btn" onclick="closePDFViewer()">
-            <i class="fa fa-times"></i>
-          </button>
-        </div>
-        <div class="pdf-viewer-body">
-          <iframe id="pdfViewerFrame" src="" frameborder="0"></iframe>
-        </div>
-        <div class="pdf-viewer-footer">
-          <a id="pdfDownloadBtn" href="" download class="pdf-download-btn">
-            <i class="fa fa-download"></i> Download PDF
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Odisha State Archaeology</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/mid-navbar.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/news-about.css" />
+  <link rel="stylesheet" href="css/news-page.css" />
+  <link rel="stylesheet" href="css/about-detail.css" />
+  <link rel="stylesheet" href="css/monuments.css" />
+  <link rel="stylesheet" href="css/monuments-central.css" />
+  <link rel="stylesheet" href="css/state-protected.css" />
+  <link rel="stylesheet" href="css/unprotected-monuments.css" />
+  <link rel="stylesheet" href="css/archaeology-library.css" />
+  <link rel="stylesheet" href="css/library.css" />
+  <link rel="stylesheet" href="css/books-journals.css" />
+  <link rel="stylesheet" href="css/staffing-pattern.css" />
+  <link rel="stylesheet" href="css/activities-notice-links.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/contact-us.css" />
+  <link rel="stylesheet" href="css/act-rules.css" />
+  <link rel="stylesheet" href="css/rti.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+  <!-- Loader -->
+  <div id="loader"></div>
+  <!-- Mid Navbar -->
+  <div id="mid-navbar"></div>
+  <!-- Main Navbar -->
+  <div id="navbar"></div>
+  <!-- About Detail Page (Hidden by default) -->
+  <div class="about-detail-container" id="about-detail"></div>
+  <!-- Staffing Pattern Page (Hidden by default) -->
+  <div class="staffing-pattern-container" id="staffing-pattern"></div>
+  <!-- News Page (Hidden by default) -->
+  <div class="news-page-container" id="news-page"></div>
+  <!-- Hero Section -->
+  <div id="hero"></div>
+  <!-- News and About Section -->
+  <div id="news-about"></div>
+  <!-- Monument Section -->
+  <div id="monuments-container"></div>
+  <!-- Central Protected Monuments Section -->
+  <div id="monuments-central"></div>
+  <!-- State Protected Monuments (Hidden by default) -->
+  <div id="state-protected"></div>
+  <!-- Activities, Notices & Links Section -->
+  <div id="activities-notice-links"></div>
+  <!-- Unprotected Monuments (Hidden by default) -->
+  <div id="unprotected"></div>
+  <!-- Archaeology Library (Hidden by default) -->
+  <div id="archaeology-library"></div>
+  <!-- Library Detail Page (Hidden by default) -->
+  <div id="library-detail"></div>
+  <!-- Books & Journals Page (Hidden by default) -->
+  <div id="books-journals"></div>
+  <!-- Gallery Section -->
+  <div id="gallery"></div>
+  <!-- Contact Us Section (Hidden by default) -->
+  <div id="contact-us"></div>
+  <!-- Act & Rules Section (Hidden by default) -->
+  <div id="act-rules"></div>
+  <!-- RTI Section -->
+  <div id="rti"></div>
+  <!-- Footer Section -->
+  <div id="footer"></div>
+  <div id="pdfViewerModal" class="pdf-viewer-modal">
+    <div class="pdf-viewer-content">
+      <div class="pdf-viewer-header">
+        <h3 id="pdfViewerTitle">Document Viewer</h3>
+        <button class="pdf-close-btn" onclick="closePDFViewer()">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+      <div class="pdf-viewer-body">
+        <iframe id="pdfViewerFrame" src="" frameborder="0"></iframe>
+      </div>
+      <div class="pdf-viewer-footer">
+        <a id="pdfDownloadBtn" href="" download class="pdf-download-btn">
+          <i class="fa fa-download"></i> Download PDF
+        </a>
       </div>
     </div>
-    <!-- </div> -->
-    <script>
-      fetch("components/header.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("header").innerHTML = data;
-        });
-      fetch("components/loader.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("loader").innerHTML = data;
-        });
-      fetch("components/mid-navbar.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("mid-navbar").innerHTML = data;
-        });
-      fetch("components/navbar.html")
-        .then((res) => res.text())
-        .then((data) => (document.getElementById("navbar").innerHTML = data));
+  </div>
+  <!-- </div> -->
+  <script>
+    fetch("components/header.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("header").innerHTML = data;
+      });
+    fetch("components/loader.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("loader").innerHTML = data;
+      });
+    fetch("components/mid-navbar.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("mid-navbar").innerHTML = data;
+      });
+    fetch("components/navbar.html")
+      .then((res) => res.text())
+      .then((data) => (document.getElementById("navbar").innerHTML = data));
 
-      fetch("components/hero.html")
-        .then((res) => res.text())
-        .then((data) => (document.getElementById("hero").innerHTML = data));
+    fetch("components/hero.html")
+      .then((res) => res.text())
+      .then((data) => (document.getElementById("hero").innerHTML = data));
 
-      fetch("components/news-about.html")
-        .then((res) => res.text())
-        .then(
-          (data) => (document.getElementById("news-about").innerHTML = data)
-        );
+    fetch("components/news-about.html")
+      .then((res) => res.text())
+      .then(
+        (data) => (document.getElementById("news-about").innerHTML = data)
+      );
 
-      fetch("components/about-detail.html")
-        .then((res) => res.text())
-        .then(
-          (data) => (document.getElementById("about-detail").innerHTML = data)
-        );
+    fetch("components/about-detail.html")
+      .then((res) => res.text())
+      .then(
+        (data) => (document.getElementById("about-detail").innerHTML = data)
+      );
 
-      fetch("components/staffing-pattern.html")
-        .then((res) => res.text())
-        .then(
-          (data) =>
-            (document.getElementById("staffing-pattern").innerHTML = data)
-        );
+    fetch("components/staffing-pattern.html")
+      .then((res) => res.text())
+      .then(
+        (data) =>
+          (document.getElementById("staffing-pattern").innerHTML = data)
+      );
 
-      fetch("components/monuments.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("monuments-container").innerHTML = data;
-          const monumentSection = document.querySelector(".monuments-section");
-          if (monumentSection) {
-            monumentSection.style.display = "none";
-          }
-        });
-      fetch("components/monuments-central.html")
-        .then((res) => res.text())
-        .then((data) => {
-          // Insert ONLY the section content, not the modal
-          const tempDiv = document.createElement("div");
-          tempDiv.innerHTML = data;
-          const section = tempDiv.querySelector(".monuments-central-section");
-          document.getElementById("monuments-central").innerHTML =
-            section.outerHTML;
-          document.getElementById("monuments-central").style.display = "none";
-        });
-      fetch("components/state-protected.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("state-protected").innerHTML = data;
-          document.getElementById("state-protected").style.display = "none";
-        });
-      fetch("components/unprotected-monuments.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("unprotected").innerHTML = data;
-          document.getElementById("unprotected").style.display = "none";
-        });
-      fetch("components/archaeology-library.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("archaeology-library").innerHTML = data;
-          document.getElementById("archaeology-library").style.display = "none";
-        });
-      fetch("components/library.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("library-detail").innerHTML = data;
-          document.getElementById("library-detail").style.display = "none";
-        });
-      fetch("components/books-journals.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("books-journals").innerHTML = data;
-          document.getElementById("books-journals").style.display = "none";
-        });
-      fetch("components/news-page.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("news-page").innerHTML = data;
-        });
+    fetch("components/monuments.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("monuments-container").innerHTML = data;
+        const monumentSection = document.querySelector(".monuments-section");
+        if (monumentSection) {
+          monumentSection.style.display = "none";
+        }
+      });
+    fetch("components/monuments-central.html")
+      .then((res) => res.text())
+      .then((data) => {
+        // Insert ONLY the section content, not the modal
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = data;
+        const section = tempDiv.querySelector(".monuments-central-section");
+        document.getElementById("monuments-central").innerHTML =
+          section.outerHTML;
+        document.getElementById("monuments-central").style.display = "none";
+      });
+    fetch("components/state-protected.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("state-protected").innerHTML = data;
+        document.getElementById("state-protected").style.display = "none";
+      });
+    fetch("components/unprotected-monuments.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("unprotected").innerHTML = data;
+        document.getElementById("unprotected").style.display = "none";
+      });
+    fetch("components/archaeology-library.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("archaeology-library").innerHTML = data;
+        document.getElementById("archaeology-library").style.display = "none";
+      });
+    fetch("components/library.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("library-detail").innerHTML = data;
+        document.getElementById("library-detail").style.display = "none";
+      });
+    fetch("components/books-journals.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("books-journals").innerHTML = data;
+        document.getElementById("books-journals").style.display = "none";
+      });
+    fetch("components/news-page.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("news-page").innerHTML = data;
+      });
 
-      fetch("components/activities-notice-links.html")
-        .then((res) => res.text())
-        .then(
-          (data) =>
-            (document.getElementById("activities-notice-links").innerHTML =
-              data)
-        );
+    fetch("components/activities-notice-links.html")
+      .then((res) => res.text())
+      .then(
+        (data) =>
+        (document.getElementById("activities-notice-links").innerHTML =
+          data)
+      );
 
-      fetch("components/gallery.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("gallery").innerHTML = data;
-          // Initialize gallery interactions after the HTML has been injected
-          if (window.initGallery) {
-            window.initGallery();
-          }
-        });
+    fetch("components/gallery.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("gallery").innerHTML = data;
+        // Initialize gallery interactions after the HTML has been injected
+        if (window.initGallery) {
+          window.initGallery();
+        }
+      });
 
-      fetch("components/contact-us.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("contact-us").innerHTML = data;
-          // Hide contact-us section by default
-          document.getElementById("contact-us").style.display = "none";
-        });
+    fetch("components/contact-us.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("contact-us").innerHTML = data;
+        // Hide contact-us section by default
+        document.getElementById("contact-us").style.display = "none";
+      });
 
-      fetch("components/act-rules.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("act-rules").innerHTML = data;
-          // Hide act-rules section by default
-          document.getElementById("act-rules").style.display = "none";
-        });
-      fetch("components/rti.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("rti").innerHTML = data;
-          // Hide rti section by default
-          document.getElementById("rti").style.display = "none";
-        });
+    fetch("components/act-rules.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("act-rules").innerHTML = data;
+        // Hide act-rules section by default
+        document.getElementById("act-rules").style.display = "none";
+      });
+    fetch("components/rti.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("rti").innerHTML = data;
+        // Hide rti section by default
+        document.getElementById("rti").style.display = "none";
+      });
 
-      fetch("components/footer.html")
-        .then((res) => res.text())
-        .then((data) => (document.getElementById("footer").innerHTML = data));
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/mid-navbar.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/hero.js"></script>
-    <script src="js/news-about.js"></script>
-    <script src="js/loader.js"></script>
-    <script src="js/about-detail.js"></script>
-    <!-- <script src="js/staffing-pattern.js"></script> -->
-    <script src="js/activities-notice-links.js"></script>
-    <script src="js/monuments.js"></script>
-    <script src="js/monuments-central.js"></script>
-    <script src="js/state-protected.js"></script>
-    <script src="js/unprotected-monuments.js"></script>
-    <script src="js/archaeology-library.js"></script>
-    <script src="js/library.js"></script>
-    <script src="js/books-journals.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/contact-us.js"></script>
-    <script src="js/act-rules.js"></script>
-    <script src="js/rti.js"></script>
-    <script src="js/footer.js"></script>
-  </body>
+    fetch("components/footer.html")
+      .then((res) => res.text())
+      .then((data) => (document.getElementById("footer").innerHTML = data));
+  </script>
+  <script src="js/header.js"></script>
+  <script src="js/mid-navbar.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/news-about.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/about-detail.js"></script>
+  <script src="js/activities-notice-links.js"></script>
+  <script src="js/monuments.js"></script>
+  <script src="js/monuments-central.js"></script>
+  <script src="js/state-protected.js"></script>
+  <script src="js/unprotected-monuments.js"></script>
+  <script src="js/archaeology-library.js"></script>
+  <script src="js/library.js"></script>
+  <script src="js/books-journals.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/contact-us.js"></script>
+  <script src="js/act-rules.js"></script>
+  <script src="js/rti.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+
 </html>

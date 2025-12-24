@@ -1,54 +1,49 @@
-/* Section spacing */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
 .rti-section {
   background-color: #f9f9f9;
-  /* min-height: 80vh; */
   min-height: calc(100vh - 350px);
+  padding: 40px 0;
 }
 
-/* Heading */
+/* ================================
+   HEADING
+   ================================ */
 .rti-heading {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-/* Title */
 .rti-section-title {
   font-size: 26px;
   font-weight: 600;
   color: #333;
-  /* margin: 0 auto; */
-  margin-right: 50px;
-  padding: 0;
+  margin-bottom: 6px;
 }
 
-/* Divider aligned with title */
 .rti-section-divider {
   width: 100px;
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
-  margin: auto;
-  padding: 0;
+  margin: 0 auto;
 }
 
-/* Table Container */
+/* ================================
+   TABLE CONTAINER
+   ================================ */
 .rti-table-container {
-  overflow-x: auto;
   background: #fff;
   padding: 15px;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow-x: auto; /* Mobile horizontal scroll */
 }
 
-/* Table */
+/* ================================
+   TABLE
+   ================================ */
 .acts-table {
   width: 100%;
+  min-width: 900px; /* Keeps table readable on small screens */
   border-collapse: collapse;
-  min-width: 900px;
 }
 
 .acts-table th,
@@ -56,63 +51,150 @@
   border: 1px solid #ddd;
   padding: 12px 10px;
   text-align: left;
-  font-size: 14px;
+  vertical-align: top;
+  line-height: 1.5;
 }
-
-/* Header */
+.acts-table td{
+  font-size: 16px;
+}
+/* ================================
+   TABLE HEADER
+   ================================ */
 .acts-table thead {
   background-color: #dd6d05;
 }
 
 .acts-table thead th {
-  color: #fff;
+  color: #000;
   font-weight: 600;
+  font-size: 18px;
+
   text-transform: capitalize;
 }
 
-/* Row hover */
+/* ================================
+   TABLE BODY
+   ================================ */
+.acts-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
 .acts-table tbody tr:hover {
   background-color: #f3f3f3;
 }
 
-/* Mobile adjustments */
-@media (max-width: 480px) {
-  .section-title {
+/* ================================
+   RESPONSIVE BREAKPOINTS
+   ================================ */
+
+/* ---------- Large Desktop (≥1400px) ---------- */
+@media (min-width: 1400px) {
+  .rti-section-title {
+    font-size: 28px;
+  }
+
+  .acts-table th,
+  .acts-table td {
     font-size: 16px;
-  }
-
-  .rti-table-container {
-    padding: 15px;
-  }
-
-  .rti-table th,
-  .rti-table td {
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .rti-table td:first-child {
-    width: 50px;
+    padding: 16px 10px;
   }
 }
-@media (min-width: 481px) and (max-width: 768px) {
-  .section-title {
-    font-size: 17px;
+
+/* ---------- Laptop / Desktop (992px–1399px) ---------- */
+@media (max-width: 1399px) {
+  .rti-section-title {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Tablet (768px–991px) ---------- */
+@media (max-width: 991px) {
+  .rti-section {
+    padding: 35px 0;
   }
 
-  .rti-table-container {
-    padding: 20px;
+  .rti-section-title {
+    font-size: 22px;
   }
 
-  .rti-table th,
-  .rti-table td {
-    padding: 12px;
+  .acts-table th,
+  .acts-table td {
     font-size: 13px;
   }
 }
-@media (min-width: 1400px) {
-  .rti-table th,
-  .rti-table td {
-    font-size: 15px;
+
+/* ---------- Mobile Large (576px–767px) ---------- */
+@media (max-width: 767px) {
+  .rti-section {
+    padding: 30px 0;
+  }
+
+  .rti-section-title {
+    font-size: 20px;
+  }
+
+  .rti-table-container {
+    padding: 12px;
+  }
+
+  .acts-table th,
+  .acts-table td {
+    font-size: 12.5px;
+    padding: 10px;
+  }
+}
+
+/* ---------- Mobile Small (<576px) ---------- */
+@media (max-width: 575px) {
+  .rti-section {
+    padding: 25px 0;
+  }
+
+  .rti-section-title {
+    font-size: 18px;
+  }
+
+  .rti-table-container {
+    padding: 10px;
+  }
+
+  .acts-table {
+    min-width: 850px;
+  }
+
+  .acts-table th,
+  .acts-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* ================================
+   ACCESSIBILITY & UX
+   ================================ */
+.acts-table th {
+  white-space: nowrap;
+}
+/* 
+.acts-table td {
+  word-break: break-word;
+} */
+
+/* ================================
+   PRINT FRIENDLY
+   ================================ */
+@media print {
+  .rti-section {
+    background: #fff;
+    padding: 0;
+  }
+
+  .rti-table-container {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .acts-table {
+    min-width: 100%;
   }
 }

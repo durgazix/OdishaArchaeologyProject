@@ -7,13 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const pausePlayBtn = document.getElementById("archPausePlayBtn");
   const readMoreBtn = document.getElementById("archLibraryReadMore");
 
+  // ✅ SAFETY CHECK (important after layout changes)
   if (!sliderTrack || slides.length === 0) return;
 
   let currentSlide = 0;
-  let autoPlayInterval;
+  let autoPlayInterval = null;
   let isPlaying = true;
 
-  // Function to show specific slide
+  /* =====================================
+     SHOW SLIDE
+  ===================================== */
   function showSlide(index) {
     if (index >= slides.length) {
       currentSlide = 0;
@@ -32,34 +35,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Next slide
+  /* =====================================
+     NAVIGATION
+  ===================================== */
   function nextSlide() {
     showSlide(currentSlide + 1);
   }
 
-  // Previous slide
   function prevSlide() {
     showSlide(currentSlide - 1);
   }
 
-  // Auto play
+  /* =====================================
+     AUTOPLAY
+  ===================================== */
   function startAutoPlay() {
+    stopAutoPlay(); // prevent multiple intervals
     autoPlayInterval = setInterval(nextSlide, 4000);
     isPlaying = true;
-    pausePlayBtn.innerHTML = '<i class="fa fa-pause"></i>';
+
+    if (pausePlayBtn) {
+      pausePlayBtn.innerHTML = '<i class="fa fa-pause"></i>';
+    }
   }
 
   function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
     isPlaying = false;
-    pausePlayBtn.innerHTML = '<i class="fa fa-play"></i>';
+
+    if (pausePlayBtn) {
+      pausePlayBtn.innerHTML = '<i class="fa fa-play"></i>';
+    }
   }
 
-  // Event listeners
+  /* =====================================
+     EVENTS
+  ===================================== */
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
       nextSlide();
-      stopAutoPlay();
       startAutoPlay();
     });
   }
@@ -67,47 +84,41 @@ document.addEventListener("DOMContentLoaded", () => {
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
       prevSlide();
-      stopAutoPlay();
       startAutoPlay();
     });
   }
 
-  // Dots click
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
-      const slideIndex = parseInt(dot.getAttribute("data-slide"));
+      const slideIndex = Number(dot.dataset.slide);
       showSlide(slideIndex);
-      stopAutoPlay();
       startAutoPlay();
     });
   });
 
-  // Pause/Play button
   if (pausePlayBtn) {
     pausePlayBtn.addEventListener("click", () => {
-      if (isPlaying) {
-        stopAutoPlay();
-      } else {
-        startAutoPlay();
-      }
+      isPlaying ? stopAutoPlay() : startAutoPlay();
     });
   }
 
-  // Read More button - redirect to library detail page
   if (readMoreBtn) {
     readMoreBtn.addEventListener("click", () => {
-      showLibraryDetailPage(); // Call the library detail page function
+      showLibraryDetailPage();
     });
   }
 
-  // Initialize
-  showSlide(0);
-  startAutoPlay();
-
-  // Pause on hover
+  /* =====================================
+     HOVER PAUSE
+  ===================================== */
   sliderTrack.addEventListener("mouseenter", stopAutoPlay);
   sliderTrack.addEventListener("mouseleave", () => {
-    if (!isPlaying) return;
-    startAutoPlay();
+    if (isPlaying) startAutoPlay();
   });
+
+  /* =====================================
+     INIT
+  ===================================== */
+  showSlide(0);
+  startAutoPlay();
 });

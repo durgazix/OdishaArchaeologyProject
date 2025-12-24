@@ -1,148 +1,169 @@
-// This function will be called from index.html AFTER the gallery HTML
-// has been injected into the page.
+// ===================================
+// GALLERY INITIALIZATION
+// ===================================
+
 window.initGallery = function () {
   const photoTab = document.getElementById("photoTab");
   const videoTab = document.getElementById("videoTab");
+
   const photoGallery = document.getElementById("photoGallery");
   const videoGallery = document.getElementById("videoGallery");
+
   const galleryItems = document.getElementById("galleryItems");
-  const photoViewMoreBtn = document.querySelector(".photo-footer .view-more-btn");
-  const photoViewLessBtn = document.querySelector(".photo-footer .view-less-btn");
-  const videoGrid = document.querySelector(".video-grid");
-  const videoViewMoreBtn = document.querySelector(".video-footer .view-more-btn");
-  const videoViewLessBtn = document.querySelector(".video-footer .view-less-btn");
 
-  // If the gallery markup is not present, safely exit
-  if (!photoTab || !videoTab || !photoGallery || !videoGallery || !galleryItems) return;
+  const photoViewMore = document.getElementById("photoViewMore");
+  const photoViewLess = document.getElementById("photoViewLess");
 
-  let showingPhotos = true;
-  let showingAllPhotos = false;
-  let showingAllVideos = false;
+  const videoViewMore = document.getElementById("videoViewMore");
+  const videoViewLess = document.getElementById("videoViewLess");
+  const extraVideos = document.querySelectorAll(".extra-video");
 
+  /* ---------------- PHOTO DATA ---------------- */
   const photoData = [
     { src: "assets/gallery/gallery_1.jpg", cap: "Ancient Temple" },
     { src: "assets/gallery/gallery_2.jpg", cap: "Architecture" },
     { src: "assets/gallery/gallery_3.jpg", cap: "Painting" },
     { src: "assets/gallery/gallery_4.jpg", cap: "Historic Site" },
-    { src: "assets/gallery/gallery_5.jpeg", cap: "Cultural Heritage" }
+    { src: "assets/gallery/gallery_5.jpeg", cap: "Cultural Heritage" },
+    { src: "assets/gallery/gallery_1.jpg", cap: "Monument" },
+    { src: "assets/gallery/gallery_2.jpg", cap: "Sculpture" },
+    { src: "assets/gallery/gallery_3.jpg", cap: "Artifact" },
   ];
 
-  // Render photos, optionally limiting how many are shown
-  function renderPhotos(limit = 4) {
+  /* ---------------- PHOTO RENDER ---------------- */
+  function renderPhotos(limit) {
     galleryItems.innerHTML = "";
-    photoData.slice(0, limit).forEach((item) => {
+    photoData.slice(0, limit).forEach((p) => {
       galleryItems.innerHTML += `
-        <div class="gallery-item">
-          <img src="${item.src}" alt="${item.cap}">
-          <div class="gallery-caption">${item.cap}</div>
-        </div>
-      `;
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="gallery-item">
+            <img src="${p.src}" class="img-fluid">
+            <div class="gallery-caption">${p.cap}</div>
+          </div>
+        </div>`;
     });
   }
 
-  // Initial state: show first 4 photos, hide videos
+  /* ---------------- INITIAL STATE ---------------- */
   renderPhotos(4);
-  photoGallery.style.display = "block";
-  videoGallery.style.display = "none";
-  photoTab.classList.add("active");
-  videoTab.classList.remove("active");
+  photoGallery.classList.remove("d-none");
+  videoGallery.classList.add("d-none");
 
-  // Setup photo View More / View Less
-  if (photoViewMoreBtn && photoViewLessBtn) {
-    // initial buttons state
-    photoViewMoreBtn.style.display = photoData.length > 4 ? "inline-block" : "none";
-    photoViewLessBtn.style.display = "none";
+  /* ---------------- TAB SWITCHING ---------------- */
+  photoTab.onclick = () => {
+    photoGallery.classList.remove("d-none");
+    videoGallery.classList.add("d-none");
 
-    photoViewMoreBtn.addEventListener("click", () => {
-      if (!showingAllPhotos) {
-        renderPhotos(photoData.length);
-        showingAllPhotos = true;
-        photoViewMoreBtn.style.display = "none";
-        photoViewLessBtn.style.display = "inline-block";
-      }
-    });
+    photoTab.classList.add("active");
+    videoTab.classList.remove("active");
+  };
 
-    photoViewLessBtn.addEventListener("click", () => {
-      if (showingAllPhotos) {
-        renderPhotos(4);
-        showingAllPhotos = false;
-        photoViewMoreBtn.style.display = photoData.length > 4 ? "inline-block" : "none";
-        photoViewLessBtn.style.display = "none";
-      }
-    });
-  }
+  videoTab.onclick = () => {
+    photoGallery.classList.add("d-none");
+    videoGallery.classList.remove("d-none");
 
-  // VIDEO: limit to first 4 cards with View More / View Less
-  if (videoGrid && videoViewMoreBtn && videoViewLessBtn) {
-    const videoCards = Array.from(videoGrid.querySelectorAll(".video-card"));
+    videoTab.classList.add("active");
+    photoTab.classList.remove("active");
+  };
 
-    function applyVideoVisibility(limit = 4) {
-      videoCards.forEach((card, index) => {
-        card.style.display = index < limit ? "block" : "none";
-      });
+  /* ---------------- PHOTO VIEW MORE ---------------- */
+  photoViewMore.onclick = () => {
+    showGalleryPage("photo");
+  };
+
+  photoViewLess.onclick = () => {
+    renderPhotos(4);
+    photoViewLess.classList.add("d-none");
+    photoViewMore.classList.remove("d-none");
+  };
+
+  /* ---------------- VIDEO VIEW MORE ---------------- */
+  videoTab.onclick = () => {
+    photoGallery.classList.add("d-none");
+    videoGallery.classList.remove("d-none");
+
+    // 🔥 ENSURE VIDEO VIEW MORE BUTTON IS VISIBLE
+    if (document.getElementById("videoViewMore")) {
+      document.getElementById("videoViewMore").classList.remove("d-none");
     }
 
-    // initial
-    applyVideoVisibility(4);
-    videoViewMoreBtn.style.display = videoCards.length > 3 ? "inline-block" : "none";
-    videoViewLessBtn.style.display = "none";
+    videoTab.classList.add("active");
+    photoTab.classList.remove("active");
+  };
+};
 
-    videoViewMoreBtn.addEventListener("click", () => {
-      if (!showingAllVideos) {
-        applyVideoVisibility(videoCards.length);
-        showingAllVideos = true;
-        videoViewMoreBtn.style.display = "none";
-        videoViewLessBtn.style.display = "inline-block";
-      }
-    });
+/* ===================================
+   GALLERY PAGE NAVIGATION
+   =================================== */
 
-    videoViewLessBtn.addEventListener("click", () => {
-      if (showingAllVideos) {
-        applyVideoVisibility(4);
-        showingAllVideos = false;
-        videoViewMoreBtn.style.display = videoCards.length > 4 ? "inline-block" : "none";
-        videoViewLessBtn.style.display = "none";
-      }
-    });
-  }
+window.showGalleryPage = function (type = "photo") {
+  hideAllSections();
 
-  function activatePhotoTab() {
-    showingPhotos = true;
-    photoGallery.style.display = "block";
-    videoGallery.style.display = "none";
+  const gallery = document.getElementById("gallery");
+  const breadcrumb = document.getElementById("gallery-breadcrumb");
+
+  gallery.style.display = "block";
+  breadcrumb.classList.remove("d-none");
+
+  const photoTab = document.getElementById("photoTab");
+  const videoTab = document.getElementById("videoTab");
+
+  const photoGallery = document.getElementById("photoGallery");
+  const videoGallery = document.getElementById("videoGallery");
+
+  const galleryItems = document.getElementById("galleryItems");
+  const photoViewMore = document.getElementById("photoViewMore");
+  const photoViewLess = document.getElementById("photoViewLess");
+
+  if (type === "photo") {
     photoTab.classList.add("active");
     videoTab.classList.remove("active");
 
-    if (photoViewMoreBtn && photoViewLessBtn) {
-      if (showingAllPhotos) {
-        photoViewMoreBtn.style.display = "none";
-        photoViewLessBtn.style.display = "inline-block";
-      } else {
-        photoViewMoreBtn.style.display = photoData.length > 4 ? "inline-block" : "none";
-        photoViewLessBtn.style.display = "none";
-      }
-    }
+    photoGallery.classList.remove("d-none");
+    videoGallery.classList.add("d-none");
+
+    const allPhotos = [
+      "gallery_1.jpg",
+      "gallery_2.jpg",
+      "gallery_3.jpg",
+      "gallery_4.jpg",
+      "gallery_5.jpeg",
+      "gallery_1.jpg",
+      "gallery_2.jpg",
+      "gallery_3.jpg",
+    ];
+
+    galleryItems.innerHTML = "";
+    allPhotos.forEach((img) => {
+      galleryItems.innerHTML += `
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="gallery-item">
+            <img src="assets/gallery/${img}" class="img-fluid">
+          </div>
+        </div>`;
+    });
+
+    photoViewMore.classList.add("d-none");
+    photoViewLess.classList.remove("d-none");
   }
 
-  function activateVideoTab() {
-    showingPhotos = false;
-    photoGallery.style.display = "none";
-    videoGallery.style.display = "block";
-    photoTab.classList.remove("active");
-    videoTab.classList.add("active");
-
-    if (videoViewMoreBtn && videoViewLessBtn && videoGrid) {
-      if (showingAllVideos) {
-        videoViewMoreBtn.style.display = "none";
-        videoViewLessBtn.style.display = "inline-block";
-      } else {
-        const hasMoreVideos = videoGrid.querySelectorAll(".video-card").length > 4;
-        videoViewMoreBtn.style.display = hasMoreVideos ? "inline-block" : "none";
-        videoViewLessBtn.style.display = "none";
-      }
-    }
-  }
-
-  photoTab.addEventListener("click", activatePhotoTab);
-  videoTab.addEventListener("click", activateVideoTab);
+  scrollToGallery();
 };
+
+/* ===================================
+   HELPERS
+   =================================== */
+
+function scrollToGallery() {
+  document
+    .getElementById("gallery")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    if (document.getElementById("gallery")) {
+      initGallery();
+    }
+  }, 300);
+});

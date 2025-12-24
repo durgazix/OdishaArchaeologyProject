@@ -1,6 +1,20 @@
+/* =====================================
+   MONUMENTS – BASE SECTION
+===================================== */
+
+.monuments-section {
+  background: #ffffff;
+  padding-bottom: 60px;
+  min-height: calc(100vh - 120px);
+}
+
+/* =====================================
+   BREADCRUMB
+===================================== */
+
 .breadcrumb-bar {
-  background: #fff;
-  padding: 15px 0;
+  background: #ffffff;
+  padding: 14px 0;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 40px;
 }
@@ -8,316 +22,210 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .breadcrumb-item {
-  color: #718096;
-  text-decoration: none;
+  color: #6b7280;
   font-size: 14px;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .breadcrumb-item:hover {
   color: #f97316;
 }
 
+.breadcrumb-item.active {
+  color: #1f2937;
+  font-weight: 600;
+}
+
 .breadcrumb-separator {
-  color: #cbd5e0;
   font-size: 12px;
+  color: #cbd5e1;
 }
 
-/* ===== MONUMENTS SECTION ===== */
-.monuments-section {
-  background: #fff;
-  min-height: 100vh;
-  padding-bottom: 60px;
-}
-
-/* Header */
-.monuments-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
+/* =====================================
+   HEADER
+===================================== */
 
 .monuments-title {
-  font-size: 36px;
-  font-weight: 900;
-  color: #2d3748;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.monuments-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #f3a668, #f97316);
-  border-radius: 2px;
+  font-size: 34px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .monuments-subtitle {
-  font-size: 16px;
-  color: #718096;
-  margin-top: 25px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.8;
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-/* Grid - 4 columns */
-.monuments-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin-bottom: 40px;
-}
+/* =====================================
+   PDF CARD
+===================================== */
 
-.monuments-item {
-  cursor: pointer;
-  background: #fff;
+.pdf-document-card {
+  background: #ffffff;
+  padding: 28px 24px;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.monuments-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.pdf-document-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-.monuments-item.hidden {
-  display: none;
+/* Icon */
+.pdf-icon {
+  font-size: 56px;
+  color: #dc2626;
 }
 
-.monuments-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-}
-
-.monuments-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.monuments-item:hover img {
-  transform: scale(1.05);
-}
-
-.monuments-content {
-  padding: 15px;
-  background: #fff;
-}
-
-.monuments-caption {
-  font-size: 16px;
+/* Title */
+.pdf-document-title {
+  font-size: 17px;
   font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 8px;
+  color: #1f2937;
+  margin: 12px 0 10px;
+  line-height: 1.4;
 }
 
-.monuments-description {
+/* Description */
+.pdf-document-description {
   font-size: 13px;
-  color: #718096;
+  color: #6b7280;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* View More Button */
-.view-more-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.view-more-btn {
+/* Button */
+.pdf-view-btn {
   background: linear-gradient(135deg, #f3a668, #f97316);
-  color: #fff;
-  padding: 15px 40px;
+  color: #ffffff;
+  padding: 12px 32px;
   border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
-  transition: all 0.3s ease;
-}
-
-.view-more-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
-}
-
-.view-more-btn.hidden {
-  display: none;
-}
-
-/* ===== VIEWER MODAL ===== */
-.monuments-viewer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-}
-
-.monuments-viewer.active {
-  display: flex;
-}
-
-.viewer-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.monuments-viewer img {
-  width: 100%;
-  height: auto;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-}
-
-/* Close Button */
-.monuments-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #fff;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  z-index: 10000;
-}
-
-.monuments-close:hover {
-  background: rgba(249, 115, 22, 0.9);
-  transform: rotate(90deg);
-}
-
-/* Navigation Arrows */
-.monuments-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  user-select: none;
-  backdrop-filter: blur(10px);
-}
-
-.monuments-nav:hover {
-  background: rgba(249, 115, 22, 0.9);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.monuments-nav.prev {
-  left: 30px;
-}
-
-.monuments-nav.next {
-  right: 30px;
-}
-
-/* Image Counter */
-.image-counter {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 10px 20px;
   border-radius: 25px;
   font-size: 14px;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .monuments-grid {
-    grid-template-columns: repeat(3, 1fr);
+.pdf-view-btn i {
+  margin-right: 8px;
+}
+
+.pdf-view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+}
+
+/* =====================================
+   RESPONSIVE — LARGE DESKTOP
+   ≥ 1400px
+===================================== */
+
+@media (min-width: 1400px) {
+  .monuments-title {
+    font-size: 38px;
+  }
+
+  .monuments-subtitle {
+    font-size: 16px;
+  }
+
+  .pdf-document-card {
+    padding: 32px 28px;
   }
 }
 
-@media (max-width: 768px) {
+/* =====================================
+   RESPONSIVE — DESKTOP / LAPTOP
+   992px – 1199px
+===================================== */
+
+@media (max-width: 1199px) {
+  .monuments-title {
+    font-size: 32px;
+  }
+}
+
+/* =====================================
+   RESPONSIVE — TABLET / LAPTOP
+   768px – 991px
+===================================== */
+
+@media (max-width: 991px) {
   .monuments-title {
     font-size: 28px;
   }
 
-  .monuments-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .monuments-image-wrapper {
-    height: 180px;
-  }
-
-  .monuments-nav {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
-
-  .monuments-nav.prev {
-    left: 15px;
-  }
-
-  .monuments-nav.next {
-    right: 15px;
-  }
-
-  .monuments-close {
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
+  .pdf-icon {
+    font-size: 50px;
   }
 }
 
+/* =====================================
+   RESPONSIVE — MOBILE
+   ≤ 767px
+===================================== */
+
+@media (max-width: 767px) {
+  .breadcrumb {
+    font-size: 13px;
+  }
+
+  .monuments-title {
+    font-size: 24px;
+  }
+
+  .monuments-subtitle {
+    font-size: 14px;
+  }
+
+  .pdf-document-card {
+    padding: 22px 20px;
+  }
+
+  .pdf-view-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* =====================================
+   RESPONSIVE — SMALL PHONES
+   ≤ 480px
+===================================== */
+
 @media (max-width: 480px) {
-  .monuments-grid {
-    grid-template-columns: 1fr;
+  .monuments-title {
+    font-size: 22px;
   }
 
-  .monuments-image-wrapper {
-    height: 220px;
+  .pdf-document-title {
+    font-size: 16px;
   }
 
-  .monuments-section {
-    padding: 40px 0;
+  .pdf-document-description {
+    font-size: 12px;
+  }
+
+  .pdf-icon {
+    font-size: 44px;
   }
 }

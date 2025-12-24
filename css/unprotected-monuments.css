@@ -1,49 +1,35 @@
-/* Section spacing */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
 
-.unprotected-section {
-  padding: 40px 0;
+#unprotected-monuments {
   background-color: #f9f9f9;
-  /* min-height: 60vh; */
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 250px);
 }
 
-/* Heading */
-.unprotected-heading {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-/* Title */
+/* ================================
+   HEADING
+   ================================ */
 .unprotected-section-title {
   font-size: 26px;
   font-weight: 600;
   color: #333;
-  margin: 15px auto;
-  padding: 0 60px;
+  margin-bottom: 6px;
 }
 
-/* Divider aligned with title */
 .unprotected-section-divider {
   width: 100px;
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
   margin: 0 auto;
-  padding: 0;
 }
 
-/* Coming Soon Container */
+/* ================================
+   COMING SOON CARD
+   ================================ */
 .coming-soon-container {
-  background: #fff;
+  background: #ffffff;
   padding: 60px 30px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   text-align: center;
-  max-width: 600px;
   margin: 40px auto;
 }
 
@@ -54,7 +40,7 @@
 .coming-soon-icon i {
   font-size: 80px;
   color: #ff9900;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .coming-soon-title {
@@ -77,15 +63,78 @@
   font-style: italic;
 }
 
-/* Mobile adjustments */
-@media (max-width: 480px) {
+/* ================================
+   RESPONSIVE BREAKPOINTS
+   ================================ */
+
+/* ---------- Large Desktop (≥1400px) ---------- */
+@media (min-width: 1400px) {
   .unprotected-section-title {
-    font-size: 18px;
-    padding: 0 15px;
+    font-size: 28px;
+  }
+
+  .coming-soon-title {
+    font-size: 34px;
+  }
+}
+
+/* ---------- Laptop / Desktop (992px–1399px) ---------- */
+@media (max-width: 1399px) {
+  .unprotected-section-title {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Tablet (768px–991px) ---------- */
+@media (max-width: 991px) {
+  #unprotected-monuments {
+    padding: 35px 0;
+  }
+
+  .unprotected-section-title {
+    font-size: 22px;
+  }
+
+  .coming-soon-container {
+    padding: 50px 25px;
+  }
+
+  .coming-soon-icon i {
+    font-size: 70px;
+  }
+}
+
+/* ---------- Mobile Large (576px–767px) ---------- */
+@media (max-width: 767px) {
+  #unprotected-monuments {
+    padding: 30px 0;
+  }
+
+  .unprotected-section-title {
+    font-size: 20px;
   }
 
   .coming-soon-container {
     padding: 40px 20px;
+  }
+
+  .coming-soon-title {
+    font-size: 26px;
+  }
+
+  .coming-soon-text {
+    font-size: 15px;
+  }
+}
+
+/* ---------- Mobile Small (<576px) ---------- */
+@media (max-width: 575px) {
+  #unprotected-monuments {
+    padding: 25px 0;
+  }
+
+  .unprotected-section-title {
+    font-size: 18px;
   }
 
   .coming-soon-icon i {
@@ -98,25 +147,5 @@
 
   .coming-soon-text {
     font-size: 14px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .unprotected-section-title {
-    font-size: 20px;
-  }
-
-  .coming-soon-icon i {
-    font-size: 70px;
-  }
-
-  .coming-soon-title {
-    font-size: 28px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1350px;
   }
 }

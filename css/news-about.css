@@ -1,97 +1,89 @@
+/* ===================================
+   NEWS-ABOUT SECTION STYLES
+   =================================== */
+
 .news-about-section {
-  padding: 40px 0;
   background: #fafafa;
 }
 
-.container {
-  margin: auto;
-  padding: 0 15px;
+.news-about-section .card {
+  border-color: rgba(78, 68, 68, 0.42) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+.news-about-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* NEWS SECTION */
-.news-section {
-  background: #fff;
-  padding: 30px;
-  border-radius: 4px;
-  border: 1px solid #4e44446b;
-}
+/* ===================================
+   SECTION TITLES
+   =================================== */
 
 .section-title {
   font-size: 18px;
-  font-weight: 700;
   color: #333;
-  margin: 0 0 10px 0;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* ===================================
+   DIVIDERS
+   =================================== */
 
 .news-divider,
 .about-divider {
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
-  margin-bottom: 25px;
+  border: none;
+  opacity: 1;
+  margin-top: 0;
 }
 
-.news-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #b59e9e;
-}
-
-.news-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #333;
-  margin: 0;
-  flex: 1;
-  transition: opacity 0.5s ease-in-out;
-}
+/* ===================================
+   NEWS NAVIGATION BUTTONS
+   =================================== */
 
 .news-nav {
-  display: flex;
-  gap: 8px;
-  margin-left: 20px;
+  min-width: 72px;
 }
 
-.nav-prev,
-.nav-next {
-  background: #f0f0f0;
-  border: 1px solid #ddd;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+.news-nav .btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #333;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  background-color: #f0f0f0;
 }
 
-.nav-prev:hover,
-.nav-next:hover {
-  background: #333;
-  color: #fff;
-  border-color: #333;
+.news-nav .btn:hover {
+  background: #333 !important;
+  color: #fff !important;
+  border-color: #333 !important;
   transform: scale(1.1);
 }
 
+/* ===================================
+   NEWS TITLE
+   =================================== */
+
+.news-title {
+  font-size: 15px;
+  color: #333;
+  transition: opacity 0.5s ease-in-out;
+  line-height: 1.4;
+}
+
+/* ===================================
+   NEWS CONTENT ANIMATION
+   =================================== */
+
 .news-content {
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  gap: 20px;
-  align-items: start;
   animation: fadeInUp 0.5s ease-in-out;
 }
 
@@ -106,22 +98,26 @@
   }
 }
 
+/* ===================================
+   NEWS TEXT
+   =================================== */
+
 .news-text {
   font-size: 14px;
-  line-height: 1.6;
   color: #666;
-  margin: 0;
-  grid-column: 1;
   transition: all 0.5s ease-in-out;
+  line-height: 1.7;
+  text-align: justify;
 }
 
+/* ===================================
+   NEWS IMAGE
+   =================================== */
+
 .news-image {
+  height: 180px;
   width: 100%;
-  height: 150px;
   object-fit: cover;
-  border-radius: 3px;
-  grid-column: 2;
-  grid-row: 1 / 3;
   transition: all 0.5s ease-in-out;
   animation: zoomIn 0.5s ease-in-out;
 }
@@ -137,67 +133,120 @@
   }
 }
 
+/* ===================================
+   NEWS MORE LINK
+   =================================== */
+
 .news-more {
   color: #d24a00;
-  text-decoration: none;
-  font-weight: 600;
   font-size: 14px;
-  cursor: pointer;
-  grid-column: 1;
-  align-self: end;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .news-more:hover {
-  text-decoration: underline;
+  color: #a03700;
+  text-decoration: underline !important;
 }
 
-/* ABOUT SECTION */
-.about-section {
-  background: #fff;
-  padding: 30px;
-  border-radius: 4px;
-  border: 1px solid #4e44446b;
-}
+/* ===================================
+   ABOUT TEXT
+   =================================== */
 
 .about-text {
   font-size: 14px;
-  line-height: 1.7;
   color: #666;
-  margin: 0 0 20px 0;
   text-align: justify;
+  line-height: 1.7;
 }
 
-.read-more-btn {
-  border: 1px solid #d24a00;
-  background: #fff;
-  color: #d24a00;
-  padding: 10px 25px;
+/* ===================================
+   READ MORE BUTTON
+   =================================== */
+
+.btn-outline-danger {
+  border-color: #d24a00 !important;
+  color: #d24a00 !important;
   font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+  padding: 10px 25px;
   border-radius: 3px;
   transition: all 0.3s ease;
-  align-self: flex-end;
 }
 
-.read-more-btn:hover {
-  background: #d24a00;
-  color: #fff;
+.btn-outline-danger:hover {
+  background: #d24a00 !important;
+  border-color: #d24a00 !important;
+  color: #fff !important;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .news-about-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+/* ===================================
+   RESPONSIVE STYLES
+   =================================== */
 
-  .news-content {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 991px) {
   .news-image {
-    grid-column: 1;
-    grid-row: auto;
+    height: 220px;
   }
+  
+  .news-title {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .news-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .news-nav {
+    margin-top: 10px;
+  }
+  
+  .news-text,
+  .about-text {
+    font-size: 13px;
+  }
+  
+  .news-image {
+    height: 200px;
+    margin-bottom: 15px;
+  }
+  
+  .news-about-section .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 15px;
+  }
+  
+  .news-nav .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  
+  .btn-outline-danger {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  
+  .news-image {
+    height: 180px;
+  }
+}
+
+/* ===================================
+   TEXT JUSTIFY UTILITY
+   =================================== */
+
+.text-justify {
+  text-align: justify;
 }

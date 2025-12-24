@@ -1,95 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("monumentsTableBody");
-
   if (!tableBody) return;
 
   let allMonuments = [];
   let displayedCount = 20;
   const incrementCount = 20;
 
-  // Function to read Excel file
   async function loadMonumentsData() {
     try {
       const response = await fetch("assets/state-monuments/state_protected_monuments.xlsx");
-      const arrayBuffer = await response.arrayBuffer();
-      
-      // Parse Excel using SheetJS
-      const workbook = XLSX.read(arrayBuffer, { type: "array" });
-      const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-      const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+      const buffer = await response.arrayBuffer();
 
-      // Transform data
-      allMonuments = jsonData.map((row, index) => ({
+      const workbook = XLSX.read(buffer, { type: "array" });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const data = XLSX.utils.sheet_to_json(sheet);
+
+      allMonuments = data.map((row, index) => ({
         sl: index + 1,
-        district: row["District"] || row["DISTRICT"] || "",
-        name: row["Monument Name"] || row["NAME"] || row["Monument"] || "",
-        location: row["Location"] || row["LOCATION"] || row["Place"] || "",
-        period: row["Period"] || row["PERIOD"] || row["Age"] || "",
-        remarks: row["Remarks"] || row["REMARKS"] || row["Status"] || ""
+        district: row["District"] || "",
+        name: row["Monument Name"] || "",
+        location: row["Location"] || "",
+        period: row["Period"] || "",
+        remarks: row["Remarks"] || "State Protected"
       }));
 
       renderMonuments();
-
-    } catch (error) {
-      console.error("Error loading monuments data:", error);
+    } catch (err) {
+      console.error(err);
       tableBody.innerHTML = `
         <tr>
           <td colspan="6" class="loading-message">
-            Failed to load monuments data. Please try refreshing the page.
+            Failed to load monuments data.
           </td>
         </tr>
       `;
     }
   }
 
-  // Function to render monuments
   function renderMonuments() {
-    const monumentsToShow = allMonuments.slice(0, displayedCount);
-    
-    tableBody.innerHTML = monumentsToShow.map(monument => `
-      <tr>
-        <td>${monument.sl}</td>
-        <td>${monument.district}</td>
-        <td>${monument.name}</td>
-        <td>${monument.location}</td>
-        <td>${monument.period}</td>
-        <td>${monument.remarks}</td>
-      </tr>
-    `).join("");
+    tableBody.innerHTML = "";
 
-    // Add View More button if there are more monuments to show
+    const slice = allMonuments.slice(0, displayedCount);
+
+    slice.forEach(m => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${m.sl}</td>
+        <td>${m.district}</td>
+        <td>${m.name}</td>
+        <td>${m.location}</td>
+        <td>${m.period}</td>
+        <td>${m.remarks}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+
     if (displayedCount < allMonuments.length) {
-      const viewMoreRow = document.createElement("tr");
-      viewMoreRow.className = "view-more-row";
-      viewMoreRow.innerHTML = `
+      const row = document.createElement("tr");
+      row.className = "view-more-row";
+      row.innerHTML = `
         <td colspan="6" class="view-more-cell">
-          <button id="viewMoreBtn" class="view-more-btn">
-            View More <i class="fa fa-chevron-down"></i>
+          <button class="view-more-btn" id="viewMoreBtn">
+            View More
           </button>
-          <span class="monuments-count">(Showing ${displayedCount} of ${allMonuments.length} monuments)</span>
+          <span class="monuments-count">
+            Showing ${displayedCount} of ${allMonuments.length}
+          </span>
         </td>
       `;
-      tableBody.appendChild(viewMoreRow);
+      tableBody.appendChild(row);
 
-      // Add event listener to View More button
-      const viewMoreBtn = document.getElementById("viewMoreBtn");
-      viewMoreBtn.addEventListener("click", () => {
+      document.getElementById("viewMoreBtn").onclick = () => {
         displayedCount += incrementCount;
         renderMonuments();
-      });
-    } else if (allMonuments.length > incrementCount) {
-      // Show "All monuments displayed" message
-      const allDisplayedRow = document.createElement("tr");
-      allDisplayedRow.className = "view-more-row";
-      allDisplayedRow.innerHTML = `
-        <td colspan="6" class="view-more-cell">
-          <span class="monuments-count">All ${allMonuments.length} monuments displayed</span>
-        </td>
-      `;
-      tableBody.appendChild(allDisplayedRow);
+      };
     }
   }
 
-  // Initialize
   loadMonumentsData();
 });

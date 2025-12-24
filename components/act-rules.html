@@ -1,83 +1,96 @@
+<!-- Breadcrumb -->
 <div class="breadcrumb-bar">
   <div class="container">
     <nav class="breadcrumb">
-      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
+      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;"
+        >Home</a
+      >
       <span class="breadcrumb-separator">&gt;&gt;</span>
       <span class="breadcrumb-item active">Act & Rules</span>
     </nav>
   </div>
 </div>
 
+<!-- ACT & RULES SECTION -->
 <section class="act-rules-section">
-  <div class="act-rules-heading">
-    <h2 class="act-section-title">ACT & RULES</h2>
-    <div class="act-section-divider"></div>
-  </div>
   <div class="container">
-
-
-    <div class="acts-table-container">
-      <table class="acts-table">
-        <thead>
-          <tr>
-            <th>Sl. No.</th>
-            <th>Act</th>
-            <th>Download</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1.</td>
-            <td class="act-name" onclick="openPDFViewer('act1')">
-              Odisha Development Authorities (Planning and Building Standards) Act & Rules 2020.
-            </td>
-            <td>
-              <button class="download-btn" onclick="downloadPDF('act1')">
-                <i class="fa fa-download"></i>
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>2.</td>
-            <td class="act-name" onclick="openPDFViewer('act2')">
-              Orissa Ancient Monuments Preservation Rule, 1958
-            </td>
-            <td>
-              <button class="download-btn" onclick="downloadPDF('act2')">
-                <i class="fa fa-download"></i>
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>3.</td>
-            <td class="act-name" onclick="openPDFViewer('act3')">
-              Orissa Ancient Monuments Preservation Act, 1956
-            </td>
-            <td>
-              <button class="download-btn" onclick="downloadPDF('act3')">
-                <i class="fa fa-download"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Heading -->
+    <div class="row">
+      <div class="col-12">
+        <div class="act-rules-heading">
+          <h2 class="act-section-title">ACT & RULES</h2>
+          <div class="act-section-divider"></div>
+        </div>
+      </div>
     </div>
 
+    <!-- Table -->
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive acts-table-wrapper">
+          <table class="table acts-table">
+            <thead>
+              <tr>
+                <th style="width: 80px">Sl. No.</th>
+                <th>Act</th>
+                <th style="width: 120px">Download</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="text-center">1</td>
+                <td class="act-name" onclick="openPDFViewer('act1')">
+                  Odisha Development Authorities (Planning and Building
+                  Standards) Act & Rules 2020
+                </td>
+                <td class="text-center">
+                  <button class="download-btn" onclick="downloadPDF('act1')">
+                    <i class="fa fa-download"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="text-center">2</td>
+                <td class="act-name" onclick="openPDFViewer('act2')">
+                  Orissa Ancient Monuments Preservation Rule, 1958
+                </td>
+                <td class="text-center">
+                  <button class="download-btn" onclick="downloadPDF('act2')">
+                    <i class="fa fa-download"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="text-center">3</td>
+                <td class="act-name" onclick="openPDFViewer('act3')">
+                  Orissa Ancient Monuments Preservation Act, 1956
+                </td>
+                <td class="text-center">
+                  <button class="download-btn" onclick="downloadPDF('act3')">
+                    <i class="fa fa-download"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- PDF Viewer -->
+<!-- PDF Viewer Modal (UNCHANGED) -->
 <div id="pdfViewerModal" class="pdf-viewer-modal">
   <div class="pdf-viewer-container">
     <div class="pdf-viewer-header">
-      <h2 class="pdf-viewer-title" id="pdfTitle"></h2>
+      <h2 id="pdfTitle" class="pdf-viewer-title"></h2>
       <button class="close-pdf-btn" onclick="closePDFViewer()">
         <i class="fa fa-times"></i>
       </button>
     </div>
-
     <div class="pdf-document-viewer">
       <iframe id="pdfFrame" class="pdf-frame"></iframe>
     </div>

@@ -1,86 +1,130 @@
-<div class="breadcrumb-bar" id="gallery-breadcrumb" style="display: none;">
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar py-2 d-none" id="gallery-breadcrumb">
   <div class="container">
-    <nav class="breadcrumb">
-      <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
-      <span class="breadcrumb-separator">&gt;&gt;</span>
-      <span class="breadcrumb-item active">Gallery</span>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0 align-items-center">
+        <li class="breadcrumb-item">
+          <a href="#" onclick="goHome(); return false;">Home</a>
+        </li>
+        <span class="breadcrumb-separator">&gt;&gt;</span>
+        <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+      </ol>
     </nav>
   </div>
 </div>
 
-<section class="gallery-section" id="gallery">
+<!-- Gallery Section -->
+<section class="gallery-section py-5" id="gallery">
   <div class="container">
-    <div class="gallery-wrapper">
 
-      <!-- Header -->
-      <div class="gallery-header">
-        <h2 class="gallery-title">GALLERY</h2>
-        <div class="gallery-divider"></div>
-
-        <div class="gallery-toggle-group">
-          <button id="photoTab" class="gallery-toggle-btn active">PHOTO</button>
-          <button id="videoTab" class="gallery-toggle-btn">VIDEO</button>
-        </div>
+    <!-- Header -->
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <h2 class="gallery-title fw-bold mb-2">GALLERY</h2>
+        <div class="gallery-divider mx-auto mx-md-0"></div>
       </div>
 
-      <!-- PHOTO -->
-      <div class="gallery-container photo-gallery" id="photoGallery">
-        <div class="gallery-items" id="galleryItems"></div>
-
-        <div class="gallery-footer photo-footer">
-          <button class="view-more-btn" onclick="showGalleryPage(); return false;">View More</button>
-          <button class="view-less-btn" onclick="showGalleryPage(); return false;">View Less</button>
-        </div>
+      <div class="col-md-6 d-flex justify-content-center justify-content-md-end gap-2">
+        <button id="photoTab" class="btn gallery-toggle-btn active">PHOTO</button>
+        <button id="videoTab" class="btn gallery-toggle-btn">VIDEO</button>
       </div>
-
-      <!-- VIDEO -->
-      <div class="video-gallery" id="videoGallery" style="display:none">
-
-        <div class="video-grid">
-
-          <div class="video-card">
-            <video controls>
-              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
-            </video>
-            <p>Tharangambadi</p>
-          </div>
-
-          <div class="video-card">
-            <video controls>
-              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
-            </video>
-            <p>Keeladi</p>
-          </div>
-
-          <div class="video-card">
-            <video controls>
-              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
-            </video>
-            <p>Excavation Documentary</p>
-          </div>
-
-          <div class="video-card">
-            <video controls>
-              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
-            </video>
-            <p>Excavation Documentary</p>
-          </div>
-          
-          <div class="video-card">
-            <video controls>
-              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" type="video/mp4">
-            </video>
-            <p>Excavation Documentary</p>
-          </div>
-
-        </div>
-
-        <div class="gallery-footer video-footer">
-          <button class="view-more-btn" onclick="showGalleryPage(); return false;">View More</button>
-          <button class="view-less-btn" onclick="showGalleryPage(); return false;">View Less</button>
-        </div>
-      </div>
-
     </div>
+
+    <!-- PHOTO GALLERY -->
+    <div id="photoGallery">
+      <div class="row g-4" id="galleryItems"></div>
+
+      <div class="text-center mt-4 photo-footer">
+        <button class="btn view-more-btn" id="photoViewMore"
+          onclick="showGalleryPage(); return false;">
+          View More
+        </button>
+
+        <button class="btn view-less-btn d-none" id="photoViewLess">
+          View Less
+        </button>
+      </div>
+    </div>
+
+    <!-- VIDEO GALLERY -->
+    <!-- VIDEO GALLERY -->
+<div id="videoGallery" class="d-none">
+
+  <div class="row g-4" id="videoGalleryGrid">
+
+    <!-- Video 1 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="video-card">
+        <video controls class="w-100 rounded">
+          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
+        </video>
+        <p class="video-caption">Heritage Sites</p>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="video-card">
+        <video controls class="w-100 rounded">
+          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
+        </video>
+        <p class="video-caption">Temple Architecture</p>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="video-card">
+        <video controls class="w-100 rounded">
+          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
+        </video>
+        <p class="video-caption">Excavation Documentary</p>
+      </div>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="video-card">
+        <video controls class="w-100 rounded">
+          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
+        </video>
+        <p class="video-caption">Cultural Heritage</p>
+      </div>
+    </div>
+
+    <!-- EXTRA VIDEOS (Hidden Initially) -->
+    <div class="col-12 col-sm-6 col-lg-3 d-none extra-video">
+      <div class="video-card">
+        <video controls class="w-100 rounded">
+          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
+        </video>
+        <p class="video-caption">Ancient Monuments</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3 d-none extra-video">
+      <div class="video-card">
+        <video controls class="w-100 rounded">
+          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
+        </video>
+        <p class="video-caption">Archaeological Finds</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ VIDEO FOOTER -->
+  <div class="text-center mt-4 video-footer">
+    <button class="btn view-more-btn me-2" id="videoViewMore">
+      View More
+    </button>
+    <button class="btn view-less-btn d-none" id="videoViewLess">
+      View Less
+    </button>
+  </div>
+
+</div>
+
+
   </div>
 </section>

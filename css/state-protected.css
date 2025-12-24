@@ -1,192 +1,160 @@
-/* Section spacing */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+/* ================================
+   SECTION
+================================ */
 
-.state-protected-section {
+#state-protected {
   background-color: #f9f9f9;
-  /* min-height: 80vh;0 */
-  min-height: calc(100vh - 400px);
+  min-height: calc(100vh - 350px);
 }
 
-/* Heading */
+/* ================================
+   HEADING
+================================ */
+
 .state-protected-heading {
-  text-align: center;
   margin-bottom: 25px;
 }
 
-/* Title */
 .state-protected-section-title {
   font-size: 26px;
   font-weight: 600;
   color: #333;
-  margin: 15px auto;
-  /* padding: 0 60px; */
+  margin-bottom: 6px;
 }
 
-/* Divider aligned with title */
 .state-protected-section-divider {
   width: 100px;
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
-  margin-top: 0;
-  padding: 0;
-  margin: 0 auto;
 }
 
+/* ================================
+   TABLE CONTAINER
+================================ */
 
-/* Table Container */
 .state-protected-table-container {
-  overflow-x: auto;
-  background: #fff;
+  background: #ffffff;
   padding: 15px;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  max-width: 1100px;  /* Add maximum width */
-  margin: 0 auto;  /* Center the container */
+  overflow-x: auto;
 }
 
-/* Table */
+/* ================================
+   TABLE
+================================ */
+
 .monuments-table {
   width: 100%;
+  min-width: 1000px;
   border-collapse: collapse;
-  min-width: 900px;
 }
 
 .monuments-table th,
 .monuments-table td {
   border: 1px solid #ddd;
   padding: 12px 10px;
-  text-align: left;
-  font-size: 14px;
+  vertical-align: top;
+  line-height: 1.5;
 }
 
-/* Header */
+.monuments-table td {
+  font-size: 15px;
+}
+
+/* ================================
+   TABLE HEADER
+================================ */
+
 .monuments-table thead {
   background-color: #dd6d05;
 }
 
 .monuments-table thead th {
-  color: #fff;
   font-weight: 600;
-  text-transform: capitalize;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
 }
 
-/* Row hover */
-.monuments-table tbody tr:hover {
-  background-color: #f3f3f3;
-}
+/* ================================
+   TABLE BODY
+================================ */
 
-/* Alternating rows */
 .monuments-table tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
 
-/* Loading State */
+.monuments-table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+/* ================================
+   LOADING MESSAGE
+================================ */
+
 .loading-message {
   text-align: center;
   padding: 40px 20px;
-  color: #999;
   font-style: italic;
+  color: #888;
 }
 
-/* View More Button Styles */
-.view-more-row {
-  background-color: #fff !important;
-}
+/* ================================
+   RESPONSIVE
+================================ */
 
-.view-more-row:hover {
-  background-color: #fff !important;
-}
-
-.view-more-cell {
-  text-align: center;
-  padding: 20px !important;
-  border: none !important;
-}
-
-.view-more-btn {
-  padding: 12px 30px;
-  background-color: #ff9900;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.view-more-btn:hover {
-  background-color: #dd6d05;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
-}
-
-.view-more-btn i {
-  transition: transform 0.3s;
-}
-
-.view-more-btn:hover i {
-  transform: translateY(2px);
-}
-
-.monuments-count {
-  display: block;
-  margin-top: 10px;
-  color: #666;
-  font-size: 13px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
+/* Laptop / Desktop */
+@media (max-width: 1399px) {
   .state-protected-section-title {
-    font-size: 16px;
+    font-size: 24px;
   }
+}
 
-  .state-protected-table-container {
-    padding: 15px;
+/* Tablet */
+@media (max-width: 991px) {
+  .state-protected-section-title {
+    font-size: 22px;
   }
 
   .monuments-table th,
   .monuments-table td {
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .monuments-table td:first-child {
-    width: 50px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .state-protected-section-title {
-    font-size: 17px;
-  }
-
-  .state-protected-table-container {
-    padding: 20px;
-  }
-
-  .monuments-table th,
-  .monuments-table td {
-    padding: 12px;
     font-size: 13px;
   }
 }
 
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1350px;
+/* Mobile */
+@media (max-width: 575px) {
+  .state-protected-section-title {
+    font-size: 18px;
+  }
+
+  .monuments-table {
+    min-width: 850px;
   }
 
   .monuments-table th,
   .monuments-table td {
-    font-size: 15px;
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* ================================
+   PRINT
+================================ */
+
+@media print {
+  #state-protected {
+    background: #ffffff;
+  }
+
+  .state-protected-table-container {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .monuments-table {
+    min-width: 100%;
   }
 }

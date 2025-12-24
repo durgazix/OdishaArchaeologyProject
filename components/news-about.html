@@ -1,36 +1,63 @@
-<section class="news-about-section">
+<section class="news-about-section py-5 bg-light" id="news-about">
   <div class="container">
-    <div class="news-about-grid">
+    <div class="row g-4">
       <!-- NEWS SECTION -->
-      <div class="news-section">
-        <h2 class="section-title">NEWS</h2>
-        <div class="news-divider"></div>
-
-        <!-- News Item 1 -->
-        <div class="news-item">
-          <div class="news-header">
-            <h3 class="news-title">Preservation of Jagannath Temple Complex - A Living Monument</h3>
-            <div class="news-nav">
-              <button class="nav-prev">&lt;</button>
-              <button class="nav-next">&gt;</button>
+      <div class="col-lg-6">
+        <div class="card border shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="section-title text-uppercase fw-bold mb-3">NEWS</h2>
+            <hr class="news-divider mb-4" />
+            
+            <!-- News Item -->
+            <div class="news-item">
+              <div class="d-flex justify-content-between align-items-start mb-3 pb-3 border-bottom">
+                <h3 class="news-title fs-6 fw-semibold mb-0 flex-grow-1 me-3">
+                  Preservation of Jagannath Temple Complex - A Living Monument
+                </h3>
+                <div class="news-nav d-flex gap-2 flex-shrink-0">
+                  <button class="btn btn-light btn-sm nav-prev" type="button">&lt;</button>
+                  <button class="btn btn-light btn-sm nav-next" type="button">&gt;</button>
+                </div>
+              </div>
+              
+              <div class="news-content">
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-8">
+                    <p class="news-text small text-muted lh-base mb-3">
+                      The Jagannath Temple in Puri is one of Odisha's most sacred and architecturally significant monuments. The Department of Archaeology continues its dedicated efforts to preserve this 12th-century masterpiece, ensuring that its intricate stone carvings, magnificent spires, and spiritual significance are maintained for future generations of pilgrims and scholars. This magnificent structure, built in the 12th century, stands as a testament to Odishan architectural brilliance and remains one of the four most important pilgrimage sites in Hinduism.
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <img src="assets/news/Vallam-min_1.jpg" alt="Jagannath Temple" class="news-image img-fluid rounded w-100" />
+                  </div>
+                  <div class="col-12">
+                    <a href="#" class="news-more text-danger fw-semibold text-decoration-none" onclick="showNewsPage(); return false;">
+                      More..
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="news-content">
-            <p class="news-text">The Jagannath Temple in Puri is one of Odisha's most sacred and architecturally significant monuments. The Department of Archaeology continues its dedicated efforts to preserve this 12th-century masterpiece, ensuring that its intricate stone carvings, magnificent spires, and spiritual significance are maintained for future generations of pilgrims and scholars. This magnificent structure, built in the 12th century, stands as a testament to Odishan architectural brilliance and remains one of the four most important pilgrimage sites in Hinduism.</p>
-            <img src="assets/news/Vallam-min_1.jpg" alt="Jagannath Temple" class="news-image">
-            <a href="#" class="news-more" onclick="showNewsPage(); return false;">More..</a>
           </div>
         </div>
       </div>
 
       <!-- ABOUT DEPARTMENT SECTION -->
-      <div class="about-section" id="about-detail">
-        <h2 class="section-title">ABOUT DEPARTMENT OF ARCHAEOLOGY</h2>
-        <div class="about-divider"></div>
-        <p class="about-text">
-          The Department of Archaeology, Government of Odisha, is dedicated to the conservation, preservation, and promotion of Odisha's rich archaeological heritage. Established to protect ancient monuments and conduct scientific excavations at historically significant sites, the department has uncovered invaluable artifacts and structures that reveal the grandeur of Odisha's ancient civilizations. From the Jagannath Temple in Puri to the Konark Sun Temple, Odisha possesses some of India's most spectacular architectural treasures. Our expertise extends to epigraphy, artifact conservation, and the establishment of site museums...
-        </p>
-        <button class="read-more-btn" onclick="showAboutPage()">Read more</button>
+      <div class="col-lg-6">
+        <div class="card border shadow-sm h-100">
+          <div class="card-body p-4 d-flex flex-column">
+            <h2 class="section-title text-uppercase fw-bold mb-3">ABOUT DEPARTMENT OF ARCHAEOLOGY</h2>
+            <hr class="about-divider mb-4" />
+            
+            <p class="about-text small text-muted lh-base text-justify mb-4 flex-grow-1">
+              The Department of Archaeology, Government of Odisha, is dedicated to the conservation, preservation, and promotion of Odisha's rich archaeological heritage. Established to protect ancient monuments and conduct scientific excavations at historically significant sites, the department has uncovered invaluable artifacts and structures that reveal the grandeur of Odisha's ancient civilizations. From the Jagannath Temple in Puri to the Konark Sun Temple, Odisha possesses some of India's most spectacular architectural treasures. Our expertise extends to epigraphy, artifact conservation, and the establishment of site museums...
+            </p>
+            
+            <button class="btn btn-outline-danger fw-semibold align-self-start" onclick="showAboutPage(); return false;">
+              Read more
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

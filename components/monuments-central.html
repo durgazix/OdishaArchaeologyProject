@@ -1,83 +1,123 @@
-<!-- CENTRAL PROTECTED MONUMENTS -->
-<section id="monuments-central" class="monuments-central-section">
+<!-- MONUMENTS CENTRAL (GRID VIEW) -->
+<section id="monuments-central" class="monuments-central-section" >
+
   <!-- Breadcrumb -->
   <div class="breadcrumb-bar">
     <div class="container">
       <nav class="breadcrumb">
-        <a href="#" class="breadcrumb-item" onclick="goHome(); return false;">Home</a>
+        <a href="#" class="breadcrumb-item" onclick="goHome();return false;">Home</a>
         <span class="breadcrumb-separator">&gt;&gt;</span>
-        <a class="breadcrumb-item active" onclick="showMonumentsPage(); return false;">Monuments</a>
+        <a href="#" class="breadcrumb-item" onclick="showMonumentsPage();return false;">Monuments</a>
         <span class="breadcrumb-separator">&gt;&gt;</span>
         <span class="breadcrumb-item active">Central Protected Monuments</span>
       </nav>
     </div>
   </div>
 
-  <div class="monuments-central-wrapper">
-    <!-- Heading -->
-    <div class="monuments-central-heading">
-      <h2 class="monuments-central-title">CENTRAL PROTECTED MONUMENTS</h2>
-      <div class="monuments-central-divider"></div>
-      <p class="monuments-central-subtitle">
-        View official documents and acts related to monument preservation in Odisha
-      </p>
-    </div>
+  <!-- Heading -->
+  <div class="container text-center mb-5">
+    <h2 class="monuments-title">CENTRAL PROTECTED MONUMENTS OF ODISHSA</h2>
+    <p class="monuments-subtitle">
+      Discover the architectural marvels and cultural heritage of ancient Odisha.
+    </p>
   </div>
 
+  <!-- Grid -->
   <div class="container">
-    <!-- PDF Documents Grid -->
-    <div class="pdf-documents-grid">
-      <!-- Document 1 -->
-      <div class="pdf-document-card">
-        <div class="pdf-icon">
-          <i class="fa fa-file-pdf-o"></i>
-        </div>
-        <div class="pdf-document-info">
-          <h3 class="pdf-document-title">Orissa Ancient Monuments Preservation Act 1956</h3>
-          <p class="pdf-document-description">
-            Official act for the preservation of ancient monuments and objects of archaeological, historical or artistic interest.
-          </p>
-          <button class="pdf-view-btn" onclick="openPDFViewer('assets/state-monuments/Orissa Ancient Monuments Preservation Act 1956.pdf', 'Orissa Ancient Monuments Preservation Act 1956'); event.stopPropagation();">
-            <i class="fa fa-eye"></i> View Document
-          </button>
+    <div class="row g-4" id="monumentsGrid">
+
+      <!-- CARD -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(0)">
+          <img src="assets/central-monuments/img_1.jpg" alt="Konark Sun Temple">
+          <div class="monument-info">
+            <h5>Konark Sun Temple</h5>
+            <p>13th-century Sun Temple</p>
+          </div>
         </div>
       </div>
 
-      <!-- Document 2 -->
-      <div class="pdf-document-card">
-        <div class="pdf-icon">
-          <i class="fa fa-file-pdf-o"></i>
-        </div>
-        <div class="pdf-document-info">
-          <h3 class="pdf-document-title">Orissa Ancient Monuments Preservation Rule 1958</h3>
-          <p class="pdf-document-description">
-            Rules and regulations for the implementation of the Orissa Ancient Monuments Preservation Act, 1956.
-          </p>
-          <button class="pdf-view-btn" onclick="openPDFViewer('assets/state-monuments/Orissa Ancient Monuments Preservation Rule 1958.pdf', 'Orissa Ancient Monuments Preservation Rule 1958'); event.stopPropagation();">
-            <i class="fa fa-eye"></i> View Document
-          </button>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(1)">
+          <img src="assets/central-monuments/img_2.jpg" alt="Lingaraj Temple">
+          <div class="monument-info">
+            <h5>Lingaraj Temple</h5>
+            <p>Peak Kalinga architecture</p>
+          </div>
         </div>
       </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(2)">
+          <img src="assets/central-monuments/img_3.jpg" alt="Udayagiri Caves">
+          <div class="monument-info">
+            <h5>Udayagiri Caves</h5>
+            <p>Ancient Jain caves</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(3)">
+          <img src="assets/central-monuments/img_4.jpg" alt="Mukteswar Temple">
+          <div class="monument-info">
+            <h5>Mukteswar Temple</h5>
+            <p>Gem of Odisha architecture</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(3)">
+          <img src="assets/central-monuments/img_5.jpg" alt="Mukteswar Temple">
+          <div class="monument-info">
+            <h5>Mukteswar Temple</h5>
+            <p>Gem of Odisha architecture</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(3)">
+          <img src="assets/central-monuments/img_6.jpg" alt="Mukteswar Temple">
+          <div class="monument-info">
+            <h5>Mukteswar Temple</h5>
+            <p>Gem of Odisha architecture</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(3)">
+          <img src="assets/central-monuments/img_7.jpg" alt="Mukteswar Temple">
+          <div class="monument-info">
+            <h5>Mukteswar Temple</h5>
+            <p>Gem of Odisha architecture</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="monument-card" onclick="openImageViewer(3)">
+          <img src="assets/central-monuments/img_8.jpg" alt="Mukteswar Temple">
+          <div class="monument-info">
+            <h5>Mukteswar Temple</h5>
+            <p>Gem of Odisha architecture</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PDF Viewer Modal -->
-<!-- <div id="pdfViewerModal" class="pdf-viewer-modal">
-  <div class="pdf-viewer-content">
-    <div class="pdf-viewer-header">
-      <h3 id="pdfViewerTitle">Document Viewer</h3>
-      <button class="pdf-close-btn" onclick="closePDFViewer()">
-        <i class="fa fa-times"></i>
-      </button>
-    </div>
-    <div class="pdf-viewer-body">
-      <iframe id="pdfViewerFrame" src="" frameborder="0"></iframe>
-    </div>
-    <div class="pdf-viewer-footer">
-      <a id="pdfDownloadBtn" href="" download class="pdf-download-btn">
-        <i class="fa fa-download"></i> Download PDF
-      </a>
+<!-- IMAGE VIEWER -->
+<div class="monuments-viewer" id="monumentsViewer">
+  <span class="viewer-close" onclick="closeImageViewer()">&times;</span>
+  <span class="viewer-nav prev" onclick="prevImage()">&#10094;</span>
+
+  <div class="viewer-content">
+    <img id="viewerImage" />
+    <div class="viewer-counter">
+      <span id="viewerCurrent">1</span>/<span id="viewerTotal">4</span>
     </div>
   </div>
-</div> -->
+
+  <span class="viewer-nav next" onclick="nextImage()">&#10095;</span>
+</div>
