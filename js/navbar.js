@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Global function to show Gallery page
 // Called when Gallery link is clicked in navbar
+
 window.showGalleryPage = function () {
   // Close About detail page if it's open
   if (typeof window.closeDetailPage === "function") {
@@ -197,8 +198,6 @@ window.showGalleryPage = function () {
   }, 100);
 };
 
-// Global function to show About page
-// Called when About Us link is clicked in navbar
 window.showAboutPage = function () {
   // Close About detail page if it's open (to reset state)
   if (typeof window.closeDetailPage === "function") {

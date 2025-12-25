@@ -4,7 +4,7 @@
 
 .monuments-section {
   background: #ffffff;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   min-height: calc(100vh - 120px);
 }
 
@@ -52,8 +52,8 @@
 ===================================== */
 
 .monuments-title {
-  font-size: 34px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   color: #1f2937;
   margin-bottom: 12px;
   text-transform: uppercase;

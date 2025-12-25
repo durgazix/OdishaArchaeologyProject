@@ -1,14 +1,12 @@
 .rti-section {
   background-color: #f9f9f9;
-  min-height: calc(100vh - 350px);
-  padding: 40px 0;
+  min-height: calc(100vh - 250px);
 }
 
 /* ================================
    HEADING
    ================================ */
 .rti-heading {
-  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -23,7 +21,7 @@
   width: 100px;
   height: 3px;
   background: linear-gradient(to right, #ff9900, transparent);
-  margin: 0 auto;
+  text-align: left;;
 }
 
 /* ================================
@@ -40,31 +38,32 @@
 /* ================================
    TABLE
    ================================ */
-.acts-table {
+.acts-table-rti {
   width: 100%;
   min-width: 900px; /* Keeps table readable on small screens */
   border-collapse: collapse;
 }
 
-.acts-table th,
-.acts-table td {
+.acts-table-rti th,
+.acts-table-rti td {
   border: 1px solid #ddd;
   padding: 12px 10px;
   text-align: left;
   vertical-align: top;
   line-height: 1.5;
-}
-.acts-table td{
   font-size: 16px;
+}
+.acts-table-rti th{
+  text-align: center;
 }
 /* ================================
    TABLE HEADER
    ================================ */
-.acts-table thead {
+.acts-table-rti thead {
   background-color: #dd6d05;
 }
 
-.acts-table thead th {
+.acts-table-rti thead th {
   color: #000;
   font-weight: 600;
   font-size: 18px;
@@ -75,11 +74,11 @@
 /* ================================
    TABLE BODY
    ================================ */
-.acts-table tbody tr {
+.acts-table-rti tbody tr {
   transition: background-color 0.3s ease;
 }
 
-.acts-table tbody tr:hover {
+.acts-table-rti tbody tr:hover {
   background-color: #f3f3f3;
 }
 
@@ -93,8 +92,8 @@
     font-size: 28px;
   }
 
-  .acts-table th,
-  .acts-table td {
+  .acts-table-rti th,
+  .acts-table-rti td {
     font-size: 16px;
     padding: 16px 10px;
   }
@@ -117,8 +116,8 @@
     font-size: 22px;
   }
 
-  .acts-table th,
-  .acts-table td {
+  .acts-table-rti th,
+  .acts-table-rti td {
     font-size: 13px;
   }
 }
@@ -137,8 +136,8 @@
     padding: 12px;
   }
 
-  .acts-table th,
-  .acts-table td {
+  .acts-table-rti th,
+  .acts-table-rti td {
     font-size: 12.5px;
     padding: 10px;
   }
@@ -158,12 +157,12 @@
     padding: 10px;
   }
 
-  .acts-table {
+  .acts-table-rti {
     min-width: 850px;
   }
 
-  .acts-table th,
-  .acts-table td {
+  .acts-table-rti th,
+  .acts-table-rti td {
     font-size: 12px;
     padding: 8px;
   }
@@ -172,11 +171,11 @@
 /* ================================
    ACCESSIBILITY & UX
    ================================ */
-.acts-table th {
+.acts-table-rti th {
   white-space: nowrap;
 }
 /* 
-.acts-table td {
+.acts-table-rti td {
   word-break: break-word;
 } */
 
@@ -194,7 +193,7 @@
     padding: 0;
   }
 
-  .acts-table {
+  .acts-table-rti {
     min-width: 100%;
   }
 }

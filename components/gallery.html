@@ -16,16 +16,17 @@
 <!-- Gallery Section -->
 <section class="gallery-section py-5" id="gallery">
   <div class="container">
-
     <!-- Header -->
     <div class="row align-items-center mb-4">
       <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-        <h2 class="gallery-title fw-bold mb-2">GALLERY</h2>
+        <h2 class="gallery-title mb-4">GALLERY</h2>
         <div class="gallery-divider mx-auto mx-md-0"></div>
       </div>
 
       <div class="col-md-6 d-flex justify-content-center justify-content-md-end gap-2">
-        <button id="photoTab" class="btn gallery-toggle-btn active">PHOTO</button>
+        <button id="photoTab" class="btn gallery-toggle-btn active">
+          PHOTO
+        </button>
         <button id="videoTab" class="btn gallery-toggle-btn">VIDEO</button>
       </div>
     </div>
@@ -35,8 +36,7 @@
       <div class="row g-4" id="galleryItems"></div>
 
       <div class="text-center mt-4 photo-footer">
-        <button class="btn view-more-btn" id="photoViewMore"
-          onclick="showGalleryPage(); return false;">
+        <button class="btn view-more-btn" id="photoViewMore" onclick="showGalleryPage(); return false;">
           View More
         </button>
 
@@ -48,83 +48,77 @@
 
     <!-- VIDEO GALLERY -->
     <!-- VIDEO GALLERY -->
-<div id="videoGallery" class="d-none">
+    <div id="videoGallery" class="d-none">
+      <div class="row g-4" id="videoGalleryGrid">
+        <!-- Video 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="video-card">
+            <video controls class="w-100 rounded">
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" />
+            </video>
+            <p class="video-caption">Heritage Sites</p>
+          </div>
+        </div>
 
-  <div class="row g-4" id="videoGalleryGrid">
+        <!-- Video 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="video-card">
+            <video controls class="w-100 rounded">
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" />
+            </video>
+            <p class="video-caption">Temple Architecture</p>
+          </div>
+        </div>
 
-    <!-- Video 1 -->
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="video-card">
-        <video controls class="w-100 rounded">
-          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
-        </video>
-        <p class="video-caption">Heritage Sites</p>
+        <!-- Video 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="video-card">
+            <video controls class="w-100 rounded">
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" />
+            </video>
+            <p class="video-caption">Excavation Documentary</p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="video-card">
+            <video controls class="w-100 rounded">
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" />
+            </video>
+            <p class="video-caption">Cultural Heritage</p>
+          </div>
+        </div>
+
+        <!-- EXTRA VIDEOS (Hidden Initially) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-none extra-video">
+          <div class="video-card">
+            <video controls class="w-100 rounded">
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" />
+            </video>
+            <p class="video-caption">Ancient Monuments</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 d-none extra-video">
+          <div class="video-card">
+            <video controls class="w-100 rounded">
+              <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4" />
+            </video>
+            <p class="video-caption">Archaeological Finds</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ VIDEO FOOTER -->
+      <div class="text-center mt-4 video-footer">
+        <button class="btn view-more-btn me-2" id="videoViewMore">
+          View More
+        </button>
+        <button class="btn view-less-btn d-none" id="videoViewLess">
+          View Less
+        </button>
       </div>
     </div>
-
-    <!-- Video 2 -->
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="video-card">
-        <video controls class="w-100 rounded">
-          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
-        </video>
-        <p class="video-caption">Temple Architecture</p>
-      </div>
-    </div>
-
-    <!-- Video 3 -->
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="video-card">
-        <video controls class="w-100 rounded">
-          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
-        </video>
-        <p class="video-caption">Excavation Documentary</p>
-      </div>
-    </div>
-
-    <!-- Video 4 -->
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="video-card">
-        <video controls class="w-100 rounded">
-          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
-        </video>
-        <p class="video-caption">Cultural Heritage</p>
-      </div>
-    </div>
-
-    <!-- EXTRA VIDEOS (Hidden Initially) -->
-    <div class="col-12 col-sm-6 col-lg-3 d-none extra-video">
-      <div class="video-card">
-        <video controls class="w-100 rounded">
-          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
-        </video>
-        <p class="video-caption">Ancient Monuments</p>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3 d-none extra-video">
-      <div class="video-card">
-        <video controls class="w-100 rounded">
-          <source src="assets/virtual-tour/Video_Generation_for_Ecosystem.mp4">
-        </video>
-        <p class="video-caption">Archaeological Finds</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ✅ VIDEO FOOTER -->
-  <div class="text-center mt-4 video-footer">
-    <button class="btn view-more-btn me-2" id="videoViewMore">
-      View More
-    </button>
-    <button class="btn view-less-btn d-none" id="videoViewLess">
-      View Less
-    </button>
-  </div>
-
-</div>
-
-
   </div>
 </section>

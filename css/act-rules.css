@@ -4,7 +4,6 @@
 
 .act-rules-section {
   background: #fafafa;
-  padding: 40px 0;
   min-height: 60vh;
 }
 
@@ -34,7 +33,7 @@
    TABLE WRAPPER
 ================================ */
 
-.acts-table-wrapper {
+.acts-rules-table-wrapper {
   background: #ffffff;
   padding: 25px;
   border-radius: 6px;
@@ -45,34 +44,35 @@
    TABLE
 ================================ */
 
-.acts-table {
+.acts-rules-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 0;
 }
 
-.acts-table thead {
+.acts-rules-table thead {
   background: #dd6d05;
 }
 
-.acts-table th,
-.acts-table td {
+.acts-rules-table th,
+.acts-rules-table td {
   border: 1px solid #ddd;
   padding: 14px 16px;
   font-size: 14px;
   vertical-align: middle;
 }
 
-.acts-table th {
+.acts-rules-table th {
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.3px;
 }
-
-.acts-table td:first-child {
+/* 
+.acts-rules-table td:first-child {
   width: 80px;
   text-align: center;
-}
+} */
 
 /* ===============================
    ACT NAME
@@ -174,12 +174,12 @@
     font-size: 18px;
   }
 
-  .acts-table-wrapper {
+  .acts-rules-table-wrapper {
     padding: 15px;
   }
 
-  .acts-table th,
-  .acts-table td {
+  .acts-rules-table th,
+  .acts-rules-table td {
     font-size: 12px;
     padding: 10px;
   }
@@ -205,12 +205,12 @@
 ================================ */
 
 @media (min-width: 1400px) {
-  .acts-table-wrapper {
+  .acts-rules-table-wrapper {
     max-width: 1200px;
   }
 
-  .acts-table th,
-  .acts-table td {
+  .acts-rules-table th,
+  .acts-rules-table td {
     font-size: 15px;
     padding: 16px 18px;
   }

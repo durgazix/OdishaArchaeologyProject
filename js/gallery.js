@@ -1,8 +1,9 @@
-// ===================================
-// GALLERY INITIALIZATION
-// ===================================
+/* ===============================
+   GALLERY INITIALIZATION
+================================ */
 
 window.initGallery = function () {
+
   const photoTab = document.getElementById("photoTab");
   const videoTab = document.getElementById("videoTab");
 
@@ -16,9 +17,10 @@ window.initGallery = function () {
 
   const videoViewMore = document.getElementById("videoViewMore");
   const videoViewLess = document.getElementById("videoViewLess");
+
   const extraVideos = document.querySelectorAll(".extra-video");
 
-  /* ---------------- PHOTO DATA ---------------- */
+  /* ================= PHOTO DATA ================= */
   const photoData = [
     { src: "assets/gallery/gallery_1.jpg", cap: "Ancient Temple" },
     { src: "assets/gallery/gallery_2.jpg", cap: "Architecture" },
@@ -27,76 +29,96 @@ window.initGallery = function () {
     { src: "assets/gallery/gallery_5.jpeg", cap: "Cultural Heritage" },
     { src: "assets/gallery/gallery_1.jpg", cap: "Monument" },
     { src: "assets/gallery/gallery_2.jpg", cap: "Sculpture" },
-    { src: "assets/gallery/gallery_3.jpg", cap: "Artifact" },
+    { src: "assets/gallery/gallery_3.jpg", cap: "Artifact" }
   ];
 
-  /* ---------------- PHOTO RENDER ---------------- */
+  /* ================= RENDER ================= */
+
   function renderPhotos(limit) {
     galleryItems.innerHTML = "";
-    photoData.slice(0, limit).forEach((p) => {
+    photoData.slice(0, limit).forEach(item => {
       galleryItems.innerHTML += `
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="gallery-item">
-            <img src="${p.src}" class="img-fluid">
-            <div class="gallery-caption">${p.cap}</div>
+            <img src="${item.src}" class="img-fluid">
+            <div class="gallery-caption">${item.cap}</div>
           </div>
         </div>`;
     });
   }
 
-  /* ---------------- INITIAL STATE ---------------- */
-  renderPhotos(4);
+  function showPreviewPhotos() {
+    renderPhotos(4);
+    photoViewMore.classList.remove("d-none");
+    photoViewLess.classList.add("d-none");
+  }
+
+  function showAllPhotos() {
+    renderPhotos(photoData.length);
+    photoViewMore.classList.add("d-none");
+    photoViewLess.classList.remove("d-none");
+  }
+
+  /* ================= INITIAL STATE ================= */
+  showPreviewPhotos();
   photoGallery.classList.remove("d-none");
   videoGallery.classList.add("d-none");
 
-  /* ---------------- TAB SWITCHING ---------------- */
+  /* ================= TAB SWITCH ================= */
+
   photoTab.onclick = () => {
+    photoTab.classList.add("active");
+    videoTab.classList.remove("active");
+
     photoGallery.classList.remove("d-none");
     videoGallery.classList.add("d-none");
 
-    photoTab.classList.add("active");
-    videoTab.classList.remove("active");
+    showPreviewPhotos();
   };
 
   videoTab.onclick = () => {
-    photoGallery.classList.add("d-none");
-    videoGallery.classList.remove("d-none");
-
     videoTab.classList.add("active");
     photoTab.classList.remove("active");
+
+    videoGallery.classList.remove("d-none");
+    photoGallery.classList.add("d-none");
+
+    extraVideos.forEach(v => v.classList.add("d-none"));
+    videoViewMore.classList.remove("d-none");
+    videoViewLess.classList.add("d-none");
   };
 
-  /* ---------------- PHOTO VIEW MORE ---------------- */
+  /* ================= PHOTO VIEW MORE / LESS ================= */
+
   photoViewMore.onclick = () => {
     showGalleryPage("photo");
   };
 
   photoViewLess.onclick = () => {
-    renderPhotos(4);
-    photoViewLess.classList.add("d-none");
-    photoViewMore.classList.remove("d-none");
+    showPreviewPhotos();
+    scrollToGallery();
   };
 
-  /* ---------------- VIDEO VIEW MORE ---------------- */
-  videoTab.onclick = () => {
-    photoGallery.classList.add("d-none");
-    videoGallery.classList.remove("d-none");
+  /* ================= VIDEO VIEW MORE / LESS ================= */
 
-    // 🔥 ENSURE VIDEO VIEW MORE BUTTON IS VISIBLE
-    if (document.getElementById("videoViewMore")) {
-      document.getElementById("videoViewMore").classList.remove("d-none");
-    }
+  videoViewMore.onclick = () => {
+    showGalleryPage("video");
+  };
 
-    videoTab.classList.add("active");
-    photoTab.classList.remove("active");
+  videoViewLess.onclick = () => {
+    extraVideos.forEach(v => v.classList.add("d-none"));
+    videoViewLess.classList.add("d-none");
+    videoViewMore.classList.remove("d-none");
+    scrollToGallery();
   };
 };
 
-/* ===================================
-   GALLERY PAGE NAVIGATION
-   =================================== */
+/* ===============================
+   FULL GALLERY PAGE HANDLER
+================================ */
 
-window.showGalleryPage = function (type = "photo") {
+window.showGalleryPage = function (type) {
+
   hideAllSections();
 
   const gallery = document.getElementById("gallery");
@@ -112,8 +134,7 @@ window.showGalleryPage = function (type = "photo") {
   const videoGallery = document.getElementById("videoGallery");
 
   const galleryItems = document.getElementById("galleryItems");
-  const photoViewMore = document.getElementById("photoViewMore");
-  const photoViewLess = document.getElementById("photoViewLess");
+  const extraVideos = document.querySelectorAll(".extra-video");
 
   if (type === "photo") {
     photoTab.classList.add("active");
@@ -122,7 +143,8 @@ window.showGalleryPage = function (type = "photo") {
     photoGallery.classList.remove("d-none");
     videoGallery.classList.add("d-none");
 
-    const allPhotos = [
+    galleryItems.innerHTML = "";
+    [
       "gallery_1.jpg",
       "gallery_2.jpg",
       "gallery_3.jpg",
@@ -130,11 +152,8 @@ window.showGalleryPage = function (type = "photo") {
       "gallery_5.jpeg",
       "gallery_1.jpg",
       "gallery_2.jpg",
-      "gallery_3.jpg",
-    ];
-
-    galleryItems.innerHTML = "";
-    allPhotos.forEach((img) => {
+      "gallery_3.jpg"
+    ].forEach(img => {
       galleryItems.innerHTML += `
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="gallery-item">
@@ -147,23 +166,31 @@ window.showGalleryPage = function (type = "photo") {
     photoViewLess.classList.remove("d-none");
   }
 
+  if (type === "video") {
+    videoTab.classList.add("active");
+    photoTab.classList.remove("active");
+
+    videoGallery.classList.remove("d-none");
+    photoGallery.classList.add("d-none");
+
+    extraVideos.forEach(v => v.classList.remove("d-none"));
+
+    videoViewMore.classList.add("d-none");
+    videoViewLess.classList.remove("d-none");
+  }
+
   scrollToGallery();
 };
 
-/* ===================================
-   HELPERS
-   =================================== */
+/* ===============================
+   SCROLL
+================================ */
 
 function scrollToGallery() {
-  document
-    .getElementById("gallery")
+  document.getElementById("gallery")
     .scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    if (document.getElementById("gallery")) {
-      initGallery();
-    }
-  }, 300);
+  initGallery();
 });

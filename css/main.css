@@ -24,6 +24,8 @@ h3 {
 html,
 body {
   font-family: "robotoregular", Arial, sans-serif;
+  height: 100%;
+  margin: 0;
 }
 
 * {
@@ -32,17 +34,27 @@ body {
   box-sizing: border-box;
 }
 
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* THIS pushes footer to bottom */
+}
+
 body {
   font-family: "robotoregular", Arial, sans-serif;
   background: #f8f9fa;
   line-height: 1.6;
 }
-
+/* 
 .container {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 15px;
-}
+} */
 
 /* ===== GLOBAL LAYOUT ===== */
 .container .mid-container {
