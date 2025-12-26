@@ -197,16 +197,10 @@
 /* =========================================================
    READ MORE BUTTON
 ========================================================= */
-
-.arch-library-readmore {
-  text-align: center;
-  margin: 30px 0 10px;
-}
-
 .arch-readmore-btn {
   background: #dd6d05;
   color: #fff;
-  padding: 14px 40px;
+  padding: 10px 20px;
   border: none;
   border-radius: 6px;
   font-size: 16px;

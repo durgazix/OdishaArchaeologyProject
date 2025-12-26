@@ -1,126 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sliderContainer = document.getElementById("librarySliderContainer");
+  const slider = document.getElementById("librarySliderContainer");
   const slides = document.querySelectorAll(".slider-slide");
-  const prevArrow = document.getElementById("prevArrow");
-  const nextArrow = document.getElementById("nextArrow");
+  const prevBtn = document.getElementById("prevArrow");
+  const nextBtn = document.getElementById("nextArrow");
 
-  if (!sliderContainer || slides.length === 0) return;
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let autoSlide;
 
-  let currentSlide = 0;
-  let autoSlideInterval;
-  const autoSlideDelay = 4000; // 4 seconds
-
-  // Function to show specific slide
-  function showSlide(index) {
-    // Remove active class from all slides
-    slides.forEach((slide) => {
-      slide.classList.remove("active");
-    });
-
-    // Handle wraparound
-    if (index >= slides.length) {
-      currentSlide = 0;
-    } else if (index < 0) {
-      currentSlide = slides.length - 1;
-    } else {
-      currentSlide = index;
-    }
-
-    // Add active class to current slide
-    slides[currentSlide].classList.add("active");
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  // Next slide function
   function nextSlide() {
-    showSlide(currentSlide + 1);
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
   }
 
-  // Previous slide function
   function prevSlide() {
-    showSlide(currentSlide - 1);
+    currentIndex =
+      currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+    updateSlide();
   }
 
-  // Start auto sliding
   function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
+    autoSlide = setInterval(nextSlide, 4000);
   }
 
-  // Stop auto sliding
   function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
+    clearInterval(autoSlide);
   }
 
-  // Reset auto slide (stop and start again)
-  function resetAutoSlide() {
+  // Button events
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
     stopAutoSlide();
     startAutoSlide();
-  }
-
-  // Event listener for next arrow
-  if (nextArrow) {
-    nextArrow.addEventListener("click", () => {
-      nextSlide();
-      resetAutoSlide();
-    });
-  }
-
-  // Event listener for previous arrow
-  if (prevArrow) {
-    prevArrow.addEventListener("click", () => {
-      prevSlide();
-      resetAutoSlide();
-    });
-  }
-
-  // Pause auto slide on hover
-  if (sliderContainer) {
-    sliderContainer.addEventListener("mouseenter", stopAutoSlide);
-    sliderContainer.addEventListener("mouseleave", startAutoSlide);
-  }
-
-  // Touch/Swipe support for mobile
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  if (sliderContainer) {
-    sliderContainer.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    sliderContainer.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    });
-  }
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        // Swipe left - next slide
-        nextSlide();
-      } else {
-        // Swipe right - previous slide
-        prevSlide();
-      }
-      resetAutoSlide();
-    }
-  }
-
-  // Keyboard navigation
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-      prevSlide();
-      resetAutoSlide();
-    } else if (e.key === "ArrowRight") {
-      nextSlide();
-      resetAutoSlide();
-    }
   });
 
-  // Initialize
-  showSlide(0);
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  // Pause on hover
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
+
+  // Swipe support
+  let startX = 0;
+  slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+  });
+
+  // Init
+  updateSlide();
   startAutoSlide();
 });

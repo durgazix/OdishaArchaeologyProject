@@ -19,13 +19,14 @@
   display: block;
   padding: 6px 12px;
   text-decoration: none;
-  color: #222;
+  color: #2B2B2B;
   font-size: 15px;
   border-right: 1px solid #ddd;
+  font-weight: 600;
 }
 .nav-list > li:not(.home-icon):hover > a{
   background-color: #ff9900ea;
-    color: #fff;
+  color: #fff;
   
 }
 
@@ -86,6 +87,32 @@
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+/* Dropdown Arrow Icon */
+.dropdown-menu li a {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Arrow icon */
+.dropdown-menu li a::before {
+  content: "\f105";
+  font-family: "FontAwesome";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #fff;
+  transition: 0.8s ease-in;
+}
+
+/* Hover effect */
+.dropdown-menu li a:hover::before {
+  color: #d24a00;
+  transform: translateY(-50%) translateX(3px);
+  display: none;
+}
+
 
 /* Mobile Responsive */
 @media (max-width: 992px) {

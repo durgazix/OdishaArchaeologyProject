@@ -106,15 +106,25 @@
 }
 
 /* LINKS */
+/* ==============================
+   IMPORTANT LINKS AUTO SCROLL
+================================ */
+
+/* Container must hide overflow */
 .links-scroll-container {
-  height: 170px;
+  height: 200px; /* adjust as needed */
   overflow: hidden;
+  position: relative;
 }
 
+/* Scrolling content */
 .links-content {
-  animation: scrollUpLinks 18s linear infinite;
+  display: flex;
+  flex-direction: column;
+  animation: scrollLinks 15s linear infinite;
 }
 
+/* List styling */
 .links-list {
   list-style: none;
   padding: 0;
@@ -122,23 +132,30 @@
 }
 
 .links-list li {
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.links-list li::before {
-  content: "•";
-  position: absolute;
-  left: -12px;
-  color: #d24a00;
-  font-size: 18px;
+  padding: 8px 0;
 }
 
 .links-list a {
-  font-size: 13px;
-  color: #555;
   text-decoration: none;
+  color: #333;
+  font-size: 14px;
 }
+
+.links-list a:hover {
+  color: #dd6d05;
+  text-decoration:#f3a668e5;
+}
+
+/* Scroll animation */
+@keyframes scrollLinks {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
 
 /* VIEW ALL */
 .view-all-btn {
