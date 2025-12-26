@@ -1,15 +1,11 @@
-/* ===============================
-   SECTION
-================================ */
+/* SECTION */
 
 .act-rules-section {
   background: #fafafa;
   min-height: 60vh;
 }
 
-/* ===============================
-   HEADING
-================================ */
+/* HEADING */
 
 .act-rules-heading {
   margin-bottom: 25px;
@@ -29,9 +25,7 @@
   background: linear-gradient(to right, #ff9900, transparent);
 }
 
-/* ===============================
-   TABLE WRAPPER
-================================ */
+/* TABLE WRAPPER */
 
 .acts-rules-table-wrapper {
   background: #ffffff;
@@ -40,9 +34,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
-/* ===============================
-   TABLE
-================================ */
+/* TABLE */
 
 .acts-rules-table {
   width: 100%;
@@ -68,15 +60,8 @@
   text-align: center;
   letter-spacing: 0.3px;
 }
-/* 
-.acts-rules-table td:first-child {
-  width: 80px;
-  text-align: center;
-} */
 
-/* ===============================
-   ACT NAME
-================================ */
+/* ACT NAME */
 
 .act-name {
   cursor: pointer;
@@ -88,9 +73,7 @@
   text-decoration: underline;
 }
 
-/* ===============================
-   DOWNLOAD BUTTON
-================================ */
+/* DOWNLOAD BUTTON */
 
 .download-btn {
   background: #111;
@@ -108,10 +91,7 @@
   color: #111;
 }
 
-/* ===============================
-   PDF VIEWER MODAL
-   (UNCHANGED)
-================================ */
+/* PDF VIEWER MODAL */
 
 .pdf-viewer-modal {
   display: none;
@@ -165,9 +145,7 @@
   border: none;
 }
 
-/* ===============================
-   RESPONSIVE – MOBILE
-================================ */
+/* RESPONSIVE – MOBILE */
 
 @media (max-width: 576px) {
   .act-section-title {
@@ -190,9 +168,7 @@
   }
 }
 
-/* ===============================
-   RESPONSIVE – TABLET
-================================ */
+/* RESPONSIVE – TABLET */
 
 @media (max-width: 991px) {
   .act-section-title {
@@ -200,9 +176,7 @@
   }
 }
 
-/* ===============================
-   RESPONSIVE – LARGE DESKTOP
-================================ */
+/* RESPONSIVE – LARGE DESKTOP */
 
 @media (min-width: 1400px) {
   .acts-rules-table-wrapper {

@@ -106,13 +106,8 @@
 }
 
 /* LINKS */
-/* ==============================
-   IMPORTANT LINKS AUTO SCROLL
-================================ */
-
-/* Container must hide overflow */
 .links-scroll-container {
-  height: 200px; /* adjust as needed */
+  height: 200px;
   overflow: hidden;
   position: relative;
 }

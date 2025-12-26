@@ -1,6 +1,4 @@
-/* =====================================================
-   BREADCRUMB
-===================================================== */
+/* BREADCRUMB */
 
 .breadcrumb-bar {
   background: #2d5016;
@@ -28,18 +26,14 @@
   color: #fff;
 }
 
-/* =====================================================
-   SECTION
-===================================================== */
+/* SECTION */
 
 .books-journals-section {
   background: #f9f9f9;
   min-height: calc(100vh - 350px);
 }
 
-/* =====================================================
-   HEADING
-===================================================== */
+/* HEADING */
 
 .books-journals-heading {
   margin-bottom: 25px;
@@ -60,9 +54,7 @@
   background: linear-gradient(to right, #ff9900, transparent);
 }
 
-/* =====================================================
-   CONTENT BOX
-===================================================== */
+/* CONTENT BOX */
 
 .publications-content-box {
   background: #fff;
